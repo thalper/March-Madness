@@ -1,2 +1,5 @@
 Previous attendance records:
 https://www.ncaa.org/sports/2013/11/27/ncaa-men-s-basketball-attendance.aspx
+
+Kaggle data for previous years:
+https://www.kaggle.com/andrewsundberg/college-basketball-dataset
