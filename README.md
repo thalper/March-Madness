@@ -15,6 +15,7 @@ Contribution :
 I successfully identified SMART Goals for the new proposal with my team. We expanded the original proposal in order for it to fit the new updated requirements. This past week was mostly meeting up with the group and researching more about our project in order to have a clearer idea on how to better our proposal. I also researched different technologies that we can possibly implement/use in our project.
 
 Open-Source Software progress report 1/24 Tycho Halpern
+
 I created the github repository and added Rylee and Luca as contributors. I then met with both of them and we came up with a guideline for the OSS diagram which Rylee converted from pen and paper to a digital image. We then added success criteria to our final proposal, using the SMART metrics. Finally, I researched data sources that we can use for our project.
 
 
