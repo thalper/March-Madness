@@ -14,9 +14,10 @@ ECE 495 -Open Source software 01/24/2022
 Contribution :
 I successfully identified SMART Goals for the new proposal with my team. We expanded the original proposal in order for it to fit the new updated requirements. This past week was mostly meeting up with the group and researching more about our project in order to have a clearer idea on how to better our proposal. I also researched different technologies that we can possibly implement/use in our project.
 
-Open-Source Software progress report 1/24 Tycho Halpern
+Open-Source Software progress report 1/31 Tycho Halpern
 
-I created the github repository and added Rylee and Luca as contributors. I then met with both of them and we came up with a guideline for the OSS diagram which Rylee converted from pen and paper to a digital image. We then added success criteria to our final proposal, using the SMART metrics. Finally, I researched data sources that we can use for our project.
+I started the function for parsing the data, the next step is to add all of the teams in the tournament from a given year to a set, and the data will be organized nicely for each year. I also worked on the deliverables with Rylee and Luca this week during lab. We completed them during 
+lab so we did not need to do any more work on them individually.
 
 
 # References
