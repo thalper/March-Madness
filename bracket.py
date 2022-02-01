@@ -1,5 +1,3 @@
-import math
-import random
 import tkinter
 
 # https://github.com/JonathanZwiebel/bracket-generator
@@ -12,9 +10,12 @@ HORIZONTAL_PADDING = 70
 GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 
 def addXY(boxKey):
+    # CHANGE FOR TEAM NAMES NOW
+    # BOXKEY SHOULD BE TEAM NAMES
     xValue = x_center - _game_box_width / 16
     yValue = y_center - _game_box_height / 16
     bracketLoc[boxKey] = [xValue, yValue]
+    canvas.create_text(bracketLoc[boxKey][0], bracketLoc[boxKey][1], text=boxKey, fill="black", font=('Helvetica 5 bold'))
 
 if __name__ == "__main__":
     _size = 5
@@ -24,7 +25,6 @@ if __name__ == "__main__":
     _game_box_height = _game_box_width / GAME_BOX_WIDTH_HEIGHT_RATIO
     canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
     canvas.pack()
-
     for i in range(_columns):
         if i - _size < 0:
             side = "LEFT"
