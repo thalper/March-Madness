@@ -30,5 +30,8 @@ Tycho Halpern
 I started the function for parsing the data, the next step is to add all of the teams in the tournament from a given year to a set, and the data will be organized nicely for each year. I also worked on the deliverables with Rylee and Luca this week during lab. We completed them during 
 lab so we did not need to do any more work on them individually.
 
+Luca Rivera
+
+Worked with my team in the Word doc for Code review and how we were going to build our repository. I was not able to do hands on work this week because I was sick and could not attend a group meeting. I am now up to date with the progress of the team and will be contributing more with the programming aspects.
 
 # References
