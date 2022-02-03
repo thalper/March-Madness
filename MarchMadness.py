@@ -28,6 +28,10 @@ def getTeams():
         teamsByYear.append(currYear)
     return teamsByYear
 
+#DELETE LATER, USED FOR TESTING CI
+def addition(a, b):
+    return a + b
+
 
 if __name__ == "__main__":
     dataSet = np.zeros(shape=(9,68,19))
