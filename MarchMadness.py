@@ -15,8 +15,16 @@ def parseYear(year, dataSet): # input year, output numpy array storing statistic
                 dataSet[ind,count] = np.array(row[2:21])
                 count += 1
 
+if __name__ == "__main__":
+    dataSet = np.zeros(shape=(9,68,19))
+    for year in range(2013,2022):
+        if year == 2020:
+            continue
+        parseYear(year, dataSet)
+    print(dataSet)
+    
 
-def getTeams():
+"""def getTeams():
     teamsByYear = []
     for year in range(2013,2020):
         dataStr = "Previous/teams"+str(year%2000)+".txt"
@@ -26,14 +34,4 @@ def getTeams():
             for team in teams:
                 currYear.add(team.rstrip())
         teamsByYear.append(currYear)
-    return teamsByYear
-
-
-if __name__ == "__main__":
-    dataSet = np.zeros(shape=(9,68,19))
-    for year in range(2013,2022):
-        if year == 2020:
-            continue
-        parseYear(year, dataSet)
-    print(dataSet)
-    
+    return teamsByYear"""
