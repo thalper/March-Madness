@@ -5,3 +5,5 @@ MarchMadness.egg-info/PKG-INFO
 MarchMadness.egg-info/SOURCES.txt
 MarchMadness.egg-info/dependency_links.txt
 MarchMadness.egg-info/top_level.txt
+test/__init__.py
+test/test_MarchMadness.py

@@ -41,11 +41,4 @@ def addition(a, b):
     return a + b
 
 
-if __name__ == "__main__":
-    dataSet = np.zeros(shape=(9,68,19))
-    for year in range(2013,2022):
-        if year == 2020:
-            continue
-        parseYear(year, dataSet)
-    print(dataSet)
     
