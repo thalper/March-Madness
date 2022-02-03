@@ -16,7 +16,7 @@ def parseYear(year, dataSet): # input year, output numpy array storing statistic
                 count += 1
 
 if __name__ == "__main__":
-    dataSet = np.zeros(shape=(9,68,19))
+    dataSet = np.zeros(shape=(9,68,19)) # 9 years, 68 teams per year, 19 stats per team
     for year in range(2013,2022):
         if year == 2020:
             continue
