@@ -34,4 +34,10 @@ Luca Rivera
 
 Worked with my team in the Word doc for Code review and how we were going to build our repository. I was not able to do hands on work this week because I was sick and could not attend a group meeting. I am now up to date with the progress of the team and will be contributing more with the programming aspects.
 
+Progress Report (Week of 01/30/22)
+
+Rylee Benes
+
+On Tuesday, I seperated my bracket file so that the bracket mapping happens first by itself, then the bracket is created later instead of all at the same time. This allows us to add the team names to the mapping before the bracket is created. On Thursday, I created our CI using GitHub Actions through python-app.yml. This allows us after every commit to set up an environment, set up our dependencies, and run any testing that we later create to squash bugs. We can track if everything works properly through the Actions tab on our repository. I also created the deliverable that summerizes our build-system and CI throroughly. 
+
 # References
