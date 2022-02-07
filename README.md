@@ -40,8 +40,8 @@ Rylee Benes
 
 On Tuesday, I separated my bracket file so that the bracket mapping happens first by itself, then the bracket is created later instead of all at the same time. This allows us to add the team names to the mapping before the bracket is created. On Thursday, I created our CI using GitHub Actions through python-app.yml. This allows us after every commit to set up an environment, set up our dependencies, and run any testing that we later create to squash bugs. We can track if everything works properly through the Actions tab on our repository. I also created the deliverable that summarizes our build-system and CI thoroughly.
 
-Tycho Halpern
+Luca Rivera-
 
-I finished the parsing function, and changed the data structure for storing the team by team data. The parsing function now does not need a list of the teams who participated in the tournament as an input, and can separate teams on its own. I also set up the build environment and compared the outputs of the build using diffoscope. 
+This week I met up with the team on Tuesday and Thursday. We were working on data processing for our project. This week I mainly worked on researching how github actions worked and discussing on the best data structures to use to store all of the CSV files. We also discussed future steps of our project.
 
 # References
