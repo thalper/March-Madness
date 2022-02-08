@@ -6,12 +6,25 @@ def parseYear(year, dataSet): # input year, output dict of numpy array storing s
     dataStr = "Previous/cbb"+str(year%2000)+".csv"
     with open(dataStr, newline='') as csvfile:
         dataByTeam = csv.reader(csvfile, delimiter=',', quotechar='|')
-        ind = year%2013
+        ind = year%2013   
         if year > 2020:
             ind -= 1
         for row in dataByTeam:
             if (year < 2020 and row[22] != "NA" and row[22] != "SEED") or (year == 2021 and row[21] != "NA" and row[21] != "SEED"):
                 dataSet[ind][row[0]] = np.array(row[2:21])
+
+def testTeams(dataSet, years):
+    for i in range(len(years)):
+        teamFileStr = "Previous/teams"+str(years[i]%2000)+".txt"
+        teamFile = open(teamFileStr, 'r')
+        teams = teamFile.read().split("\n")
+        teamFile.close()
+        if len(teams) != len(dataSet[i]):
+            return "Different number of teams in year {}.".format(years[i])
+        for team in teams:
+            if team not in dataSet[i].keys():
+                return team+" not in dataset in year {}.".format(years[i])
+    return "Teams parsed correctly."
 
 if __name__ == "__main__":
     dataSet = [] # each year is a dict
@@ -21,6 +34,8 @@ if __name__ == "__main__":
         if year == 2020:
             continue
         parseYear(year, dataSet)
+    years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021] # tournament years in order
+    print(testTeams(dataSet, years))
     #print(dataSet)
     
 
