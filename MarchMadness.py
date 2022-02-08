@@ -2,6 +2,7 @@ import numpy as np
 import csv
 
 dataSet = [] # each year is a dict
+#stat order: games played, wins, adjusted offense efficiency, adjusted defensive efficiency, Power Rating, Effective Field Goal Percentage
 
 def parseYear(year, dataSet): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
     dataStr = "Previous/cbb"+str(year%2000)+".csv"
@@ -30,8 +31,6 @@ def testTeams(dataSet, years):
 
 
 def fillData():
-    #dataSet = [] # each year is a dict
-    #stat order: games played, wins, adjusted offense efficiency, adjusted defensive efficiency, Power Rating, Effective Field Goal Percentage
     for year in range(2013,2022):
         dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
