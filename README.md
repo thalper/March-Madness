@@ -44,4 +44,8 @@ Luca Rivera-
 
 This week I met up with the team on Tuesday and Thursday. We were working on data processing for our project. This week I mainly worked on researching how github actions worked and discussing on the best data structures to use to store all of the CSV files. We also discussed future steps of our project.
 
+Tycho Halpern
+
+I finished the parsing function, and changed the data structure for storing the team by team data. The parsing function now does not need a list of the teams who participated in the tournament as an input, and can separate teams on its own. I also set up the build environment and compared the outputs of the build using diffoscope.
+
 # References
