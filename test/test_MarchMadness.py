@@ -5,4 +5,5 @@ import MarchMadness
 
 def test_testTeams():
   years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021]
+  MarchMadness.fillData()
   assert MarchMadness.testTeams(MarchMadness.dataSet, years) == "Teams parsed correctly."

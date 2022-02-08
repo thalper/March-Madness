@@ -1,6 +1,7 @@
 import numpy as np
 import csv
 
+dataSet = [] # each year is a dict
 
 def parseYear(year, dataSet): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
     dataStr = "Previous/cbb"+str(year%2000)+".csv"
@@ -26,8 +27,10 @@ def testTeams(dataSet, years):
                 return team+" not in dataset in year {}.".format(years[i])
     return "Teams parsed correctly."
 
-if __name__ == "__main__":
-    dataSet = [] # each year is a dict
+
+
+def fillData():
+    #dataSet = [] # each year is a dict
     #stat order: games played, wins, adjusted offense efficiency, adjusted defensive efficiency, Power Rating, Effective Field Goal Percentage
     for year in range(2013,2022):
         dataSet.append({}) # each key is a team, the value is the data for that team
@@ -35,9 +38,11 @@ if __name__ == "__main__":
             continue
         parseYear(year, dataSet)
     years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021] # tournament years in order
-    print(testTeams(dataSet, years))
-    print(dataSet)
+    #print(testTeams(dataSet, years))
+    #print(dataSet)
     
+if __name__ == "__main__":
+    fillData()
 
 """def getTeams():
     teamsByYear = []
