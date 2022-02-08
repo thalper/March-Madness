@@ -36,7 +36,7 @@ if __name__ == "__main__":
         parseYear(year, dataSet)
     years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021] # tournament years in order
     print(testTeams(dataSet, years))
-    #print(dataSet)
+    print(dataSet)
     
 
 """def getTeams():
