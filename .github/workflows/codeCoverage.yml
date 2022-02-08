@@ -71,6 +71,7 @@ jobs:
       if: ${{ steps.pytester-cov.outputs.cov-threshold-single-fail == 'true' }}
       run: |
         echo "cov single fail ${{ steps.pytester-cov.outputs.cov-threshold-single-fail }}"
+        pytest --cov-report term-missing --cov=myproj tests/
         exit 1
 
     - name: Coverage total fail - new issue
@@ -87,6 +88,7 @@ jobs:
       if: ${{ steps.pytester-cov.outputs.cov-threshold-total-fail == 'true' }}
       run: |
         echo "cov single fail ${{ steps.pytester-cov.outputs.cov-threshold-total-fail }}"
+        pytest --cov-report term-missing --cov=myproj tests/
         exit 1
 
     - name: Commit pytest coverage table
