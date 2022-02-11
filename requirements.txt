@@ -1,3 +1,5 @@
 pytest
 mypy
 numpy
+coverage
+pytest-cov

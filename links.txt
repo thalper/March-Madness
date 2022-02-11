@@ -6,3 +6,6 @@ https://www.kaggle.com/andrewsundberg/college-basketball-dataset
 
 Build Template:
 https://dzone.com/articles/executable-package-pip-install
+
+Kaggle Data for March Madness Game-by-Game stats:
+https://www.kaggle.com/jedbell/march-madness-games-season-stats-and-boxscores
