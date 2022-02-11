@@ -48,4 +48,10 @@ Tycho Halpern
 
 I finished the parsing function, and changed the data structure for storing the team by team data. The parsing function now does not need a list of the teams who participated in the tournament as an input, and can separate teams on its own. I also set up the build environment and compared the outputs of the build using diffoscope.
 
+
+Progress Report (Week of 2/7/2022)
+
+Tycho Halpern
+
+I wrote the unit test to test the parsing function, and our team worked on the coverage report during lab. I also rewrote the structure of our main file to increase coverage. Our tests did not cover all of our code, so changing the structure of the code increased coverage. I learned how the actions tab works on github and figured out how to monitor issues that are raised with the repository. 
 # References

@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
      name='MarchMadness',  
      version='0.1',
-     scripts=['MarchMadness.py'] ,
+     scripts=['MarchMadness.py', 'Simulate.py'] ,
      author="Tycho Halpern, Rylee Benes, Luca Rivera",
      author_email="thalper@purdue.edu,rbenes@purdue.edu, river172@purdue.edu",
      description="March Madness bracket simulation 2022",

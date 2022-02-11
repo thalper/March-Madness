@@ -1,5 +1,7 @@
 import numpy as np
 import csv
+import Simulate
+import AIWeighting
 
 dataSet = [] # each year is a dict
 #stat order: games played, wins, adjusted offense efficiency, adjusted defensive efficiency, Power Rating, Effective Field Goal Percentage
@@ -28,9 +30,7 @@ def testTeams(dataSet, years):
                 return team+" not in dataset in year {}.".format(years[i])
     return "Teams parsed correctly."
 
-
-
-def fillData():
+def parseData():
     for year in range(2013,2022):
         dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
@@ -38,10 +38,17 @@ def fillData():
         parseYear(year, dataSet)
     #print(testTeams(dataSet, years))
     #print(dataSet)
+
+
+
     
 if __name__ == "__main__":
-    fillData()
-
+    parseData() #creates dataset
+    weights = AIWeighting.createWeights() #runs AI weighting
+    #Simulate.simulateGame(dataSet[year][teamA], dataSet[year][teamB], weights) #simulates basketball game between two teams
+    for i in range(15): #number of simulations to run
+        score = Simulate.simulateGame(np.array([0.55, 0.42, 13, 60, 15]), np.array([0.49, 0.37, 18, 50, 12]), weights)
+        print(score[0], "-", score[1])
 """def getTeams():
     teamsByYear = []
     for year in range(2013,2020):
