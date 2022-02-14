@@ -55,5 +55,9 @@ Tycho Halpern
 
 I wrote the unit test to test the parsing function, and our team worked on the coverage report during lab. I also rewrote the structure of our main file to increase coverage. Our tests did not cover all of our code, so changing the structure of the code increased coverage. I learned how the actions tab works on github and figured out how to monitor issues that are raised with the repository. I then wrote the skeleton for how an individual game would be simulated and talked with my group about more specifica plans for the simulation portion of our bracket generator.
 
+Luca Rivera-
+
+This week our team worked on making our first unit test and adding a code coverage feature for the code. I helped my teammate Rylee to both research and implement an automated way to get code coverage. For now we have it on every commit to the repository. I also proposed new ideas as to how we should approach the main part of the program the actual 'simulation'. It feels like we are on milestones and work done.
+
 
 # References
