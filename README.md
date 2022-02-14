@@ -53,5 +53,7 @@ Progress Report (Week of 2/7/2022)
 
 Tycho Halpern
 
-I wrote the unit test to test the parsing function, and our team worked on the coverage report during lab. I also rewrote the structure of our main file to increase coverage. Our tests did not cover all of our code, so changing the structure of the code increased coverage. I learned how the actions tab works on github and figured out how to monitor issues that are raised with the repository. 
+I wrote the unit test to test the parsing function, and our team worked on the coverage report during lab. I also rewrote the structure of our main file to increase coverage. Our tests did not cover all of our code, so changing the structure of the code increased coverage. I learned how the actions tab works on github and figured out how to monitor issues that are raised with the repository. I then wrote the skeleton for how an individual game would be simulated and talked with my group about more specifica plans for the simulation portion of our bracket generator.
+
+
 # References
