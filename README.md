@@ -59,5 +59,8 @@ Luca Rivera-
 
 This week our team worked on making our first unit test and adding a code coverage feature for the code. I helped my teammate Rylee to both research and implement an automated way to get code coverage. For now we have it on every commit to the repository. I also proposed new ideas as to how we should approach the main part of the program the actual 'simulation'. It feels like we are on milestones and work done.
 
+Rylee Benes
+
+On Tuesday, I created the GitHub Action for code coverage that prints out a comprehensive table after every commit to our repository. I also edited the testing section of our CI so we could run a unit test. On Thursday, I documented our deliverable for the week and submitted it. Then, I brainstormed with the group what to do with our AI weighting and simulator. On Friday, I assisted Tycho in creating and organizing new functions and files for our weighting and simulator. I also helping in finding more data for stats we were missing.
 
 # References
