@@ -6,7 +6,7 @@ import AIWeighting
 dataSet = [] # each year is a dict
 #stat order: games played, wins, adjusted offense efficiency, adjusted defensive efficiency, Power Rating, Effective Field Goal Percentage
 
-def parseYear(year, dataSet): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
+def oldParseYear(year, dataSet): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
     dataStr = "Previous/cbb"+str(year%2000)+".csv"
     with open(dataStr, newline='') as csvfile:
         dataByTeam = csv.reader(csvfile, delimiter=',', quotechar='|')
@@ -16,6 +16,21 @@ def parseYear(year, dataSet): # input year, output dict of numpy array storing s
         for row in dataByTeam:
             if (year < 2020 and row[22] != "NA" and row[22] != "SEED") or (year == 2021 and row[21] != "NA" and row[21] != "SEED"):
                 dataSet[ind][row[0]] = np.array(row[2:21])
+
+def parseYear(year, dataSet): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
+    dataStr = "Previous/tr"+str(year%2000)+".csv"
+    teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
+    teamFile = open(teamsFileStr, "r")
+    tourneyTeams = set(teamFile.read().split('\n'))
+    with open(dataStr, newline='') as csvfile:
+        dataByTeam = csv.reader(csvfile, delimiter=',', quotechar='|')
+        ind = year%2013   
+        if year > 2020:
+            ind -= 1
+        for row in dataByTeam:
+            if row[0] in tourneyTeams:
+                dataSet[ind][row[0]] = np.array(row[1:22], dtype=float)
+                tourneyTeams.remove(row[0])
 
 def testTeams(dataSet, years):
     for i in range(len(years)):
@@ -36,7 +51,6 @@ def parseData():
         if year == 2020:
             continue
         parseYear(year, dataSet)
-    #print(testTeams(dataSet, years))
     #print(dataSet)
 
 
@@ -45,21 +59,12 @@ def parseData():
 if __name__ == "__main__":
     parseData() #creates dataset
     weights = AIWeighting.createWeights() #runs AI weighting
+    Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])
     #Simulate.simulateGame(dataSet[year][teamA], dataSet[year][teamB], weights) #simulates basketball game between two teams
-    for i in range(15): #number of simulations to run
-        score = Simulate.simulateGame(np.array([0.55, 0.42, 13, 60, 15]), np.array([0.49, 0.37, 18, 50, 12]), weights)
-        print(score[0], "-", score[1])
-"""def getTeams():
-    teamsByYear = []
-    for year in range(2013,2020):
-        dataStr = "Previous/teams"+str(year%2000)+".txt"
-        currYear = set()
-        with open(dataStr, 'r') as teamsFile:
-            teams = teamsFile.readlines()
-            for team in teams:
-                currYear.add(team.rstrip())
-        teamsByYear.append(currYear)
-    return teamsByYear"""
+    #for i in range(15): #number of simulations to run
+        #score = Simulate.simulateGame(np.array([0.55, 0.42, 13, 60, 15]), np.array([0.49, 0.37, 18, 50, 12]), weights)
+        #print(score[0], "-", score[1])
+
 
 
 
