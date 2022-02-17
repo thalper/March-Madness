@@ -5,20 +5,20 @@ Gonzaga
 Louisville
 Notre Dame
 Kentucky
-Michigan St.
+Michigan St
 Arkansas
 Butler
 Cincinnati
 Dayton
 Georgetown
-Georgia St.
+Georgia St
 Iowa
 Kansas
 Maryland
-Northern Iowa
-Ohio St.
+N Iowa
+Ohio State
 Oregon
-San Diego St.
+San Diego St
 UAB
 Villanova
 Virginia
@@ -26,43 +26,43 @@ Albany
 Baylor
 Belmont
 Buffalo
-Coastal Carolina
+Coastal Car
 Davidson
-Eastern Washington
+E Washingtn
 Georgia
 Hampton
 Harvard
 Indiana
-Iowa St.
+Iowa State
 Lafayette
 LSU
 Mississippi
-New Mexico St.
-North Dakota St.
-Northeastern
-Oklahoma St.
+N Mex State
+N Dakota St
+Northeastrn
+Oklahoma St
 Providence
 Purdue
-Robert Morris
-SMU
-St. John's
-Stephen F. Austin
+Rob Morris
+S Methodist
+St Johns
+Ste F Austin
 Texas
-Texas Southern
+TX Southern
 UC Irvine
 Valparaiso
 VCU
 Wofford
 Wyoming
-Boise St.
+Boise State
 BYU
 Manhattan
-North Florida
-North Carolina
-North Carolina St.
+N Florida
+N Carolina
+NC State
 Oklahoma
 UCLA
 Utah
-West Virginia
-Wichita St.
+W Virginia
+Wichita St
 Xavier

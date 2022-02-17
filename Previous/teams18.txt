@@ -5,14 +5,14 @@ Purdue
 Cincinnati
 Kansas
 Michigan
-West Virginia
-Michigan St.
-North Carolina
+W Virginia
+Michigan St
+N Carolina
 Tennessee
 Xavier
 Gonzaga
 Texas Tech
-Ohio St.
+Ohio State
 Florida
 Houston
 Butler
@@ -20,49 +20,49 @@ Kentucky
 Clemson
 Seton Hall
 Creighton
-TCU
+TX Christian
 Auburn
-Wichita St.
+Wichita St
 Texas A&M
-Florida St.
-Miami FL
-Kansas St.
-Virginia Tech
+Florida St
+Miami (FL)
+Kansas St
+VA Tech
 Texas
 Arizona
-San Diego St.
+San Diego St
 Arkansas
 Nevada
-Loyola Chicago
+Loyola-Chi
 Missouri
 Oklahoma
 Syracuse
 Davidson
-North Carolina St.
-Arizona St.
+NC State
+Arizona St
 Alabama
 UCLA
 Providence
-South Dakota St.
+S Dakota St
 Rhode Island
-New Mexico St.
+N Mex State
 Buffalo
-St. Bonaventure
-Murray St.
-UNC Greensboro
+St Bonavent
+Murray St
+NC-Grnsboro
 Montana
-Georgia St.
-Stephen F. Austin
+Georgia St
+Ste F Austin
 Bucknell
-Penn
+U Penn
 Marshall
-College of Charleston
-Wright St.
+Col Charlestn
+Wright State
 Lipscomb
 Iona
-UMBC
-Cal St. Fullerton
+Maryland BC
+CS Fullerton
 Radford
-LIU Brooklyn
-Texas Southern
-North Carolina Central
+LIU-Brooklyn
+TX Southern
+NC Central

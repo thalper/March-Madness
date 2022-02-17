@@ -1,27 +1,27 @@
 Arizona
 Florida
 Virginia
-Wichita St.
+Wichita St
 Kansas
 Michigan
 Villanova
 Wisconsin
 Creighton
 Duke
-Iowa St.
+Iowa State
 Syracuse
 Louisville
-Michigan St.
-San Diego St.
+Michigan St
+San Diego St
 UCLA
 Cincinnati
 Oklahoma
 Saint Louis
 VCU
 Baylor
-Massachusetts
-North Carolina
-Ohio St.
+U Mass
+N Carolina
+Ohio State
 Connecticut
 New Mexico
 Oregon
@@ -30,39 +30,39 @@ Colorado
 Gonzaga
 Kentucky
 Memphis
-Kansas St.
-Oklahoma St.
+Kansas St
+Oklahoma St
 Pittsburgh
-Arizona St.
+Arizona St
 BYU
-Saint Joseph's
+St Josephs
 Stanford
 Dayton
-George Washington
+Geo Wshgtn
 Iowa
 Nebraska
 Providence
 Tennessee
 Harvard
-North Carolina St.
-North Dakota St.
-Stephen F. Austin
+NC State
+N Dakota St
+Ste F Austin
 Xavier
 Delaware
 Manhattan
-New Mexico St.
+N Mex State
 Tulsa
-Louisiana Lafayette
+LA Lafayette
 Mercer
-North Carolina Central
-Western Michigan
+NC Central
+W Michigan
 American
-Eastern Kentucky
-Milwaukee
+E Kentucky
+WI-Milwkee
 Wofford
 Albany
 Cal Poly
-Coastal Carolina
-Mount St. Mary's
-Texas Southern
-Weber St.
+Coastal Car
+Mt St Marys
+TX Southern
+Weber State

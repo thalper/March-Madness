@@ -1,10 +1,10 @@
 Arizona
-Arkansas Little Rock
+AR Lit Rock
 Austin Peay
 Baylor
 Buffalo
 Butler
-Cal St. Bakersfield
+CS Bakersfld
 California
 Chattanooga
 Cincinnati
@@ -12,39 +12,39 @@ Colorado
 Connecticut
 Dayton
 Duke
-Fairleigh Dickinson
-Florida Gulf Coast
-Fresno St.
+F Dickinson
+Fla Gulf Cst
+Fresno St
 Gonzaga
-Green Bay
+WI-Grn Bay
 Hampton
 Hawaii
 Holy Cross
 Indiana
 Iona
 Iowa
-Iowa St.
+Iowa State
 Kansas
 Kentucky
 Maryland
-Miami FL
+Miami (FL)
 Michigan
-Michigan St.
-Middle Tennessee
-North Carolina
-Northern Iowa
+Michigan St
+Middle Tenn
+N Carolina
+N Iowa
 Notre Dame
 Oklahoma
 Oregon
-Oregon St.
+Oregon St
 Pittsburgh
 Providence
 Purdue
-Saint Joseph's
+St Josephs
 Seton Hall
-South Dakota St.
+S Dakota St
 Southern
-Stephen F. Austin
+Ste F Austin
 Stony Brook
 Syracuse
 Temple
@@ -52,17 +52,17 @@ Texas
 Texas A&M
 Texas Tech
 Tulsa
-UNC Asheville
-UNC Wilmington
+NC-Asheville
+NC-Wilmgton
 USC
 Utah
 Vanderbilt
 VCU
 Villanova
 Virginia
-Weber St.
-West Virginia
-Wichita St.
+Weber State
+W Virginia
+Wichita St
 Wisconsin
 Xavier
 Yale

@@ -1,24 +1,24 @@
 Gonzaga
 Virginia
 Duke
-North Carolina
+N Carolina
 Michigan
-Michigan St.
+Michigan St
 Kentucky
 Tennessee
 Texas Tech
 Purdue
 Houston
 LSU
-Virginia Tech
-Kansas St.
-Florida St.
+VA Tech
+Kansas St
+Florida St
 Kansas
 Auburn
 Wisconsin
-Mississippi St.
+Miss State
 Marquette
-Iowa St.
+Iowa State
 Maryland
 Buffalo
 Villanova
@@ -29,8 +29,8 @@ Nevada
 VCU
 Syracuse
 Mississippi
-Utah St.
-UCF
+Utah State
+Central FL
 Oklahoma
 Baylor
 Washington
@@ -38,31 +38,31 @@ Florida
 Iowa
 Minnesota
 Seton Hall
-Saint Mary's
-Ohio St.
+St Marys
+Ohio State
 Belmont
 Temple
-Arizona St.
-St. John's
+Arizona St
+St Johns
 Oregon
-New Mexico St.
-Murray St.
+N Mex State
+Murray St
 Liberty
 UC Irvine
 Vermont
-Northeastern
+Northeastrn
 Saint Louis
 Yale
-Northern Kentucky
-Georgia St.
+N Kentucky
+Georgia St
 Old Dominion
 Colgate
 Montana
 Bradley
-Abilene Christian
-Gardner Webb
-North Dakota St.
+Abl Christian
+Gard-Webb
+N Dakota St
 Iona
-Prairie View A&M
-Fairleigh Dickinson
-North Carolina Central
+Prairie View
+F Dickinson
+NC Central
