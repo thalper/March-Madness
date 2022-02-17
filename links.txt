@@ -10,13 +10,10 @@ https://dzone.com/articles/executable-package-pip-install
 Kaggle Data for March Madness Game-by-Game stats:
 https://www.kaggle.com/jedbell/march-madness-games-season-stats-and-boxscores
 
-<<<<<<< HEAD
 Possible replacement for previous years data:
 https://www.kaggle.com/kerneler/starter-2013-ncaab-stats-ee18f469-f/data
 
 More data: # in order to use this, copy paste a category into an excel sheet (saves formatting)
 https://www.teamrankings.com/ncb/team-stats/
-=======
 Other Scraping Data Website
 https://www.teamrankings.com/
->>>>>>> f493033eaeb0e43306b7e327866c3505ec7320b6
