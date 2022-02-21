@@ -70,4 +70,7 @@ Rylee Benes
 
 On Tuesday, we found new, better data on a new website, so I created an Excel sheet so that we could transfer the stats we wanted into a useable .csv file. I then completed filling out the seven remaining Excel sheets over Tuesday, Wednesday, and Thursday. On Thursday, I also helped the group in getting the data into our program and working on our game simulator.
 
+Tycho Halpern
+During lab this week we decided to create our own data set in order to include every statistic that we want to use in the same format. We then talked about how we want our final simulation algorithm to work and I implemented the skeleton for the simulation. We then ran a test case on the simulation and found that the structure will work well. 
+
 # References
