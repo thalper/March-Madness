@@ -59,3 +59,20 @@ def simulateGame(teamAdata, teamBdata, weights):
 # this data from both teams will be able to predict number of possessions
 
 # 3 point attempts (taken and allowed), 3 pt percent(taken and allowed), 2 pt attempts(taken and allowed), 2 pt percent(taken and allowed), foul rate (for and against)
+
+
+# skeleton for simulating the entire bracket
+"""
+bracket = [[[a,b],[c,d]],[[e,f],[g,[h,i]]]]
+
+simulateGame(bracket[0], bracket[1])
+
+def simulateGame(a,b):
+    if len(a) > 1:
+        a = simulateGame(a[0],a[1])
+    if len(b) > 1: 
+        b = simulateGame(b[0],b[1])
+    for i in range(possessions):
+        simulatePossession()
+
+    return winner"""
