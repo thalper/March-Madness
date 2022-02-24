@@ -10,6 +10,13 @@ import random
 # 
 
 
+outputOrder = [1,2,33,3,4,34,49,5,6,35,7,8,36,50,57,9,10,37,11,12,38,51,13,14,39,15,16,40,52,58,61,
+                17,18,41,19,20,42,53,21,22,43,23,24,44,54,59,25,26,45,27,28,46,55,29,30,47,31,32,48,56,60,62,63,
+                96,97,80,98,99,81,72,100,101,82,102,103,83,73,68,104,105,84,106,107,85,74,108,109,86,110,111,87,75,69,66,
+                112,113,88,114,115,89,76,116,117,90,118,119,91,77,70,120,121,92,122,123,93,78,124,125,94,126,127,95,71,67,65,64]
+
+
+
 def assignWeights(A,B,weights):
     # % that its a 2pt attempt, 2pt percentage, % 3pt attempt, 3 pt percentage
     return [[(A[4]-A[0])/A[4],A[5],(A[0]/A[4]),A[1]], [(B[4]-B[0])/B[4],B[5],(B[0]/B[4]),B[1]]]
@@ -21,7 +28,6 @@ def simulatePossession(Poss):
         # 3pt attempt
         # Turnover
         # foul
-    print(Poss)
     if random.random() < (1 - Poss[0]):
         if random.random() < Poss[1]:
             return 2
@@ -40,7 +46,7 @@ def simulateGame(teamAdata, teamBdata, weights):
     for i in range(possessions):
         Ascore += simulatePossession(Possession[0])
         Bscore += simulatePossession(Possession[1])
-        print("Possession #", i, " ", Ascore, "-", Bscore)
+        #print("Possession #", i, " ", Ascore, "-", Bscore)
     return [Ascore, Bscore]
 
 
