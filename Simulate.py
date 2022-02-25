@@ -13,8 +13,14 @@ import random
 outputOrder = [1,2,33,3,4,34,49,5,6,35,7,8,36,50,57,9,10,37,11,12,38,51,13,14,39,15,16,40,52,58,61,
                 17,18,41,19,20,42,53,21,22,43,23,24,44,54,59,25,26,45,27,28,46,55,29,30,47,31,32,48,56,60,62,63,
                 96,97,80,98,99,81,72,100,101,82,102,103,83,73,68,104,105,84,106,107,85,74,108,109,86,110,111,87,75,69,66,
-                112,113,88,114,115,89,76,116,117,90,118,119,91,77,70,120,121,92,122,123,93,78,124,125,94,126,127,95,71,67,65,64]
+                112,113,88,114,115,89,76,116,117,90,118,119,91,77,70,120,121,92,122,123,93,78,124,125,94,126,127,95,79,71,67,65,64]
 
+for i in range(127):
+    if i+1 not in outputOrder:
+        print(i+1)
+used = set()
+
+index = [0]
 
 
 def assignWeights(A,B,weights):
@@ -49,7 +55,31 @@ def simulateGame(teamAdata, teamBdata, weights):
         #print("Possession #", i, " ", Ascore, "-", Bscore)
     return [Ascore, Bscore]
 
-
+def simulateTournament(a, b, dataSet, year, output):
+    if type(a) == list:
+        a = simulateTournament(a[0],a[1], dataSet, year, output)
+    if type(b) == list: 
+        b = simulateTournament(b[0],b[1], dataSet, year, output)
+    if a not in used:
+        used.add(a)
+        output[outputOrder[index[0]]-1] = a
+        index[0] += 1
+    if b not in used:
+        used.add(b)
+        output[outputOrder[index[0]]-1] = b
+        index[0] += 1
+    ind = year%2013
+    if year > 2020:
+        ind -= 1
+    score = [0,0]
+    while score[0] == score[1]:
+        score = simulateGame(dataSet[ind][a], dataSet[ind][b], [0.0,0.5])
+    print(a, score[0], "-", score[1], b)
+    print(index[0])
+    print(len(outputOrder))
+    output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
+    index[0] += 1
+    return a if score[0] > score[1] else b
 
 
 # Basic Possession Formula=0.96*[(Field Goal Attempts)+(Turnovers)+0.44*(Free Throw Attempts)-(Offensive Rebounds)]

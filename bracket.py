@@ -11,7 +11,7 @@ WIDTH = 1250  # root.winfo_screenwidth()
 HORIZONTAL_PADDING = 70
 GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 
-def addXY(boxKey):
+def addXY(team):
     # CHANGE FOR TEAM NAMES NOW
     # BOXKEY SHOULD BE TEAM NAMES
     if finalTwo == 1:
@@ -23,7 +23,7 @@ def addXY(boxKey):
     else:
         xValue = x_center - _game_box_width / 16
         yValue = y_center - _game_box_height / 16 - 2
-    bracketLoc[boxKey] = [xValue, yValue]
+    bracketLoc[team] = [xValue, yValue]
     canvas.create_text(bracketLoc[boxKey][0], bracketLoc[boxKey][1], text=boxKey, fill="black", font=('Helvetica 5 bold'))
     draw.text((bracketLoc[boxKey][0], bracketLoc[boxKey][1]), text=str(boxKey), fill="black", font=ImageFont.load_default())
 
@@ -33,6 +33,10 @@ if __name__ == "__main__":
     _column_width = WIDTH / _columns
     _game_box_width = _column_width - HORIZONTAL_PADDING
     _game_box_height = _game_box_width / GAME_BOX_WIDTH_HEIGHT_RATIO
+
+    BracketFile = open("Simulations/2021output.txt", 'r')
+    output = BracketFile.read().split("\n")
+    BracketFile.close()
     canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
     canvas.pack()
     image1 = Image.new("RGB", (WIDTH, HEIGHT), 'white')
@@ -56,20 +60,20 @@ if __name__ == "__main__":
                 finalTwo += 1
                 canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80)
                 draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80], outline='black')
-                addXY(63)
+                addXY(output[63])
                 #champion
                 finalTwo -= 1
-                addXY(64)
+                addXY(output[64])
                 #right final two
                 finalTwo += 2
                 canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
                 draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80], outline='black')
-                addXY(65)
+                addXY(output[65])
                 boxKey += 3
                 finalTwo -= 2
             if i <= 10: #creates dictionary of x, y coords on the bracket L to R, top to bottom
                 if i != 5:
-                    addXY(boxKey)
+                    addXY(output[boxKey])
                     boxKey += 1
             #horizontal lines right of rectangles
             if i != _columns - 1:
