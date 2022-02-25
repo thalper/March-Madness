@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 # https://github.com/JonathanZwiebel/bracket-generator
 root = tkinter.Tk()
 bracketLoc = {}
+finalTwo = 0
 boxKey = 1
 HEIGHT = 625  # root.winfo_screenheight()
 WIDTH = 1250  # root.winfo_screenwidth()
@@ -13,8 +14,15 @@ GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 def addXY(boxKey):
     # CHANGE FOR TEAM NAMES NOW
     # BOXKEY SHOULD BE TEAM NAMES
-    xValue = x_center - _game_box_width / 16
-    yValue = y_center - _game_box_height / 16 - 2
+    if finalTwo == 1:
+        xValue = x_center - _game_box_width / 16
+        yValue = y_center - _game_box_height / 16 - 2 - 80
+    elif finalTwo == 2:
+        xValue = x_center - _game_box_width / 16
+        yValue = y_center - _game_box_height / 16 + 2 + 76
+    else:
+        xValue = x_center - _game_box_width / 16
+        yValue = y_center - _game_box_height / 16 - 2
     bracketLoc[boxKey] = [xValue, yValue]
     canvas.create_text(bracketLoc[boxKey][0], bracketLoc[boxKey][1], text=boxKey, fill="black", font=('Helvetica 5 bold'))
     draw.text((bracketLoc[boxKey][0], bracketLoc[boxKey][1]), text=str(boxKey), fill="black", font=ImageFont.load_default())
@@ -43,15 +51,43 @@ if __name__ == "__main__":
             y_center = y_size * (j + 0.5)
             canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2, x_center + _game_box_width / 2, y_center + _game_box_height / 2)
             draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2, x_center + _game_box_width / 2, y_center + _game_box_height / 2], outline = 'black')
+            if i == 5:
+                #left final two
+                finalTwo += 1
+                canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80)
+                draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80], outline='black')
+                addXY(63)
+                #champion
+                finalTwo -= 1
+                addXY(64)
+                #right final two
+                finalTwo += 2
+                canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
+                draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80], outline='black')
+                addXY(65)
+                boxKey += 3
+                finalTwo -= 2
             if i <= 10: #creates dictionary of x, y coords on the bracket L to R, top to bottom
-                addXY(boxKey)
-                boxKey += 1
+                if i != 5:
+                    addXY(boxKey)
+                    boxKey += 1
+            #horizontal lines right of rectangles
             if i != _columns - 1:
-                canvas.create_line(x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center)
-                draw.line([x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center], 'black')
+                if i == 5:
+                    canvas.create_line(x_center - _game_box_width / 2 + 2 * _game_box_width - 8, y_center + 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2 + 2 * _game_box_width - 8, y_center + 80)
+                    draw.line([x_center - _game_box_width / 2 + 2 * _game_box_width - 8, y_center + 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2 + 2 * _game_box_width - 8, y_center + 80], 'black')
+                else:
+                    canvas.create_line(x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center)
+                    draw.line([x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center], 'black')
+            # horizontal lines left of rectangles
             if i != 0:
-                canvas.create_line(x_center - _game_box_width / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center)
-                draw.line([x_center - _game_box_width / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center], 'black')
+                if i == 5:
+                    canvas.create_line(x_center - _game_box_width / 2, y_center - 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center - 80)
+                    draw.line([x_center - _game_box_width / 2, y_center - 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center - 80], 'black')
+                else:
+                    canvas.create_line(x_center - _game_box_width / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center)
+                    draw.line([x_center - _game_box_width / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center], 'black')
+            #vertical lines
             if j % 2 == 1:
                 if side == "LEFT":
                     canvas.create_line(x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center - y_size)
