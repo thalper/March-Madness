@@ -1,68 +1,68 @@
-Wisconsin
-Duke
-Arizona
-Gonzaga
-Louisville
-Notre Dame
 Kentucky
-Michigan St
-Arkansas
-Butler
-Cincinnati
-Dayton
-Georgetown
-Georgia St
-Iowa
 Kansas
+Notre Dame
 Maryland
-N Iowa
-Ohio State
+W Virginia
+Butler
+Wichita St
+Cincinnati
+Purdue
+Indiana
+Texas
+Buffalo
+Valparaiso
+Northeastrn
+N Mex State
+*Hampton
+*Manhattan
+Wisconsin
+Arizona
+Baylor
+N Carolina
+Arkansas
+Xavier
+VCU
 Oregon
-San Diego St
-UAB
+Oklahoma St
+Ohio State
+*Mississippi
+*BYU
+Wofford
+Harvard
+Georgia St
+TX Southern
+Coastal Car
 Villanova
 Virginia
-Albany
-Baylor
-Belmont
-Buffalo
-Coastal Car
-Davidson
-E Washingtn
-Georgia
-Hampton
-Harvard
-Indiana
-Iowa State
-Lafayette
-LSU
-Mississippi
-N Mex State
-N Dakota St
-Northeastrn
-Oklahoma St
-Providence
-Purdue
-Rob Morris
-S Methodist
-St Johns
-Ste F Austin
-Texas
-TX Southern
-UC Irvine
-Valparaiso
-VCU
-Wofford
-Wyoming
-Boise State
-BYU
-Manhattan
-N Florida
-N Carolina
-NC State
 Oklahoma
-UCLA
+Louisville
+N Iowa
+Providence
+Michigan St
+NC State
+LSU
+Georgia
+*Dayton
+*Boise State
+Wyoming
+UC Irvine
+Albany
+Belmont
+Lafayette
+Duke
+Gonzaga
+Iowa State
+Georgetown
 Utah
-W Virginia
-Wichita St
-Xavier
+S Methodist
+Iowa
+San Diego St
+St Johns
+Davidson
+UCLA
+Ste F Austin
+E Washingtn
+UAB
+N Dakota St
+*Rob Morris
+*N Florida

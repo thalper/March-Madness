@@ -1,68 +1,68 @@
-Arizona
-AR Lit Rock
-Austin Peay
-Baylor
-Buffalo
-Butler
-CS Bakersfld
+Kansas
+Villanova
+Miami (FL)
 California
-Chattanooga
-Cincinnati
+Maryland
+Arizona
+Iowa
 Colorado
 Connecticut
-Dayton
-Duke
-F Dickinson
-Fla Gulf Cst
-Fresno St
-Gonzaga
-WI-Grn Bay
-Hampton
-Hawaii
-Holy Cross
-Indiana
-Iona
-Iowa
-Iowa State
-Kansas
-Kentucky
-Maryland
-Miami (FL)
-Michigan
-Michigan St
-Middle Tenn
-N Carolina
-N Iowa
-Notre Dame
-Oklahoma
-Oregon
-Oregon St
-Pittsburgh
-Providence
-Purdue
-St Josephs
-Seton Hall
-S Dakota St
-Southern
-Ste F Austin
-Stony Brook
-Syracuse
 Temple
-Texas
-Texas A&M
-Texas Tech
-Tulsa
+*Vanderbilt
+*Wichita St
+S Dakota St
+Hawaii
+Buffalo
 NC-Asheville
-NC-Wilmgton
-USC
-Utah
-Vanderbilt
+Austin Peay
+Oregon
+Oklahoma
+Texas A&M
+Duke
+Baylor
+Texas
+Oregon St
+St Josephs
+Cincinnati
 VCU
-Villanova
-Virginia
-Weber State
-W Virginia
-Wichita St
-Wisconsin
-Xavier
+N Iowa
 Yale
+NC-Wilmgton
+WI-Grn Bay
+CS Bakersfld
+*Holy Cross
+*Southern
+N Carolina
+Xavier
+W Virginia
+Kentucky
+Indiana
+Notre Dame
+Wisconsin
+USC
+Providence
+Pittsburgh
+*Michigan
+*Tulsa
+Chattanooga
+Stony Brook
+Ste F Austin
+Weber State
+*F Dickinson
+*Fla Gulf Cst
+Virginia
+Michigan St
+Utah
+Iowa State
+Purdue
+Seton Hall
+Dayton
+Texas Tech
+Butler
+Syracuse
+Gonzaga
+AR Lit Rock
+Iona
+Fresno St
+Middle Tenn
+Hampton

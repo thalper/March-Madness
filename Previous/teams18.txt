@@ -1,68 +1,68 @@
-Villanova
 Virginia
-Duke
-Purdue
 Cincinnati
-Kansas
-Michigan
-W Virginia
-Michigan St
-N Carolina
 Tennessee
-Xavier
-Gonzaga
-Texas Tech
-Ohio State
-Florida
-Houston
-Butler
-Kentucky
-Clemson
-Seton Hall
-Creighton
-TX Christian
-Auburn
-Wichita St
-Texas A&M
-Florida St
-Miami (FL)
-Kansas St
-VA Tech
-Texas
 Arizona
-San Diego St
-Arkansas
+Kentucky
+Miami (FL)
 Nevada
+Creighton
+Kansas St
+Texas
 Loyola-Chi
-Missouri
-Oklahoma
-Syracuse
 Davidson
-NC State
-Arizona St
-Alabama
-UCLA
-Providence
-S Dakota St
-Rhode Island
-N Mex State
 Buffalo
-St Bonavent
-Murray St
+Wright State
+Georgia St
+Maryland BC
+Xavier
+N Carolina
+Michigan
+Gonzaga
+Ohio State
+Houston
+Texas A&M
+Missouri
+Florida St
+Providence
+San Diego St
+S Dakota St
 NC-Grnsboro
 Montana
-Georgia St
-Ste F Austin
-Bucknell
-U Penn
-Marshall
-Col Charlestn
-Wright State
 Lipscomb
-Iona
-Maryland BC
+*TX Southern
+*NC Central
+Villanova
+Purdue
+Texas Tech
+Wichita St
+W Virginia
+Florida
+Arkansas
+VA Tech
+Alabama
+Butler
+*UCLA
+*St Bonavent
+Murray St
+Marshall
+Ste F Austin
 CS Fullerton
-Radford
-LIU-Brooklyn
-TX Southern
-NC Central
+*Radford
+*LIU-Brooklyn
+Kansas
+Duke
+Michigan St
+Auburn
+Clemson
+TX Christian
+Rhode Island
+Seton Hall
+NC State
+Oklahoma
+*Syracuse
+*Arizona St
+N Mex State
+Col Charlestn
+Bucknell
+Iona
+U Penn

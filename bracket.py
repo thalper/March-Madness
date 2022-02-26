@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 root = tkinter.Tk()
 bracketLoc = {}
 finalTwo = 0
-boxKey = 1
+boxKey = 0
 HEIGHT = 625  # root.winfo_screenheight()
 WIDTH = 1250  # root.winfo_screenwidth()
 HORIZONTAL_PADDING = 70
@@ -15,17 +15,17 @@ def addXY(team):
     # CHANGE FOR TEAM NAMES NOW
     # BOXKEY SHOULD BE TEAM NAMES
     if finalTwo == 1:
-        xValue = x_center - _game_box_width / 16
+        xValue = x_center - _game_box_width / 16 + 2
         yValue = y_center - _game_box_height / 16 - 2 - 80
     elif finalTwo == 2:
-        xValue = x_center - _game_box_width / 16
+        xValue = x_center - _game_box_width / 16 + 2
         yValue = y_center - _game_box_height / 16 + 2 + 76
     else:
-        xValue = x_center - _game_box_width / 16
-        yValue = y_center - _game_box_height / 16 - 2
+        xValue = x_center - _game_box_width / 16 + 2
+        yValue = y_center - _game_box_height / 16
     bracketLoc[team] = [xValue, yValue]
-    canvas.create_text(bracketLoc[boxKey][0], bracketLoc[boxKey][1], text=boxKey, fill="black", font=('Helvetica 5 bold'))
-    draw.text((bracketLoc[boxKey][0], bracketLoc[boxKey][1]), text=str(boxKey), fill="black", font=ImageFont.load_default())
+    canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
+    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
 
 if __name__ == "__main__":
     _size = 5

@@ -1,68 +1,68 @@
-Arizona
 Florida
-Virginia
-Wichita St
 Kansas
-Michigan
-Villanova
-Wisconsin
-Creighton
-Duke
-Iowa State
 Syracuse
-Louisville
-Michigan St
-San Diego St
 UCLA
-Cincinnati
-Oklahoma
-Saint Louis
 VCU
-Baylor
-U Mass
-N Carolina
 Ohio State
-Connecticut
 New Mexico
-Oregon
-Texas
 Colorado
-Gonzaga
-Kentucky
-Memphis
-Kansas St
-Oklahoma St
 Pittsburgh
-Arizona St
-BYU
-St Josephs
 Stanford
 Dayton
-Geo Wshgtn
-Iowa
-Nebraska
-Providence
-Tennessee
-Harvard
-NC State
-N Dakota St
 Ste F Austin
-Xavier
-Delaware
-Manhattan
-N Mex State
 Tulsa
-LA Lafayette
-Mercer
-NC Central
 W Michigan
-American
 E Kentucky
+*Albany
+*Mt St Marys
+Virginia
+Villanova
+Iowa State
+Michigan St
+Cincinnati
+N Carolina
+Connecticut
+Memphis
+Geo Wshgtn
+St Josephs
+Providence
+Harvard
+Delaware
+NC Central
 WI-Milwkee
-Wofford
-Albany
-Cal Poly
 Coastal Car
-Mt St Marys
-TX Southern
+Arizona
+Wisconsin
+Creighton
+San Diego St
+Oklahoma
+Baylor
+Oregon
+Gonzaga
+Oklahoma St
+BYU
+Nebraska
+N Dakota St
+N Mex State
+LA Lafayette
+American
 Weber State
+Wichita St
+Michigan
+Duke
+Louisville
+Saint Louis
+U Mass
+Texas
+Kentucky
+Kansas St
+Arizona St
+*Iowa
+*Tennessee
+*NC State
+*Xavier
+Manhattan
+Mercer
+Wofford
+*Cal Poly
+*TX Southern
