@@ -80,4 +80,8 @@ Rylee Benes
 
 On Tuesday, I helped in creating the data flow diagram and writing the security design deliverable. I edited the bracket to save as a .jpg file. I fixed the bracket to include the final two game. Later, I helped Tycho in connecting the game simulator to the bracket maker, so that we can feed in 68 teams, the teams play games and are arranged into the bracket, then saved. I started working on the midterm PowerPoint and fixed up the rest of our input files, so that all of our data can be simulated into a bracket. 
 
+Tycho Halpern
+
+This week I spent the majority of the time working on simulating the tournament for a given year. I created an array structure to store all of the teams so that the winners of the correct 2 games would play each other in the next round. I added an output list to store the winners of each game, and the a transformation array to reorganise the team names so they could be interpreted correctly by the bracket making program. At the end of the week we were able to output a simulated tournament to a .jpg file that was easy to read for the first time. 
+
 # References
