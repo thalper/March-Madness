@@ -63,7 +63,6 @@ Rylee Benes
 
 On Tuesday, I created the GitHub Action for code coverage that prints out a comprehensive table after every commit to our repository. I also edited the testing section of our CI so we could run a unit test. On Thursday, I documented our deliverable for the week and submitted it. Then, I brainstormed with the group what to do with our AI weighting and simulator. On Friday, I assisted Tycho in creating and organizing new functions and files for our weighting and simulator. I also helping in finding more data for stats we were missing.
 
-
 Progress Report (Week of 02/13/22)
 
 Rylee Benes
@@ -71,6 +70,14 @@ Rylee Benes
 On Tuesday, we found new, better data on a new website, so I created an Excel sheet so that we could transfer the stats we wanted into a useable .csv file. I then completed filling out the seven remaining Excel sheets over Tuesday, Wednesday, and Thursday. On Thursday, I also helped the group in getting the data into our program and working on our game simulator.
 
 Tycho Halpern
+
 During lab this week we decided to create our own data set in order to include every statistic that we want to use in the same format. We then talked about how we want our final simulation algorithm to work and I implemented the skeleton for the simulation. We then ran a test case on the simulation and found that the structure will work well. 
+
+
+Progress Report (Week of 02/20/22)
+
+Rylee Benes
+
+On Tuesday, I helped in creating the data flow diagram and writing the security design deliverable. I edited the bracket to save as a .jpg file. I fixed the bracket to include the final two game. Later, I helped Tycho in connecting the game simulator to the bracket maker, so that we can feed in 68 teams, the teams play games and are arranged into the bracket, then saved. I started working on the midterm PowerPoint and fixed up the rest of our input files, so that all of our data can be simulated into a bracket. 
 
 # References
