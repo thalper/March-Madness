@@ -75,7 +75,6 @@ def simulateTournament(a, b, dataSet, year, output):
     while score[0] == score[1]:
         score = simulateGame(dataSet[ind][a], dataSet[ind][b], [0.0,0.5])
     print(a, score[0], "-", score[1], b)
-    print(index[0])
     output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
     index[0] += 1
     return a if score[0] > score[1] else b

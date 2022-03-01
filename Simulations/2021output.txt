@@ -1,5 +1,5 @@
 Gonzaga
-*Norfolk St
+*App State
 Oklahoma
 Missouri
 Virginia
@@ -31,7 +31,7 @@ Abl Christian
 BYU
 *UCLA
 Gonzaga
-Missouri
+Oklahoma
 Virginia
 Creighton
 Iowa
@@ -40,59 +40,59 @@ E Washingtn
 *Drake
 Michigan
 LSU
-NC-Grnsboro
+Florida St
 Colorado
-Alabama
-Maryland
-Texas
-BYU
+Iona
+Connecticut
+Abl Christian
+*UCLA
 Gonzaga
 Creighton
 Iowa
 *Drake
-Michigan
-Colorado
-Maryland
-Texas
+LSU
+Florida St
+Iona
+*UCLA
 Gonzaga
 *Drake
-Colorado
-Maryland
+LSU
+*UCLA
 Gonzaga
-Colorado
+LSU
 Gonzaga
-Gonzaga
-Colgate
-Colgate
-Oregon St
+Drexel
+Drexel
+Baylor
+Drexel
 Baylor
 Colgate
-Oregon St
-Morehead St
+Drexel
+San Diego St
 Baylor
-Winthrop
-Ohio State
+Villanova
+Florida
 Colgate
-Illinois
-Oregon St
-Cleveland St
-Morehead St
+Drexel
+Tennessee
+Houston
+San Diego St
 Baylor
 N Carolina
-Purdue
-Winthrop
+North Texas
+Villanova
 Ohio State
 Florida
 Colgate
-Utah State
-Illinois
+Texas Tech
+Drexel
 GA Tech
-Liberty
-Oregon St
-Cleveland St
+Oklahoma St
+Tennessee
+Houston
 Rutgers
-Morehead St
-Syracuse
+W Virginia
+San Diego St
 Baylor
 Hartford
 N Carolina
