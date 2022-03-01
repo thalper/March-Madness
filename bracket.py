@@ -60,15 +60,15 @@ if __name__ == "__main__":
                 finalTwo += 1
                 canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80)
                 draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80], outline='black')
-                addXY(output[63])
+                addXY(output[62])
                 #champion
                 finalTwo -= 1
-                addXY(output[64])
+                addXY(output[63])
                 #right final two
                 finalTwo += 2
                 canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
                 draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80], outline='black')
-                addXY(output[65])
+                addXY(output[64])
                 boxKey += 3
                 finalTwo -= 2
             if i <= 10: #creates dictionary of x, y coords on the bracket L to R, top to bottom

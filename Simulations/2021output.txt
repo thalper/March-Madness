@@ -13,9 +13,9 @@ VCU
 Kansas
 E Washingtn
 USC
-*Wichita St
+*Drake
 Michigan
-*TX Southern
+*Mt St Marys
 LSU
 St Bonavent
 Florida St
@@ -30,69 +30,69 @@ Texas
 Abl Christian
 BYU
 *UCLA
-*Norfolk St
-Oklahoma
-Ohio
+Gonzaga
+Missouri
+Virginia
 Creighton
 Iowa
-VCU
-Kansas
-*Wichita St
+Oregon
+E Washingtn
+*Drake
 Michigan
-St Bonavent
-Florida St
-Georgetown
-Iona
-Connecticut
-Abl Christian
+LSU
+NC-Grnsboro
+Colorado
+Alabama
+Maryland
+Texas
 BYU
-*Norfolk St
+Gonzaga
 Creighton
 Iowa
-*Wichita St
+*Drake
 Michigan
-Florida St
-Iona
-BYU
-Creighton
-*Wichita St
-Michigan
-BYU
-Creighton
-Michigan
-Michigan
-Michigan
+Colorado
+Maryland
+Texas
+Gonzaga
+*Drake
+Colorado
+Maryland
+Gonzaga
+Colorado
+Gonzaga
+Gonzaga
+Colgate
+Colgate
+Oregon St
 Baylor
+Colgate
+Oregon St
+Morehead St
 Baylor
-W Virginia
-Baylor
-Florida
-Drexel
-W Virginia
-Baylor
-North Texas
-Florida
-Arkansas
-Drexel
-Liberty
-Rutgers
-W Virginia
+Winthrop
+Ohio State
+Colgate
+Illinois
+Oregon St
+Cleveland St
+Morehead St
 Baylor
 N Carolina
-North Texas
-Villanova
-Oral Roberts
+Purdue
+Winthrop
+Ohio State
 Florida
-Arkansas
+Colgate
 Utah State
-Drexel
-Loyola-Chi
+Illinois
+GA Tech
 Liberty
-Tennessee
+Oregon St
 Cleveland St
 Rutgers
-W Virginia
-San Diego St
+Morehead St
+Syracuse
 Baylor
 Hartford
 N Carolina

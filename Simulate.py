@@ -76,7 +76,6 @@ def simulateTournament(a, b, dataSet, year, output):
         score = simulateGame(dataSet[ind][a], dataSet[ind][b], [0.0,0.5])
     print(a, score[0], "-", score[1], b)
     print(index[0])
-    print(len(outputOrder))
     output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
     index[0] += 1
     return a if score[0] > score[1] else b
@@ -97,18 +96,3 @@ def simulateTournament(a, b, dataSet, year, output):
 # 3 point attempts (taken and allowed), 3 pt percent(taken and allowed), 2 pt attempts(taken and allowed), 2 pt percent(taken and allowed), foul rate (for and against)
 
 
-# skeleton for simulating the entire bracket
-"""
-bracket = [[[a,b],[c,d]],[[e,f],[g,[h,i]]]]
-
-simulateGame(bracket[0], bracket[1])
-
-def simulateGame(a,b):
-    if len(a) > 1:
-        a = simulateGame(a[0],a[1])
-    if len(b) > 1: 
-        b = simulateGame(b[0],b[1])
-    for i in range(possessions):
-        simulatePossession()
-
-    return winner"""

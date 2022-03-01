@@ -106,7 +106,7 @@ if __name__ == "__main__":
         outFile.write(team)
         outFile.write("\n")
     outFile.close()
-    print(output)
+    print(output[56:])
     #parseData() #creates dataset
     weights = AIWeighting.createWeights() #runs AI weighting
     #Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])
