@@ -52,7 +52,8 @@ def simulateGame(teamAdata, teamBdata, weights):
     for i in range(possessions):
         Ascore += simulatePossession(Possession[0])
         Bscore += simulatePossession(Possession[1])
-        #print("Possession #", i, " ", Ascore, "-", Bscore)
+        if index[0] == 126:
+            print("Possession #", i+1, " ", Ascore, "-", Bscore)
     return [Ascore, Bscore]
 
 def simulateTournament(a, b, dataSet, year, output):

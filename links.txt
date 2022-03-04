@@ -17,3 +17,6 @@ More data: # in order to use this, copy paste a category into an excel sheet (sa
 https://www.teamrankings.com/ncb/team-stats/
 Other Scraping Data Website
 https://www.teamrankings.com/
+
+Linear Regression:
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html

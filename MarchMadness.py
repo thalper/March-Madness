@@ -5,7 +5,7 @@ import AIWeighting
 
 
 dataSet = [] # each year is a dict
-#stat order: games played, wins, adjusted offense efficiency, adjusted defensive efficiency, Power Rating, Effective Field Goal Percentage
+
 
 def oldParseYear(year, dataSet): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
     dataStr = "Previous/cbb"+str(year%2000)+".csv"
@@ -92,15 +92,13 @@ def parseData():
         parseYear(year)
     #print(dataSet)
 
-
-
     
 if __name__ == "__main__":
     for year in range(2013,2022):
         dataSet.append({})
-    parseYear(2021)
+    parseData()
     output = [0]*127
-    Simulate.simulateTournament(dataSet[7]["bracket"][0], dataSet[7]["bracket"][1], dataSet, year, output)
+    Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output)
     outFile = open("Simulations/2021output.txt", 'w')
     for team in output:
         outFile.write(team)
