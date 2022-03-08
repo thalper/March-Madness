@@ -34,7 +34,7 @@ if __name__ == "__main__":
     _game_box_width = _column_width - HORIZONTAL_PADDING
     _game_box_height = _game_box_width / GAME_BOX_WIDTH_HEIGHT_RATIO
 
-    BracketFile = open("Simulations/2021output.txt", 'r')
+    BracketFile = open("Previous/bracket21.txt", 'r')
     output = BracketFile.read().split("\n")
     BracketFile.close()
     canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)

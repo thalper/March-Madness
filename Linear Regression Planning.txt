@@ -1,0 +1,50 @@
+Team,3 point attempts,3 point %,3 point attempts allowed,3 point % allowed,field goal attempts,2 point %,field goal attempts allowed,2 point % allowed,Fouls per game,opponent fouls per game,Attempted Free throws,Opponent Attempted Free throws,Free throw %,Turnover,Turnover (Against),Possessions,Offensive rebounds,Offensive rebounds (against),Defensive rebounds,Defensive rebounds (against),Win %,Close game win %
+Loyola-Chi,18.1,0.398,20.4,0.32,51.1,0.566,55.4,0.47,14.1,16.5,16.5,14,0.726,12.5,12.8,66.7,5,7.9,24.2,20.6,0.838,0.667
+Michigan,24.6,0.352,16.4,0.332,57,0.547,54.1,0.469,15.8,17.8,17.5,16.2,0.66,9.3,12.9,67.5,7.4,6.9,23.8,23.6,0.8,0.571
+
+
+Loyola 3PTA: 18.1 
+Michigan 3PTA allowed: 16.4
+
+X = [[18.1,16.4],[,]... 600 games]
+
+actual: 17
+y = [17, 600 games]
+
+
+team X vs team Y, team X stats: 54 possessions, 16.4 3PTA, 22.9 2PTA, 8.4 TO, 17.2 possesions resulting in a foul
+
+
+3PTA = 0.4
+3PTA allowed = 0.6
+
+cal should take x 3 pointers
+
+key = tuple (purdue, IU, 2022) 
+value = [[purdue game stats][IU game stats]]
+
+for game in dict:
+	teamA3PTA = AI.getWeights(3PTA for the game in previous tournament, , dataSet[year%2013][3PTA])
+
+sum = 0
+for team in dataSet[year%2013]:
+	sum += team[3PTA]
+
+
+w (offense 3PTA)
+
+squared error = [0]*11
+for i in range(11):
+	w = 0.1*i
+	for game in games:
+		predict = offense average 3PTA * w + (1-w)*defense allowed 3PTA
+		squared error[i] += (predict - actual)^2
+
+
+lowest index = min(squared error)
+
+for i in range(21):
+	w = 0.01*i + lowestindex-0.1
+
+
+

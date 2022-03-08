@@ -64,6 +64,10 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
             ind -= 1
         for row in dataByTeam:
             if row[0] in tourneyTeams:
+                print("\n\n\n")
+                print(row[5], row[1])
+                row[5] = str(int(row[5]) - int(row[1]))
+                print(row[5])
                 dataSet[ind][row[0]] = np.array(row[1:22], dtype=float)
                 tourneyTeams.remove(row[0])
     teamFile = open(teamsFileStr, "r")

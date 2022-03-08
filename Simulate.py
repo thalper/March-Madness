@@ -1,7 +1,7 @@
 import random
 
 #Stat order
-# 3 point attempts,3 point %,3 point attempts allowed,3 point % allowed,field goal attempts,2 point %
+# 3 point attempts,3 point %,3 point attempts allowed,3 point % allowed,2 point attempts,2 point %
 # field goal attempts allowed,2 point % allowed,Fouls per game,opponent fouls per game,Attempted Free throws
 # Opponent Attempted Free throws,Free throw %,Turnover,Turnover (Against),Possessions,Offensive rebounds,Offensive rebounds (against)
 # Defensive rebounds,Defensive rebounds (against),Win %,Close game win %
