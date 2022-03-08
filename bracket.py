@@ -11,6 +11,24 @@ WIDTH = 1250  # root.winfo_screenwidth()
 HORIZONTAL_PADDING = 70
 GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 
+def computeAccuracy():
+    BracketFile = open("Simulations/2021output.txt", 'r')
+    CorrectBracket = open("Previous/bracket19.txt", 'r')
+    bList = []
+    cList = []
+    for i in BracketFile:
+        bList.append(i)
+    for j in CorrectBracket:
+        cList.append(j)
+    correct = 0
+    for i in range(len(bList)):
+        if bList[i] == cList[i]:
+            print(i)
+            correct += 1
+    print("Accuracy:", correct / 127 * 100, "%")
+    BracketFile.close()
+    CorrectBracket.close()
+
 def addXY(team):
     # CHANGE FOR TEAM NAMES NOW
     # BOXKEY SHOULD BE TEAM NAMES
@@ -34,9 +52,10 @@ if __name__ == "__main__":
     _game_box_width = _column_width - HORIZONTAL_PADDING
     _game_box_height = _game_box_width / GAME_BOX_WIDTH_HEIGHT_RATIO
 
-    BracketFile = open("Previous/bracket21.txt", 'r')
+    BracketFile = open("Simulations/2021output.txt", 'r')
     output = BracketFile.read().split("\n")
     BracketFile.close()
+    computeAccuracy()
     canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
     canvas.pack()
     image1 = Image.new("RGB", (WIDTH, HEIGHT), 'white')

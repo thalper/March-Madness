@@ -1,3 +1,4 @@
+import MarchMadness
 import collections
 import math
 import numpy as np
@@ -8,13 +9,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-dataSet = [] # each year is a dict
 prevData = {}
 
 
 def parseData():
     for year in range(2013,2022):
-        dataSet.append({}) # each key is a team, the value is the data for that team
+        MarchMadness.MarchMadness.dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
         parseYear(year)
@@ -35,10 +35,10 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
         for row in dataByTeam:
             if row[0] in tourneyTeams:
                 row[5] = str(float(row[5]) - float(row[1]))
-                dataSet[ind][row[0]] = np.array(row[1:22], dtype=float)
+                MarchMadness.dataSet[ind][row[0]] = np.array(row[1:22], dtype=float)
                 tourneyTeams.remove(row[0])
 
-def parsePrevTourneyforAI():
+def parsePrevTourneyforAI(dataSet):
     dataStr = "Previous\\NCAATourneyFullBoxscoresAndStats_15-19.csv" # previous tournament data box scores
     with open(dataStr, newline='') as csvfile:
         dataByGame = csv.reader(csvfile, delimiter=',', quotechar='|')
@@ -69,7 +69,9 @@ def parsePrevTourneyforAI():
                 else:
                     teamA = "*"+teamA
             gameKey = (teamA, teamH, year)
-            Astats = [float(row[28]), float(row[29]), float(row[36]), float(row[37]), float(row[22]), float(row[14]), float(row[15]), float(row[35]), float(row[21]), float(row[8])]
+            # Stat order:
+            # 3 point attempts, 3 point percentage, 2 point attempts, 2 point percentage, fouls committed, attempted free throws, free throw percentage, turnovers, offensive rebounds, defensive rebounds
+            Astats = [float(row[28]), float(row[29]), float(row[36]), float(row[37]), float(row[22]), float(row[14]), float(row[15]), float(row[35]), float(row[21]), float(row[8])] 
             Hstats = [float(row[68]), float(row[69]), float(row[76]), float(row[77]), float(row[62]), float(row[54]), float(row[55]), float(row[75]), float(row[61]), float(row[48])]
             GameStats = [Astats, Hstats]
             prevData[gameKey] = GameStats
@@ -94,9 +96,16 @@ def regression(xData, yData):
 
     print(X_test, y_pred)
 
+def manualRegression(X_train, Y_train):
+    regr = LinearRegression()
+    regr.fit(X_train,Y_train)
+    
+
+    return regr
+
 if __name__ == "__main__":
     for year in range(2013,2022):
-        dataSet.append({})
+        MarchMadness.dataSet.append({})
     parseData()
     xData = []
     yData = []
@@ -104,11 +113,11 @@ if __name__ == "__main__":
         Away = key[0]
         Home = key[1]
         year = key[2]
-        currX = [dataSet[year%2013][Away][0], dataSet[year%2013][Home][2]]
+        currX = [MarchMadness.dataSet[year%2013][Away][0], MarchMadness.dataSet[year%2013][Home][2]]
         currY = prevData[key][0][0]
-        print(currY)
         xData.append(currX)
         yData.append(currY)
     # xData = [[12.4, 14.2],[13.7, 12.1],[14.3,16.2],[11.2,15.6],[12.6,15.2],[12.0, 15.2],[13.7, 12.1],[14.7,16.2],[11.2,15.6],[12.6,15.2]]
     # yData = [13, 14, 15, 12, 15, 13, 14, 15, 12, 15]
-    regression(xData, yData)
+    regr = manualRegression(xData, yData)
+    print(regr.predict([[18.5, 22.7]]))

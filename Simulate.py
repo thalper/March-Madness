@@ -1,8 +1,10 @@
 import random
+import AIWeighting
+from sklearn.linear_model import LinearRegression
 
 #Stat order
 # 3 point attempts,3 point %,3 point attempts allowed,3 point % allowed,2 point attempts,2 point %
-# field goal attempts allowed,2 point % allowed,Fouls per game,opponent fouls per game,Attempted Free throws
+# 2 point attempts allowed,2 point % allowed,Fouls per game,opponent fouls per game,Attempted Free throws
 # Opponent Attempted Free throws,Free throw %,Turnover,Turnover (Against),Possessions,Offensive rebounds,Offensive rebounds (against)
 # Defensive rebounds,Defensive rebounds (against),Win %,Close game win %
 
@@ -23,31 +25,39 @@ used = set()
 index = [0]
 
 
-def assignWeights(A,B,weights):
+def assignWeights(A,B,regressions):
     # % that its a 2pt attempt, 2pt percentage, % 3pt attempt, 3 pt percentage
-    return [[(A[4]-A[0])/A[4],A[5],(A[0]/A[4]),A[1]], [(B[4]-B[0])/B[4],B[5],(B[0]/B[4]),B[1]]]
+    Anum2s = regressions[2].predict([[A[4], B[6]]]) # number of 2s by team A
+    Anum3s = regressions[0].predict([[A[0], B[2]]]) # number of 3s by team A
+    A2ptP = regressions[3].predict([[A[5], B[7]]]) # 2 point percentage by team A
+    A3ptP = regressions[1].predict([[A[1], B[3]]]) # 3 point percentage by team A
+    
+    return [Anum2s / (Anum2s + Anum3s), A2ptP, 1 - (Anum2s / (Anum2s + Anum3s)), A3ptP]
 
 def simulatePossession(Poss):
 
     #Types of possession
-        # 2pt attempt
-        # 3pt attempt
         # Turnover
         # foul
+        
+    # 2pt attempt    
     if random.random() < (1 - Poss[0]):
         if random.random() < Poss[1]:
             return 2
         return 0
+    # 3pt attempt
     if random.random() < Poss[3]:
         return 3
     return 0
 
 
-def simulateGame(teamAdata, teamBdata, weights):
+def simulateGame(teamAdata, teamBdata, regressions):
     possessions = 60
     Ascore = 0
     Bscore = 0
-    Possession = assignWeights(teamAdata, teamBdata, weights)
+    Possession = [0,0]
+    Possession[0] = assignWeights(teamAdata, teamBdata, regressions)
+    Possession[1] = assignWeights(teamBdata, teamAdata, regressions)
     
     for i in range(possessions):
         Ascore += simulatePossession(Possession[0])
@@ -56,11 +66,11 @@ def simulateGame(teamAdata, teamBdata, weights):
             print("Possession #", i+1, " ", Ascore, "-", Bscore)
     return [Ascore, Bscore]
 
-def simulateTournament(a, b, dataSet, year, output):
+def simulateTournament(a, b, dataSet, year, output, regressions):
     if type(a) == list:
-        a = simulateTournament(a[0],a[1], dataSet, year, output)
+        a = simulateTournament(a[0],a[1], dataSet, year, output, regressions)
     if type(b) == list: 
-        b = simulateTournament(b[0],b[1], dataSet, year, output)
+        b = simulateTournament(b[0],b[1], dataSet, year, output, regressions)
     if a not in used:
         used.add(a)
         output[outputOrder[index[0]]-1] = a
@@ -73,8 +83,9 @@ def simulateTournament(a, b, dataSet, year, output):
     if year > 2020:
         ind -= 1
     score = [0,0]
+    # tie game (no OT yet)
     while score[0] == score[1]:
-        score = simulateGame(dataSet[ind][a], dataSet[ind][b], [0.0,0.5])
+        score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions)
     print(a, score[0], "-", score[1], b)
     output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
     index[0] += 1
