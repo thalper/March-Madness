@@ -66,22 +66,21 @@ index = [0]
 
 def assignWeights(A,B,regressions):
     # % that its a 2pt attempt, 2pt percentage, % 3pt attempt, 3 pt percentage
-    Anum3s = regressions[0].predict([[A[0], B[2], A[22]]]) # number of 3s by team A
-    A3ptP = regressions[1].predict([[A[1], B[3], A[22]]]) # 3 point percentage by team A
-    Anum2s = regressions[2].predict([[A[4], B[6], A[22]]]) # number of 2s by team A
-    A2ptP = regressions[3].predict([[A[5], B[7], A[22]]]) # 2 point percentage by team A
-    BFouls = regressions[4].predict([[B[8], A[9], A[22]]]) # fouls commited by team B
-    AFreeThrows = regressions[5].predict([[A[10], B[11], A[22]]]) # number of attempted free throws by team A
+    Anum3s = regressions[0].predict([[A[0], B[2], A[22]-B[22]]]) # number of 3s by team A
+    A3ptP = regressions[1].predict([[A[1], B[3], A[22]-B[22]]]) # 3 point percentage by team A
+    Anum2s = regressions[2].predict([[A[4], B[6], A[22]-B[22]]]) # number of 2s by team A
+    A2ptP = regressions[3].predict([[A[5], B[7], A[22]-B[22]]]) # 2 point percentage by team A
+    BFouls = regressions[4].predict([[B[8], A[9], B[22]-A[22]]]) # fouls commited by team B
+    AFreeThrows = regressions[5].predict([[A[10], B[11], A[22]-B[22]]]) # number of attempted free throws by team A
     AFreeThrowP = regressions[6].predict([[A[12]]]) # free throw percentage team A
-    ATurnovers = regressions[7].predict([[A[13], B[14], A[22]]]) # number of turnovers by team A
-    Aorb = regressions[8].predict([[A[16], B[17], A[22]]]) # number of offensive rebounds by team A
-    Bdrb = regressions[9].predict([[B[18], A[19], A[22]]]) # number of defensive rebounds by team B
+    ATurnovers = regressions[7].predict([[A[13], B[14], A[22]-B[22]]]) # number of turnovers by team A
+    Aorb = regressions[8].predict([[A[16], B[17], A[22]-B[22]]]) # number of offensive rebounds by team A
+    Bdrb = regressions[9].predict([[B[18], A[19], B[22]-A[22]]]) # number of defensive rebounds by team B
 
     return [Anum2s, A2ptP, Anum3s, A3ptP, BFouls, AFreeThrows, AFreeThrowP, ATurnovers, Aorb, Bdrb]
 
 # return num points scored, num fouls commited 
 def simulatePossession(Poss, fouls):
-    random.seed(time.time())
     # percent chance of each outcome
     shot2 = Poss[0] / (Poss[0] + Poss[2] + Poss[4] + Poss[7])
     made2 = Poss[1]

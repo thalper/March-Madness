@@ -25,10 +25,10 @@ def computeAccuracy():
         if bList[i] == cList[i]:
            # print(i)
             correct += 1
-    print("Accuracy:", (correct - 60) / 67 * 100, "%")
+    print("Accuracy:", (correct - 60) / 67 * 100, "%", (correct - 60))
     BracketFile.close()
     CorrectBracket.close()
-    if (correct - 60) / 67 * 100 > 70:
+    if (correct - 60) / 67 * 100 > 80:
         return True
     return False
 
