@@ -14,11 +14,11 @@ prevData = {}
 
 def parseData():
     for year in range(2013,2022):
-        MarchMadness.MarchMadness.dataSet.append({}) # each key is a team, the value is the data for that team
+        MarchMadness.dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
         parseYear(year)
-    parsePrevTourneyforAI()
+    parsePrevTourneyforAI(MarchMadness.dataSet)
     
 
 def parseYear(year): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year

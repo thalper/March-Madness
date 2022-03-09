@@ -1,5 +1,5 @@
 Duke
-*N Dakota St
+*NC Central
 VCU
 Central FL
 VA Tech
@@ -15,7 +15,7 @@ Yale
 Maryland
 *Belmont
 Gonzaga
-*F Dickinson
+*Prairie View
 Syracuse
 Baylor
 Florida St
@@ -29,58 +29,58 @@ Florida
 Texas Tech
 N Kentucky
 Buffalo
-*St Johns
-*N Dakota St
+*Arizona St
+Duke
 VCU
-Saint Louis
-Liberty
-Michigan St
-Louisville
+VA Tech
+Miss State
+Bradley
+Minnesota
 Yale
 Maryland
-*F Dickinson
-Syracuse
+Gonzaga
+Baylor
 Florida St
-Marquette
+Murray St
 Michigan
-Nevada
+Florida
 Texas Tech
 Buffalo
-VCU
-Liberty
-Michigan St
+Duke
+Miss State
+Minnesota
 Yale
-Syracuse
-Marquette
-Nevada
-Buffalo
-VCU
-Michigan St
-Syracuse
-Nevada
-Michigan St
-Syracuse
-Michigan St
-Michigan St
-Oklahoma
-Oklahoma
-Wofford
-Oklahoma
-St Marys
-Northeastrn
-Wofford
-Oklahoma
-UC Irvine
-Iowa
-St Marys
-Washington
-Northeastrn
-Wofford
-Georgia St
+Gonzaga
+Florida St
+Michigan
+Texas Tech
+Duke
+Yale
+Florida St
+Texas Tech
+Duke
+Florida St
+Florida St
+Florida St
 Virginia
-Oklahoma
+Virginia
+Kentucky
+Virginia
+Tennessee
+N Carolina
+Kentucky
+Virginia
+Oregon
+Tennessee
+St Marys
+N Carolina
+Northeastrn
+Kentucky
+Houston
+Virginia
+Mississippi
 UC Irvine
-Wisconsin
+Oregon
 Tennessee
 Iowa
 Purdue
@@ -88,11 +88,11 @@ St Marys
 N Carolina
 Washington
 Northeastrn
-N Mex State
+Auburn
 Kentucky
 Wofford
-Georgia St
-Iowa State
+Houston
+Ohio State
 Virginia
 Gard-Webb
 Mississippi

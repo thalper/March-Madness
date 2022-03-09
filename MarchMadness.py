@@ -1,22 +1,12 @@
+from cv2 import ORB
 import numpy as np
 import csv
 import Simulate
 import AIWeighting
+import bracket as br
 
 
 dataSet = [] # each year is a dict
-
-
-def oldParseYear(year, dataSet): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
-    dataStr = "Previous/cbb"+str(year%2000)+".csv"
-    with open(dataStr, newline='') as csvfile:
-        dataByTeam = csv.reader(csvfile, delimiter=',', quotechar='|')
-        ind = year%2013   
-        if year > 2020:
-            ind -= 1
-        for row in dataByTeam:
-            if (year < 2020 and row[22] != "NA" and row[22] != "SEED") or (year == 2021 and row[21] != "NA" and row[21] != "SEED"):
-                dataSet[ind][row[0]] = np.array(row[2:21])
 
 def parseBracket(teamFile, year, regressions):
     b = teamFile.read().split('\n')
@@ -55,7 +45,6 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
     teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
     teamFile = open(teamsFileStr, "r")
     tourneyTeams = set(teamFile.read().split('\n'))
-    #print(tourneyTeams)
     teamFile.close()
     with open(dataStr, newline='') as csvfile:
         dataByTeam = csv.reader(csvfile, delimiter=',', quotechar='|')
@@ -66,7 +55,7 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
             if row[0] in tourneyTeams:
                 row[5] = str(float(row[5]) - float(row[1]))
                 row[7] = str(float(row[7]) - float(row[3]))
-                dataSet[ind][row[0]] = np.array(row[1:22], dtype=float)
+                dataSet[ind][row[0]] = np.array(row[1:23], dtype=float)
                 tourneyTeams.remove(row[0])
     
 
@@ -91,70 +80,133 @@ def parseData():
         parseYear(year)
     AIWeighting.parsePrevTourneyforAI(dataSet)
 
-    
-if __name__ == "__main__":
-    for year in range(2013,2022):
-        dataSet.append({})
-    parseData()
-    output = [0]*127
-
+def setRegressions():
     regressions = []
-    numStats = 4
+    numStats = 10
     xData = []
-    yData = []
+    yData = []  
     for i in range(numStats):
         xData.append([])
         yData.append([])
-    for key in AIWeighting.prevData:
+    for key in AIWeighting.prevData: 
         Away = key[0]
         Home = key[1]
         year = key[2]
         # 3 point attempts DONE
-        away3ptAttemptsAVG = [dataSet[year%2013][Away][0], dataSet[year%2013][Home][2]]
+        away3ptAttemptsAVG = [dataSet[year%2013][Away][0], dataSet[year%2013][Home][2], dataSet[year%2013][Away][22]]
         away3ptAttemptsREAL = AIWeighting.prevData[key][0][0]
         xData[0].append(away3ptAttemptsAVG)
         yData[0].append(away3ptAttemptsREAL)
-        home3ptAttemptsAVG = [dataSet[year%2013][Home][0], dataSet[year%2013][Away][2]]
+        home3ptAttemptsAVG = [dataSet[year%2013][Home][0], dataSet[year%2013][Away][2], dataSet[year%2013][Home][22]]
         home3ptAttemptsREAL = AIWeighting.prevData[key][1][0]
         xData[0].append(home3ptAttemptsAVG)
         yData[0].append(home3ptAttemptsREAL)
 
         # 3 point percentage DONE
-        away3ptPercentAVG = [dataSet[year%2013][Away][1], dataSet[year%2013][Home][3]]
+        away3ptPercentAVG = [dataSet[year%2013][Away][1], dataSet[year%2013][Home][3], dataSet[year%2013][Away][22]]
         away3ptPercentREAL = AIWeighting.prevData[key][0][1]
         xData[1].append(away3ptPercentAVG)
         yData[1].append(away3ptPercentREAL)
-        home3ptPercentAVG = [dataSet[year%2013][Home][1], dataSet[year%2013][Away][3]]
+        home3ptPercentAVG = [dataSet[year%2013][Home][1], dataSet[year%2013][Away][3], dataSet[year%2013][Home][22]]
         home3ptPercentREAL = AIWeighting.prevData[key][1][1]
         xData[1].append(home3ptPercentAVG)
         yData[1].append(home3ptPercentREAL)
 
         # 2 point attempts DONE
-        away2ptAttemptsAVG = [dataSet[year%2013][Away][4], dataSet[year%2013][Home][6]]
+        away2ptAttemptsAVG = [dataSet[year%2013][Away][4], dataSet[year%2013][Home][6], dataSet[year%2013][Away][22]]
         away2ptAttemptsREAL = AIWeighting.prevData[key][0][2]
         xData[2].append(away2ptAttemptsAVG)
         yData[2].append(away2ptAttemptsREAL)
-        home2ptAttemptsAVG = [dataSet[year%2013][Home][4], dataSet[year%2013][Away][6]]
+        home2ptAttemptsAVG = [dataSet[year%2013][Home][4], dataSet[year%2013][Away][6], dataSet[year%2013][Home][22]]
         home2ptAttemptsREAL = AIWeighting.prevData[key][1][2]
         xData[2].append(home2ptAttemptsAVG)
         yData[2].append(home2ptAttemptsREAL)
 
         # 2 point percentage DONE
-        away2ptPercentAVG = [dataSet[year%2013][Away][5], dataSet[year%2013][Home][7]]
+        away2ptPercentAVG = [dataSet[year%2013][Away][5], dataSet[year%2013][Home][7], dataSet[year%2013][Away][22]]
         away2ptPercentREAL = AIWeighting.prevData[key][0][3]
         xData[3].append(away2ptPercentAVG)
         yData[3].append(away2ptPercentREAL)
-        home2ptPercentAVG = [dataSet[year%2013][Home][5], dataSet[year%2013][Away][7]]
+        home2ptPercentAVG = [dataSet[year%2013][Home][5], dataSet[year%2013][Away][7], dataSet[year%2013][Home][22]]
         home2ptPercentREAL = AIWeighting.prevData[key][1][3]
         xData[3].append(home2ptPercentAVG)
         yData[3].append(home2ptPercentREAL)
-    
+
+        # Fouls Committed DONE
+        awayFoulsAVG = [dataSet[year%2013][Away][8], dataSet[year%2013][Home][9], dataSet[year%2013][Away][22]]
+        awayFoulsREAL = AIWeighting.prevData[key][0][4]
+        xData[4].append(awayFoulsAVG)
+        yData[4].append(awayFoulsREAL)
+        homeFoulsAVG = [dataSet[year%2013][Home][8], dataSet[year%2013][Away][9], dataSet[year%2013][Home][22]]
+        homeFoulsREAL = AIWeighting.prevData[key][1][4]
+        xData[4].append(homeFoulsAVG)
+        yData[4].append(homeFoulsREAL)
+
+        # Attempted Free Throws DONE
+        awayFreeThrowsAVG = [dataSet[year%2013][Away][10], dataSet[year%2013][Home][11], dataSet[year%2013][Away][22]]
+        awayFreeThrowsREAL = AIWeighting.prevData[key][0][5]
+        xData[5].append(awayFreeThrowsAVG)
+        yData[5].append(awayFreeThrowsREAL)
+        homeFreeThrowsAVG = [dataSet[year%2013][Home][10], dataSet[year%2013][Away][11], dataSet[year%2013][Home][22]]
+        homeFreeThrowsREAL = AIWeighting.prevData[key][1][5]
+        xData[5].append(homeFreeThrowsAVG)
+        yData[5].append(homeFreeThrowsREAL)
+
+        # Free throw percentage DONE
+        awayFreethrowPAVG = [dataSet[year%2013][Away][12]]
+        awayFreethrowPREAL = AIWeighting.prevData[key][0][6]
+        xData[6].append(awayFreethrowPAVG)
+        yData[6].append(awayFreethrowPREAL)
+        homeFreethrowPVG = [dataSet[year%2013][Home][12]]
+        homeFreethrowPREAL = AIWeighting.prevData[key][1][6]
+        xData[6].append(homeFreethrowPVG)
+        yData[6].append(homeFreethrowPREAL)
+
+        # Turnovers Committed DONE
+        awayTurnoversAVG = [dataSet[year%2013][Away][13], dataSet[year%2013][Home][14], dataSet[year%2013][Away][22]]
+        awayTurnoversREAL = AIWeighting.prevData[key][0][7]
+        xData[7].append(awayTurnoversAVG)
+        yData[7].append(awayTurnoversREAL)
+        homeTurnoversAVG = [dataSet[year%2013][Home][13], dataSet[year%2013][Away][14], dataSet[year%2013][Home][22]]
+        homeTurnoversREAL = AIWeighting.prevData[key][1][7]
+        xData[7].append(homeTurnoversAVG)
+        yData[7].append(homeTurnoversREAL)
+
+        # ORB DONE
+        awayORBAVG = [dataSet[year%2013][Away][16], dataSet[year%2013][Home][17], dataSet[year%2013][Away][22]]
+        awayORBREAL = AIWeighting.prevData[key][0][8]
+        xData[8].append(awayORBAVG)
+        yData[8].append(awayORBREAL)
+        homeORBAVG = [dataSet[year%2013][Home][16], dataSet[year%2013][Away][17], dataSet[year%2013][Home][22]]
+        homeORBREAL = AIWeighting.prevData[key][1][8]
+        xData[8].append(homeORBAVG)
+        yData[8].append(homeORBREAL)
+
+        # DRB
+        awayDRBAVG = [dataSet[year%2013][Away][18], dataSet[year%2013][Home][19], dataSet[year%2013][Away][22]]
+        awayDRBREAL = AIWeighting.prevData[key][0][9]
+        xData[9].append(awayDRBAVG)
+        yData[9].append(awayDRBREAL)
+        homeDRBAVG = [dataSet[year%2013][Home][18], dataSet[year%2013][Away][19], dataSet[year%2013][Home][22]]
+        homeDRBREAL = AIWeighting.prevData[key][1][9]
+        xData[9].append(homeDRBAVG)
+        yData[9].append(homeDRBREAL)
         
     regressions = [0]*numStats
     for i in range(numStats):
         currRegr = AIWeighting.manualRegression(xData[i],yData[i]) #runs AI weighting
         regressions[i] = currRegr   
+    
+    return regressions
 
+
+    
+if __name__ == "__main__":
+    parseData()
+    output = [0]*127
+
+    print(dataSet[7])
+    regressions = setRegressions()
 
     ind = 0
     for year in range(2013,2022):
@@ -166,14 +218,31 @@ if __name__ == "__main__":
         dataSet[ind]["bracket"] = bracket
         ind += 1
 
+    # Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
+    # outFile = open("Simulations/2021output.txt", 'w')
+    # for team in output:
+    #     outFile.write(team)
+    #     outFile.write("\n")
+    # outFile.close()
+    # br.computeAccuracy()
 
-    Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
-    outFile = open("Simulations/2021output.txt", 'w')
-    for team in output:
-        outFile.write(team)
-        outFile.write("\n")
-    outFile.close()
+    count = 0
+    while(True):
+        count += 1
+        Simulate.index[0] = 0
+        Simulate.used = set()
+        Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
+        outFile = open("Simulations/2021output.txt", 'w')
+        for team in output:
+            outFile.write(team)
+            outFile.write("\n")
+        outFile.close()
+        if br.computeAccuracy():
+            break
+        if count % 10 == 0:
+            print(count)
     #parseData() #creates dataset
+    print(count)
 
     
     #Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])

@@ -23,11 +23,14 @@ def computeAccuracy():
     correct = 0
     for i in range(len(bList)):
         if bList[i] == cList[i]:
-            print(i)
+           # print(i)
             correct += 1
-    print("Accuracy:", correct / 127 * 100, "%")
+    print("Accuracy:", (correct - 60) / 67 * 100, "%")
     BracketFile.close()
     CorrectBracket.close()
+    if (correct - 60) / 67 * 100 > 60:
+        return True
+    return False
 
 def addXY(team):
     # CHANGE FOR TEAM NAMES NOW
