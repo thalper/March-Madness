@@ -13,7 +13,7 @@ GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 
 def computeAccuracy():
     BracketFile = open("Simulations/2021output.txt", 'r')
-    CorrectBracket = open("Previous/bracket19.txt", 'r')
+    CorrectBracket = open("Previous/bracket21.txt", 'r')
     bList = []
     cList = []
     for i in BracketFile:
@@ -28,7 +28,7 @@ def computeAccuracy():
     print("Accuracy:", (correct - 60) / 67 * 100, "%", (correct - 60))
     BracketFile.close()
     CorrectBracket.close()
-    if (correct - 60) / 67 * 100 > 80:
+    if (correct - 60) / 67 * 100 > 70:
         return True
     return False
 

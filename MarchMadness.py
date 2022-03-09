@@ -235,7 +235,7 @@ if __name__ == "__main__":
         count += 1
         Simulate.index[0] = 0
         Simulate.used = set()
-        Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
+        Simulate.simulateTournament(dataSet[7]["bracket"][0], dataSet[7]["bracket"][1], dataSet, 2021, output, regressions)
         outFile = open("Simulations/2021output.txt", 'w')
         for team in output:
             outFile.write(team)
