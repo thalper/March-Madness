@@ -55,7 +55,7 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
             if row[0] in tourneyTeams:
                 row[5] = str(float(row[5]) - float(row[1]))
                 row[7] = str(float(row[7]) - float(row[3]))
-                dataSet[ind][row[0]] = np.array(row[1:23], dtype=float)
+                dataSet[ind][row[0]] = np.array(row[1:24], dtype=float)
                 tourneyTeams.remove(row[0])
     
 
@@ -73,12 +73,11 @@ def testTeams(years):
     return "Teams parsed correctly."
 
 def parseData():
-    for year in range(2013,2020):
+    for year in range(2013,2022):
         dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
         parseYear(year)
-        print(year, dataSet[year%2013])
     AIWeighting.parsePrevTourneyforAI(dataSet)
 
 def setRegressions():
@@ -94,7 +93,6 @@ def setRegressions():
         Home = key[1]
         year = key[2]
         # 3 point attempts DONE
-        print(year, Away, dataSet[year%2013][Away])
         away3ptAttemptsAVG = [dataSet[year%2013][Away][0], dataSet[year%2013][Home][2], dataSet[year%2013][Away][22]]
         away3ptAttemptsREAL = AIWeighting.prevData[key][0][0]
         xData[0].append(away3ptAttemptsAVG)
@@ -219,31 +217,36 @@ if __name__ == "__main__":
         dataSet[ind]["bracket"] = bracket
         ind += 1
 
+    Simulate.simulateTournament(dataSet[7]["bracket"][0], dataSet[7]["bracket"][1], dataSet, 2021, output, regressions)
+    
+    
     # Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
-    # outFile = open("Simulations/2021output.txt", 'w')
-    # for team in output:
-    #     outFile.write(team)
-    #     outFile.write("\n")
-    # outFile.close()
-    # br.computeAccuracy()
+    
+    
+    outFile = open("Simulations/2021output.txt", 'w')
+    for team in output:
+        outFile.write(team)
+        outFile.write("\n")
+    outFile.close()
+    br.computeAccuracy()
 
-    count = 0
-    while(True):
-        count += 1
-        Simulate.index[0] = 0
-        Simulate.used = set()
-        Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
-        outFile = open("Simulations/2021output.txt", 'w')
-        for team in output:
-            outFile.write(team)
-            outFile.write("\n")
-        outFile.close()
-        if br.computeAccuracy():
-            break
-        if count % 10 == 0:
-            print(count)
-    #parseData() #creates dataset
-    print(count)
+    # count = 0
+    # while(True):
+    #     count += 1
+    #     Simulate.index[0] = 0
+    #     Simulate.used = set()
+    #     Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
+    #     outFile = open("Simulations/2021output.txt", 'w')
+    #     for team in output:
+    #         outFile.write(team)
+    #         outFile.write("\n")
+    #     outFile.close()
+    #     if br.computeAccuracy():
+    #         break
+    #     if count % 10 == 0:
+    #         print(count)
+    # #parseData() #creates dataset
+    # print(count)
 
     
     #Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])

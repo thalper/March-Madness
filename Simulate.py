@@ -191,7 +191,7 @@ def simulateGame(teamAdata, teamBdata, regressions):
     Possession = [0,0]
     Possession[0] = assignWeights(teamAdata, teamBdata, regressions)
     Possession[1] = assignWeights(teamBdata, teamAdata, regressions)
-    numGames = 3 # number of games to simulate
+    numGames = 10 # number of games to simulate
     possessionsPG = teamAdata[15] + teamBdata[15] / 2 # possessions per game
     possessions = int (numGames * possessionsPG)
     

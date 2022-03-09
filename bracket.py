@@ -28,7 +28,7 @@ def computeAccuracy():
     print("Accuracy:", (correct - 60) / 67 * 100, "%")
     BracketFile.close()
     CorrectBracket.close()
-    if (correct - 60) / 67 * 100 > 60:
+    if (correct - 60) / 67 * 100 > 70:
         return True
     return False
 
