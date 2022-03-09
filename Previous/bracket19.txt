@@ -2,58 +2,58 @@ Duke
 *N Dakota St
 VCU
 Central FL
-Miss State
-Liberty
 VA Tech
 Saint Louis
-Maryland
-*Belmont
-LSU
-Yale
-Louisville
-Minnesota
+Miss State
+Liberty
 Michigan St
 Bradley
+Louisville
+Minnesota
+LSU
+Yale
+Maryland
+*Belmont
 Gonzaga
 *F Dickinson
 Syracuse
 Baylor
-Marquette
-Murray St
 Florida St
 Vermont
-Buffalo
-*Arizona St
-Texas Tech
-N Kentucky
-Nevada
-Florida
+Marquette
+Murray St
 Michigan
 Montana
+Nevada
+Florida
+Texas Tech
+N Kentucky
+Buffalo
+*Arizona St
 Duke
 Central FL
-Liberty
 VA Tech
-Maryland
-LSU
-Minnesota
+Liberty
 Michigan St
+Minnesota
+LSU
+Maryland
 Gonzaga
 Baylor
-Murray St
 Florida St
-Buffalo
-Texas Tech
-Florida
+Murray St
 Michigan
+Florida
+Texas Tech
+Buffalo
 Duke
 VA Tech
-LSU
 Michigan St
+LSU
 Gonzaga
 Florida St
-Texas Tech
 Michigan
+Texas Tech
 Duke
 Michigan St
 Gonzaga
@@ -71,57 +71,57 @@ Auburn
 Kentucky
 Virginia
 Oregon
-Purdue
 Tennessee
+Purdue
 N Carolina
 Auburn
-Houston
 Kentucky
+Houston
 Virginia
 Oklahoma
-Oregon
 UC Irvine
-Villanova
-Purdue
-Iowa
+Oregon
 Tennessee
+Iowa
+Purdue
+Villanova
 N Carolina
 Washington
-Auburn
 Kansas
-Ohio State
-Houston
-Wofford
+Auburn
 Kentucky
+Wofford
+Houston
+Ohio State
 Virginia
 Gard-Webb
 Mississippi
 Oklahoma
-Wisconsin
-Oregon
 Kansas St
 UC Irvine
-Villanova
-St Marys
-Purdue
-Old Dominion
-Cincinnati
-Iowa
+Wisconsin
+Oregon
 Tennessee
 Colgate
+Cincinnati
+Iowa
+Purdue
+Old Dominion
+Villanova
+St Marys
 N Carolina
 Iona
 Utah State
 Washington
-Auburn
-N Mex State
 Kansas
 Northeastrn
-Iowa State
-Ohio State
-Houston
-Georgia St
-Wofford
-Seton Hall
+Auburn
+N Mex State
 Kentucky
 Abl Christian
+Wofford
+Seton Hall
+Houston
+Georgia St
+Iowa State
+Ohio State
