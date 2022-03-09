@@ -2,58 +2,58 @@ Gonzaga
 *Norfolk St
 Oklahoma
 Missouri
-Creighton
-UCSB
 Virginia
 Ohio
-USC
-*Drake
-Kansas
-E Washingtn
-Oregon
-VCU
+Creighton
+UCSB
 Iowa
 Grd Canyon
+Oregon
+VCU
+Kansas
+E Washingtn
+USC
+*Drake
 Michigan
 *TX Southern
 LSU
 St Bonavent
-Colorado
-Georgetown
 Florida St
 NC-Grnsboro
-BYU
-*UCLA
-Texas
-Abl Christian
-Connecticut
-Maryland
+Colorado
+Georgetown
 Alabama
 Iona
+Connecticut
+Maryland
+Texas
+Abl Christian
+BYU
+*UCLA
 Gonzaga
 Oklahoma
-Creighton
 Ohio
-USC
-Kansas
-Oregon
+Creighton
 Iowa
+Oregon
+Kansas
+USC
 Michigan
 LSU
-Colorado
 Florida St
-*UCLA
-Abl Christian
-Maryland
+Colorado
 Alabama
+Maryland
+Abl Christian
+*UCLA
 Gonzaga
 Creighton
-USC
 Oregon
+USC
 Michigan
 Florida St
-*UCLA
 Alabama
+*UCLA
 Gonzaga
 USC
 Michigan
@@ -71,57 +71,57 @@ Oregon St
 Houston
 Baylor
 Villanova
-Arkansas
 Oral Roberts
+Arkansas
 Loyola-Chi
 Oregon St
-Syracuse
 Houston
+Syracuse
 Baylor
 Wisconsin
-Villanova
 North Texas
-Texas Tech
-Arkansas
-Florida
+Villanova
 Oral Roberts
+Florida
+Arkansas
+Texas Tech
 Illinois
 Loyola-Chi
-Oregon St
 Oklahoma St
-Syracuse
-W Virginia
-Rutgers
+Oregon St
 Houston
+Rutgers
+W Virginia
+Syracuse
 Baylor
 Hartford
 N Carolina
 Wisconsin
-Villanova
-Winthrop
 Purdue
 North Texas
-Texas Tech
-Utah State
-Arkansas
-Colgate
-Florida
-VA Tech
+Villanova
+Winthrop
 Ohio State
 Oral Roberts
+Florida
+VA Tech
+Arkansas
+Colgate
+Texas Tech
+Utah State
 Illinois
 Drexel
 Loyola-Chi
 GA Tech
-Tennessee
-Oregon St
 Oklahoma St
 Liberty
-San Diego St
-Syracuse
-W Virginia
-Morehead St
-Clemson
-Rutgers
+Tennessee
+Oregon St
 Houston
 Cleveland St
+Clemson
+Rutgers
+W Virginia
+Morehead St
+San Diego St
+Syracuse
