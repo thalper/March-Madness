@@ -73,11 +73,12 @@ def testTeams(years):
     return "Teams parsed correctly."
 
 def parseData():
-    for year in range(2013,2022):
+    for year in range(2013,2020):
         dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
         parseYear(year)
+        print(year, dataSet[year%2013])
     AIWeighting.parsePrevTourneyforAI(dataSet)
 
 def setRegressions():
@@ -93,6 +94,7 @@ def setRegressions():
         Home = key[1]
         year = key[2]
         # 3 point attempts DONE
+        print(year, Away, dataSet[year%2013][Away])
         away3ptAttemptsAVG = [dataSet[year%2013][Away][0], dataSet[year%2013][Home][2], dataSet[year%2013][Away][22]]
         away3ptAttemptsREAL = AIWeighting.prevData[key][0][0]
         xData[0].append(away3ptAttemptsAVG)
@@ -205,7 +207,6 @@ if __name__ == "__main__":
     parseData()
     output = [0]*127
 
-    print(dataSet[7])
     regressions = setRegressions()
 
     ind = 0
