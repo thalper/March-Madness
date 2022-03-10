@@ -2,10 +2,10 @@ import tkinter
 from PIL import Image, ImageDraw, ImageFont
 
 # https://github.com/JonathanZwiebel/bracket-generator
-root = tkinter.Tk()
+
 bracketLoc = {}
-finalTwo = 0
-boxKey = 0
+finalTwo = [0]
+boxKey = [0]
 HEIGHT = 625  # root.winfo_screenheight()
 WIDTH = 1250  # root.winfo_screenwidth()
 HORIZONTAL_PADDING = 70
@@ -28,17 +28,18 @@ def computeAccuracy():
     print("Accuracy:", (correct - 60) / 67 * 100, "%", (correct - 60))
     BracketFile.close()
     CorrectBracket.close()
+    return (correct - 60) / 67 * 100
     if (correct - 60) / 67 * 100 > 70:
         return True
     return False
 
-def addXY(team):
+def addXY(team, x_center, y_center, _game_box_width, _game_box_height, canvas, draw):
     # CHANGE FOR TEAM NAMES NOW
-    # BOXKEY SHOULD BE TEAM NAMES
-    if finalTwo == 1:
+    # BOXKEY[0] SHOULD BE TEAM NAMES
+    if finalTwo[0] == 1:
         xValue = x_center - _game_box_width / 16 + 2
         yValue = y_center - _game_box_height / 16 - 2 - 80
-    elif finalTwo == 2:
+    elif finalTwo[0] == 2:
         xValue = x_center - _game_box_width / 16 + 2
         yValue = y_center - _game_box_height / 16 + 2 + 76
     else:
@@ -48,16 +49,37 @@ def addXY(team):
     canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
     draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
 
-if __name__ == "__main__":
+def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
+    # CHANGE FOR TEAM NAMES NOW
+    # BOXKEY[0] SHOULD BE TEAM NAMES
+    if finalTwo[0] == 1:
+        xValue = x_center - _game_box_width / 16 + 2
+        yValue = y_center - _game_box_height / 16 - 2 - 80
+    elif finalTwo[0] == 2:
+        xValue = x_center - _game_box_width / 16 + 2
+        yValue = y_center - _game_box_height / 16 + 2 + 76
+    else:
+        xValue = x_center - _game_box_width / 16 + 2
+        yValue = y_center - _game_box_height / 16
+    bracketLoc[team] = [xValue, yValue]
+    #canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
+    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
+
+def buildBracket(BracketFileStr, ScoreFileStr):
+    boxKey = [0]
+    root = tkinter.Tk()
     _size = 5
     _columns = _size * 2 + 1
     _column_width = WIDTH / _columns
     _game_box_width = _column_width - HORIZONTAL_PADDING
     _game_box_height = _game_box_width / GAME_BOX_WIDTH_HEIGHT_RATIO
 
-    BracketFile = open("Simulations/2021output.txt", 'r')
+    BracketFile = open(BracketFileStr, 'r')
     output = BracketFile.read().split("\n")
     BracketFile.close()
+    ScoreFile = open(ScoreFileStr, 'r')
+    outputScore = ScoreFile.read().split("\n")
+    ScoreFile.close()
     computeAccuracy()
     canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
     canvas.pack()
@@ -79,24 +101,26 @@ if __name__ == "__main__":
             draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2, x_center + _game_box_width / 2, y_center + _game_box_height / 2], outline = 'black')
             if i == 5:
                 #left final two
-                finalTwo += 1
+                finalTwo[0] += 1
                 canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80)
                 draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80], outline='black')
-                addXY(output[62])
+                addXY(output[62], x_center, y_center, _game_box_width, _game_box_height, canvas, draw)
                 #champion
-                finalTwo -= 1
-                addXY(output[63])
+                finalTwo[0] -= 1
+                addXY(output[63], x_center, y_center, _game_box_width, _game_box_height, canvas, draw)
+                canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=('Helvetica 10 bold'))
+                draw.text((WIDTH / 2, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
                 #right final two
-                finalTwo += 2
+                finalTwo[0] += 2
                 canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
                 draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80], outline='black')
-                addXY(output[64])
-                boxKey += 3
-                finalTwo -= 2
+                addXY(output[64], x_center, y_center, _game_box_width, _game_box_height, canvas, draw)
+                boxKey[0] += 3
+                finalTwo[0] -= 2
             if i <= 10: #creates dictionary of x, y coords on the bracket L to R, top to bottom
                 if i != 5:
-                    addXY(output[boxKey])
-                    boxKey += 1
+                    addXY(output[boxKey[0]], x_center, y_center, _game_box_width, _game_box_height, canvas, draw)
+                    boxKey[0] += 1
             #horizontal lines right of rectangles
             if i != _columns - 1:
                 if i == 5:
@@ -124,3 +148,89 @@ if __name__ == "__main__":
     filename = "myBracket.jpg"
     image1.save(filename)
     tkinter.mainloop()
+
+def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
+    boxKey = [0]
+    #root = tkinter.Tk()
+    _size = 5
+    _columns = _size * 2 + 1
+    _column_width = WIDTH / _columns
+    _game_box_width = _column_width - HORIZONTAL_PADDING
+    _game_box_height = _game_box_width / GAME_BOX_WIDTH_HEIGHT_RATIO
+
+    BracketFile = open(BracketFileStr, 'r')
+    output = BracketFile.read().split("\n")
+    BracketFile.close()
+    ScoreFile = open(ScoreFileStr, 'r')
+    outputScore = ScoreFile.read().split("\n")
+    ScoreFile.close()
+    #computeAccuracy()
+    #canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
+    #canvas.pack()
+    image1 = Image.new("RGB", (WIDTH, HEIGHT), 'white')
+    draw = ImageDraw.Draw(image1)
+    for i in range(_columns):
+        if i - _size < 0:
+            side = "LEFT"
+        elif i - _size > 0:
+            side = "RIGHT"
+        else:
+            side = "CENTER"
+        games = 2 ** abs(i - _size)
+        x_center = _column_width * (i + 0.5)
+        y_size = HEIGHT / games
+        for j in range(games):
+            y_center = y_size * (j + 0.5)
+            #canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2, x_center + _game_box_width / 2, y_center + _game_box_height / 2)
+            draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2, x_center + _game_box_width / 2, y_center + _game_box_height / 2], outline = 'black')
+            if i == 5:
+                #left final two
+                finalTwo[0] += 1
+                #canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80)
+                draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 - 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 - 80], outline='black')
+                addXYJPG(output[62], x_center, y_center, _game_box_width, _game_box_height, draw)
+                #champion
+                finalTwo[0] -= 1
+                addXYJPG(output[63], x_center, y_center, _game_box_width, _game_box_height, draw)
+                #canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=('Helvetica 10 bold'))
+                draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
+                #right final two
+                finalTwo[0] += 2
+                #canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
+                draw.rectangle([x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80], outline='black')
+                addXYJPG(output[64], x_center, y_center, _game_box_width, _game_box_height, draw)
+                boxKey[0] += 3
+                finalTwo[0] -= 2
+            if i <= 10: #creates dictionary of x, y coords on the bracket L to R, top to bottom
+                if i != 5:
+                    addXYJPG(output[boxKey[0]], x_center, y_center, _game_box_width, _game_box_height, draw)
+                    boxKey[0] += 1
+            #horizontal lines right of rectangles
+            if i != _columns - 1:
+                if i == 5:
+                    #canvas.create_line(x_center - _game_box_width / 2 + 2 * _game_box_width - 8, y_center + 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2 + 2 * _game_box_width - 8, y_center + 80)
+                    draw.line([x_center - _game_box_width / 2 + 2 * _game_box_width - 8, y_center + 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2 + 2 * _game_box_width - 8, y_center + 80], 'black')
+                else:
+                    #canvas.create_line(x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center)
+                    draw.line([x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center], 'black')
+            # horizontal lines left of rectangles
+            if i != 0:
+                if i == 5:
+                    #canvas.create_line(x_center - _game_box_width / 2, y_center - 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center - 80)
+                    draw.line([x_center - _game_box_width / 2, y_center - 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center - 80], 'black')
+                else:
+                    #canvas.create_line(x_center - _game_box_width / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center)
+                    draw.line([x_center - _game_box_width / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center], 'black')
+            #vertical lines
+            if j % 2 == 1:
+                if side == "LEFT":
+                    #canvas.create_line(x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center - y_size)
+                    draw.line([x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center - y_size], 'black')
+                if side == "RIGHT":
+                    #canvas.create_line(x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center - y_size)
+                    draw.line([x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2, y_center - y_size], 'black')
+    image1.save(JPGOutStr)
+    #tkinter.mainloop()
+
+if __name__ == "__main__":
+    buildBracket("Simulations/2021output.txt", "Simulations/2021outputScore.txt")

@@ -180,7 +180,7 @@ def simulatePossession(Poss, fouls):
     if random.random() < turnover:
         return 0,fouls
     
-    print("how the fuck did we get here")
+    print("how did we get here")
     return 0,0
 
 
@@ -190,8 +190,8 @@ def simulateGame(teamAdata, teamBdata, regressions):
     Possession = [0,0]
     Possession[0] = assignWeights(teamAdata, teamBdata, regressions)
     Possession[1] = assignWeights(teamBdata, teamAdata, regressions)
-    numGames = 10 # number of games to simulate
-    possessionsPG = teamAdata[15] + teamBdata[15] / 2 # possessions per game
+    numGames = 15 # number of games to simulate
+    possessionsPG = (teamAdata[15] + teamBdata[15]) / 2 # possessions per game
     possessions = int (numGames * possessionsPG)
     
     foulA = 0 # used for calculating if a team is in the "bonus"
@@ -208,7 +208,7 @@ def simulateGame(teamAdata, teamBdata, regressions):
         Bscore += Pscore
         # if index[0] == 126:
         #     print("Possession #", i+1, " ", Ascore, "-", Bscore)
-    return [Ascore, Bscore]
+    return [Ascore//numGames, Bscore//numGames]
 
 def simulateTournament(a, b, dataSet, year, output, regressions):
     if type(a) == list:
@@ -232,6 +232,11 @@ def simulateTournament(a, b, dataSet, year, output, regressions):
         score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions)
     # print(a, score[0], "-", score[1], b)
     output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
+    if index[0] == 126:
+        print(a, score[0], "-", score[1], b)
+        ScoreFile = open("Simulations/"+str(year)+"outputScore.txt", 'w')
+        ScoreFile.write(str(score[0]) + "\n" + str(score[1]))
+        ScoreFile.close()
     index[0] += 1
     return a if score[0] > score[1] else b
 

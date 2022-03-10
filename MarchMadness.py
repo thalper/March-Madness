@@ -202,7 +202,7 @@ def setRegressions():
 
     
 if __name__ == "__main__":
-    parseData()
+    parseData() # creates dataset
     output = [0]*127
 
     regressions = setRegressions()
@@ -231,23 +231,53 @@ if __name__ == "__main__":
     # br.computeAccuracy()
 
     count = 0
-    while(True):
-        count += 1
-        Simulate.index[0] = 0
-        Simulate.used = set()
-        Simulate.simulateTournament(dataSet[7]["bracket"][0], dataSet[7]["bracket"][1], dataSet, 2021, output, regressions)
-        outFile = open("Simulations/2021output.txt", 'w')
+    numBrackets = 1 # number of brackets to produce
+    year = 2014
+    yearInd = year%2013
+    if year > 2020:
+        yearInd -= 1
+    completedBrackets = set()
+    total = 0
+    total2 = 0
+    minAcc = 100
+    maxAcc = 0
+    for i in range(numBrackets):
+        while (True):
+            count += 1
+            Simulate.index[0] = 0
+            Simulate.used = set()
+            Simulate.simulateTournament(dataSet[yearInd]["bracket"][0], dataSet[yearInd]["bracket"][1], dataSet, year, output, regressions)
+            if tuple(output) not in completedBrackets:
+                completedBrackets.add(tuple(output))
+                break
+            else:
+                print("duplicate after ", count, " brackets")
+        #outFileStr = "Simulations/2021output"  + str(i+1) + ".txt"
+        outFileStr = "Simulations/"+str(year)+"output.txt"
+        outFile = open(outFileStr, 'w')
         for team in output:
             outFile.write(team)
             outFile.write("\n")
         outFile.close()
-        if br.computeAccuracy():
-            break
-        if count % 10 == 0:
-            print(count)
-    #parseData() #creates dataset
-    print(count)
+        currAcc = br.computeAccuracy()
+        total += currAcc
+        total2 += currAcc*currAcc
+        if currAcc < minAcc:
+            minAcc = currAcc
+        elif currAcc > maxAcc:
+            maxAcc = currAcc
+        print(count)
+        br.buildBracketJPG("Simulations/"+str(year)+"output.txt", "Simulations/"+str(year)+"outputScore.txt", "BracketOutputs/"+str(year)+"bracket"+str(i+1)+".jpg")
 
+    #     if br.computeAccuracy():
+    #         break
+    #     if count % 10 == 0:
+    #         print(count)
+    stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
+    print("Average accuracy: " + str(total/numBrackets) + "%")
+    print("Maximum accuracy: " + str(maxAcc) + "%")
+    print("Minimum accuracy: " + str(minAcc) + "%")
+    print("Standard Deviation: " + str(stdev))
     
     #Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])
     #Simulate.simulateGame(dataSet[year][teamA], dataSet[year][teamB], weights) #simulates basketball game between two teams

@@ -1,0 +1,43 @@
+Choosing the number of simulations to run for each game. Data is from 300 simulated trounaments
+
+1 Simulation statistics for the 2021 tournament:
+Average accuracy: 48.78606965174133%
+Maximum accuracy: 65.67164179104478%
+Minimum accuracy: 31.343283582089555%
+Standard Deviation: 6.897259514271548
+notes: low average accuracy, after running 2,3,5 we know we dont want to run it only once per game
+
+2 Simulations statistics for the 2021 tournament:
+Average accuracy: 52.67164179104482%
+Maximum accuracy: 65.67164179104478%
+Minimum accuracy: 38.80597014925373%
+Standard Deviation: 5.423869096990509
+notes: lower standard deviation, better accuracy
+
+3 Simulations statistics for the 2021 tournament:
+Average accuracy: 52.412935323383124%
+Maximum accuracy: 68.65671641791045%
+Minimum accuracy: 37.3134328358209%
+Standard Deviation: 5.327972634478819
+notes: lower average?, higher maximum, lower minimum, little bit lower deviation
+
+5 Simulations statistics for the 2021 tournament:
+Average accuracy: 57.970149253731364%
+Maximum accuracy: 71.64179104477611%
+Minimum accuracy: 41.7910447761194%
+Standard Deviation: 5.230500425354612
+notes: highest maximum yet, highest average yet, highest minimum, standard deviation similar to 3 simulations
+
+7 Simulations statistics for the 2021 tournament:
+Average accuracy: 60.701492537313534%
+Maximum accuracy: 73.13432835820896%
+Minimum accuracy: 47.76119402985074%
+Standard Deviation: 4.456275866031883
+notes: highest maximum yet, highest average yet, highest minimum, standard deviation a little lower
+
+10 Simulations statistics for the 2021 tournament:
+Average accuracy: 59.845771144278736%
+Maximum accuracy: 73.13432835820896%
+Minimum accuracy: 47.76119402985074%
+Standard Deviation: 4.234000382453441
+notes: very similar to 7 simulations but with lwoer std deviation
