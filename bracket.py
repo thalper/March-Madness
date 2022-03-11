@@ -151,7 +151,6 @@ def buildBracket(BracketFileStr, ScoreFileStr, year):
 
 def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
     boxKey = [0]
-    #root = tkinter.Tk()
     _size = 5
     _columns = _size * 2 + 1
     _column_width = WIDTH / _columns
@@ -165,8 +164,6 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
     outputScore = ScoreFile.read().split("\n")
     ScoreFile.close()
     #computeAccuracy()
-    #canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
-    #canvas.pack()
     image1 = Image.new("RGB", (WIDTH, HEIGHT), 'white')
     draw = ImageDraw.Draw(image1)
     for i in range(_columns):

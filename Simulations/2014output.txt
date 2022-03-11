@@ -33,42 +33,42 @@ Providence
 Florida
 Pittsburgh
 UCLA
-VCU
+Ste F Austin
 Kansas
-Stanford
+New Mexico
 Syracuse
 Ohio State
 Virginia
-Geo Wshgtn
+Memphis
 Michigan St
-Cincinnati
+Harvard
 Villanova
 Connecticut
 Iowa State
 N Carolina
 Florida
-UCLA
+Ste F Austin
 Kansas
 Ohio State
 Virginia
-Cincinnati
-Villanova
+Michigan St
+Connecticut
 Iowa State
 Florida
 Ohio State
-Cincinnati
-Villanova
+Virginia
+Iowa State
 Florida
-Villanova
+Virginia
 Florida
-Arizona
-Arizona
-Arizona
+Florida
+Louisville
+Wisconsin
 Louisville
 Arizona
-Creighton
+Wisconsin
 Louisville
-*Iowa
+*Tennessee
 Arizona
 San Diego St
 Wisconsin
@@ -76,7 +76,7 @@ Creighton
 Kentucky
 Louisville
 Michigan
-*Iowa
+*Tennessee
 Arizona
 Oklahoma St
 San Diego St
@@ -88,11 +88,11 @@ Baylor
 Wichita St
 Kentucky
 Louisville
-*Xavier
+Saint Louis
 Michigan
-Arizona St
+Texas
 Duke
-*Iowa
+*Tennessee
 Arizona
 Weber State
 Gonzaga
@@ -110,13 +110,13 @@ LA Lafayette
 Baylor
 Nebraska
 Wichita St
-*TX Southern
+*Cal Poly
 Kentucky
 Kansas St
 Louisville
 Manhattan
 Saint Louis
-*Xavier
+*NC State
 Michigan
 Wofford
 Texas
@@ -124,4 +124,4 @@ Arizona St
 Duke
 Mercer
 U Mass
-*Iowa
+*Tennessee

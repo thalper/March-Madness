@@ -215,7 +215,6 @@ def tournament(year, regressions, output, numGames, numBrackets):
     total2 = 0
     minAcc = 100
     maxAcc = 0
-    count = 0
     for i in range(numBrackets):
         if i%25 == 24:
             print(i+1)
@@ -227,7 +226,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
                 completedBrackets.add(tuple(output))
                 break
             else:
-                print("duplicate after ", count, " brackets")
+                print("duplicate after ", i, " brackets")
         #outFileStr = "Simulations/2021output"  + str(i+1) + ".txt"
         outFileStr = "Simulations/"+str(year)+"output.txt"
         outFile = open(outFileStr, 'w')
@@ -235,21 +234,24 @@ def tournament(year, regressions, output, numGames, numBrackets):
             outFile.write(team)
             outFile.write("\n")
         outFile.close()
-        currAcc = br.computeAccuracy(year)
-        total += currAcc
-        total2 += currAcc*currAcc
-        if currAcc < minAcc:
-            minAcc = currAcc
-        if currAcc > maxAcc:
-            maxAcc = currAcc
-        count += 1
+        if year < 2022:
+            currAcc = br.computeAccuracy(year)
+            total += currAcc
+            total2 += currAcc*currAcc
+            if currAcc < minAcc:
+                minAcc = currAcc
+            if currAcc > maxAcc:
+                maxAcc = currAcc
 
-    stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
-    print("Year: " + str(year) + "   numGames: " + str(numGames))
-    print("Average accuracy: " + str(total/numBrackets) + "%")
-    print("Maximum accuracy: " + str(maxAcc) + "%")
-    print("Minimum accuracy: " + str(minAcc) + "%")
-    print("Standard Deviation: " + str(stdev) + "\n\n")
+        br.buildBracketJPG(outFileStr, "Simulations/"+str(year)+"outputScore.txt", "BracketOutputs/"+str(year)+"bracket"+str(i+1)+".jpg")
+    
+    if year < 2022:
+        stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
+        print("Year: " + str(year) + "   numGames: " + str(numGames))
+        print("Average accuracy: " + str(total/numBrackets) + "%")
+        print("Maximum accuracy: " + str(maxAcc) + "%")
+        print("Minimum accuracy: " + str(minAcc) + "%")
+        print("Standard Deviation: " + str(stdev) + "\n\n")
 
 
 if __name__ == "__main__":
@@ -260,8 +262,12 @@ if __name__ == "__main__":
 
     gameTest = [10]
     yearTest = [2013, 2014, 2021]
+    numBrackets = 3 # number of brackets to produce
 
-    numBrackets = 300 # number of brackets to produce
+    # use these values to generate real brackets to use this year
+    # gameTest = [10]
+    # yearTest = [2022]
+    # numBrackets = 100
     for year in yearTest:
         for numGames in gameTest:
             tournament(year, regressions, output, numGames, numBrackets)
