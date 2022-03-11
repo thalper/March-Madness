@@ -11,9 +11,9 @@ WIDTH = 1250  # root.winfo_screenwidth()
 HORIZONTAL_PADDING = 70
 GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 
-def computeAccuracy():
-    BracketFile = open("Simulations/2021output.txt", 'r')
-    CorrectBracket = open("Previous/bracket21.txt", 'r')
+def computeAccuracy(year):
+    BracketFile = open("Simulations/"+str(year)+"output.txt", 'r')
+    CorrectBracket = open("Previous/bracket"+str(year%2000)+".txt", 'r')
     bList = []
     cList = []
     for i in BracketFile:
@@ -25,7 +25,7 @@ def computeAccuracy():
         if bList[i] == cList[i]:
            # print(i)
             correct += 1
-    print("Accuracy:", (correct - 60) / 67 * 100, "%", (correct - 60))
+    #print("Accuracy:", (correct - 60) / 67 * 100, "%", (correct - 60))
     BracketFile.close()
     CorrectBracket.close()
     return (correct - 60) / 67 * 100
@@ -65,7 +65,7 @@ def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
     #canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
     draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
 
-def buildBracket(BracketFileStr, ScoreFileStr):
+def buildBracket(BracketFileStr, ScoreFileStr, year):
     boxKey = [0]
     root = tkinter.Tk()
     _size = 5
@@ -80,7 +80,7 @@ def buildBracket(BracketFileStr, ScoreFileStr):
     ScoreFile = open(ScoreFileStr, 'r')
     outputScore = ScoreFile.read().split("\n")
     ScoreFile.close()
-    computeAccuracy()
+    computeAccuracy(year)
     canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
     canvas.pack()
     image1 = Image.new("RGB", (WIDTH, HEIGHT), 'white')
@@ -233,4 +233,4 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
     #tkinter.mainloop()
 
 if __name__ == "__main__":
-    buildBracket("Simulations/2021output.txt", "Simulations/2021outputScore.txt")
+    buildBracket("Simulations/2021output.txt", "Simulations/2021outputScore.txt", 2021)

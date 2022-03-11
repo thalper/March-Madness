@@ -8,7 +8,7 @@ import bracket as br
 
 dataSet = [] # each year is a dict
 
-def parseBracket(teamFile, year, regressions):
+def parseBracket(teamFile, year, regressions, numGames):
     b = teamFile.read().split('\n')
     i = 0
     j = 1
@@ -31,7 +31,7 @@ def parseBracket(teamFile, year, regressions):
     for i in range(4):
         teamA = playInTeams[i][0]
         teamB = playInTeams[i][1]
-        score = Simulate.simulateGame(dataSet[dataInd][teamA], dataSet[dataInd][teamB], regressions) 
+        score = Simulate.simulateGame(dataSet[dataInd][teamA], dataSet[dataInd][teamB], regressions, numGames) 
         #print(teamA, score[0], "-", score[1], teamB)
         b2[indexList[i]] = teamA if score[0] > score[1] else teamB
     bracket =   [[[[[[b2[1+16*0],b2[16+16*0]],[b2[8+16*0],b2[9+16*0]]],[[b2[4+16*0],b2[13+16*0]],[b2[5+16*0],b2[12+16*0]]]],[[[b2[2+16*0],b2[15+16*0]],[b2[7+16*0],b2[10+16*0]]],[[b2[3+16*0],b2[14+16*0]],[b2[6+16*0],b2[11+16*0]]]]],
@@ -200,22 +200,80 @@ def setRegressions():
     return regressions
 
 
-    
+def tournament(year, regressions, output, numGames, numBrackets):
+    yearInd = year%2013
+    if year > 2020:
+        yearInd -= 1
+
+    teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
+    teamFile = open(teamsFileStr, "r")
+    bracket = parseBracket(teamFile, year, regressions, numGames)
+    dataSet[yearInd]["bracket"] = bracket
+
+    completedBrackets = set()
+    total = 0
+    total2 = 0
+    minAcc = 100
+    maxAcc = 0
+    count = 0
+    for i in range(numBrackets):
+        if i%25 == 24:
+            print(i+1)
+        while (True):
+            Simulate.index[0] = 0
+            Simulate.used = set()
+            Simulate.simulateTournament(dataSet[yearInd]["bracket"][0], dataSet[yearInd]["bracket"][1], dataSet, year, output, regressions, numGames)
+            if tuple(output) not in completedBrackets:
+                completedBrackets.add(tuple(output))
+                break
+            else:
+                print("duplicate after ", count, " brackets")
+        #outFileStr = "Simulations/2021output"  + str(i+1) + ".txt"
+        outFileStr = "Simulations/"+str(year)+"output.txt"
+        outFile = open(outFileStr, 'w')
+        for team in output:
+            outFile.write(team)
+            outFile.write("\n")
+        outFile.close()
+        currAcc = br.computeAccuracy(year)
+        total += currAcc
+        total2 += currAcc*currAcc
+        if currAcc < minAcc:
+            minAcc = currAcc
+        if currAcc > maxAcc:
+            maxAcc = currAcc
+        count += 1
+
+    stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
+    print("Year: " + str(year) + "   numGames: " + str(numGames))
+    print("Average accuracy: " + str(total/numBrackets) + "%")
+    print("Maximum accuracy: " + str(maxAcc) + "%")
+    print("Minimum accuracy: " + str(minAcc) + "%")
+    print("Standard Deviation: " + str(stdev) + "\n\n")
+
+
 if __name__ == "__main__":
     parseData() # creates dataset
     output = [0]*127
 
     regressions = setRegressions()
 
-    ind = 0
-    for year in range(2013,2022):
-        if year == 2020:
-            continue
-        teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
-        teamFile = open(teamsFileStr, "r")
-        bracket = parseBracket(teamFile, year, regressions)
-        dataSet[ind]["bracket"] = bracket
-        ind += 1
+    gameTest = [10]
+    yearTest = [2013, 2014, 2021]
+
+    numBrackets = 300 # number of brackets to produce
+    for year in yearTest:
+        for numGames in gameTest:
+            tournament(year, regressions, output, numGames, numBrackets)
+    # ind = 0
+    # for year in range(2013,2022):
+    #     if year == 2020:
+    #         continue
+    #     teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
+    #     teamFile = open(teamsFileStr, "r")
+    #     bracket = parseBracket(teamFile, year, regressions, numGames)
+    #     dataSet[ind]["bracket"] = bracket
+    #     ind += 1
 
     # Simulate.simulateTournament(dataSet[7]["bracket"][0], dataSet[7]["bracket"][1], dataSet, 2021, output, regressions)
     
@@ -230,54 +288,7 @@ if __name__ == "__main__":
     # outFile.close()
     # br.computeAccuracy()
 
-    count = 0
-    numBrackets = 1 # number of brackets to produce
-    year = 2014
-    yearInd = year%2013
-    if year > 2020:
-        yearInd -= 1
-    completedBrackets = set()
-    total = 0
-    total2 = 0
-    minAcc = 100
-    maxAcc = 0
-    for i in range(numBrackets):
-        while (True):
-            count += 1
-            Simulate.index[0] = 0
-            Simulate.used = set()
-            Simulate.simulateTournament(dataSet[yearInd]["bracket"][0], dataSet[yearInd]["bracket"][1], dataSet, year, output, regressions)
-            if tuple(output) not in completedBrackets:
-                completedBrackets.add(tuple(output))
-                break
-            else:
-                print("duplicate after ", count, " brackets")
-        #outFileStr = "Simulations/2021output"  + str(i+1) + ".txt"
-        outFileStr = "Simulations/"+str(year)+"output.txt"
-        outFile = open(outFileStr, 'w')
-        for team in output:
-            outFile.write(team)
-            outFile.write("\n")
-        outFile.close()
-        currAcc = br.computeAccuracy()
-        total += currAcc
-        total2 += currAcc*currAcc
-        if currAcc < minAcc:
-            minAcc = currAcc
-        elif currAcc > maxAcc:
-            maxAcc = currAcc
-        print(count)
-        br.buildBracketJPG("Simulations/"+str(year)+"output.txt", "Simulations/"+str(year)+"outputScore.txt", "BracketOutputs/"+str(year)+"bracket"+str(i+1)+".jpg")
-
-    #     if br.computeAccuracy():
-    #         break
-    #     if count % 10 == 0:
-    #         print(count)
-    stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
-    print("Average accuracy: " + str(total/numBrackets) + "%")
-    print("Maximum accuracy: " + str(maxAcc) + "%")
-    print("Minimum accuracy: " + str(minAcc) + "%")
-    print("Standard Deviation: " + str(stdev))
+    
     
     #Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])
     #Simulate.simulateGame(dataSet[year][teamA], dataSet[year][teamB], weights) #simulates basketball game between two teams

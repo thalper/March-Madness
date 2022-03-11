@@ -1,5 +1,5 @@
 Florida
-*Mt St Marys
+*Albany
 Colorado
 Pittsburgh
 UCLA
@@ -35,7 +35,7 @@ Pittsburgh
 UCLA
 VCU
 Kansas
-New Mexico
+Stanford
 Syracuse
 Ohio State
 Virginia
@@ -46,37 +46,37 @@ Villanova
 Connecticut
 Iowa State
 N Carolina
-Pittsburgh
+Florida
 UCLA
 Kansas
-Syracuse
+Ohio State
 Virginia
 Cincinnati
 Villanova
 Iowa State
-Pittsburgh
-Syracuse
-Virginia
+Florida
+Ohio State
+Cincinnati
 Villanova
-Pittsburgh
+Florida
 Villanova
-Villanova
-Louisville
-Louisville
-Wisconsin
+Florida
+Arizona
+Arizona
+Arizona
 Louisville
 Arizona
-Wisconsin
+Creighton
 Louisville
-Michigan
+*Iowa
 Arizona
-Oklahoma
+San Diego St
 Wisconsin
 Creighton
 Kentucky
 Louisville
 Michigan
-Duke
+*Iowa
 Arizona
 Oklahoma St
 San Diego St
@@ -88,9 +88,9 @@ Baylor
 Wichita St
 Kentucky
 Louisville
-Saint Louis
+*Xavier
 Michigan
-Texas
+Arizona St
 Duke
 *Iowa
 Arizona

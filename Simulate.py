@@ -184,13 +184,12 @@ def simulatePossession(Poss, fouls):
     return 0,0
 
 
-def simulateGame(teamAdata, teamBdata, regressions):
+def simulateGame(teamAdata, teamBdata, regressions, numGames):
     Ascore = 0
     Bscore = 0
     Possession = [0,0]
     Possession[0] = assignWeights(teamAdata, teamBdata, regressions)
     Possession[1] = assignWeights(teamBdata, teamAdata, regressions)
-    numGames = 15 # number of games to simulate
     possessionsPG = (teamAdata[15] + teamBdata[15]) / 2 # possessions per game
     possessions = int (numGames * possessionsPG)
     
@@ -210,11 +209,11 @@ def simulateGame(teamAdata, teamBdata, regressions):
         #     print("Possession #", i+1, " ", Ascore, "-", Bscore)
     return [Ascore//numGames, Bscore//numGames]
 
-def simulateTournament(a, b, dataSet, year, output, regressions):
+def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
     if type(a) == list:
-        a = simulateTournament(a[0],a[1], dataSet, year, output, regressions)
+        a = simulateTournament(a[0],a[1], dataSet, year, output, regressions, numGames)
     if type(b) == list: 
-        b = simulateTournament(b[0],b[1], dataSet, year, output, regressions)
+        b = simulateTournament(b[0],b[1], dataSet, year, output, regressions, numGames)
     if a not in used:
         used.add(a)
         output[outputOrder[index[0]]-1] = a
@@ -229,11 +228,11 @@ def simulateTournament(a, b, dataSet, year, output, regressions):
     score = [0,0]
     # tie game (no OT yet)
     while score[0] == score[1]:
-        score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions)
+        score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, numGames)
     # print(a, score[0], "-", score[1], b)
     output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
     if index[0] == 126:
-        print(a, score[0], "-", score[1], b)
+        # print(a, score[0], "-", score[1], b)
         ScoreFile = open("Simulations/"+str(year)+"outputScore.txt", 'w')
         ScoreFile.write(str(score[0]) + "\n" + str(score[1]))
         ScoreFile.close()

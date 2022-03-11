@@ -13,7 +13,7 @@ Cincinnati
 Michigan St
 Valparaiso
 Memphis
-*St Marys
+*Middle Tenn
 Gonzaga
 Southern
 Pittsburgh
@@ -31,33 +31,33 @@ Harvard
 Arizona
 Belmont
 Louisville
-Missouri
+Colorado St
 Saint Louis
 Oklahoma St
 Duke
-Creighton
+Cincinnati
 Michigan St
-*St Marys
+*Middle Tenn
 Gonzaga
 Pittsburgh
-Kansas St
+*La Salle
 Wisconsin
 Ohio State
 Iowa State
-New Mexico
+Harvard
 Arizona
 Louisville
-Oklahoma St
+Saint Louis
 Duke
 Michigan St
 Gonzaga
 Wisconsin
-Iowa State
+Ohio State
 Arizona
 Louisville
 Duke
 Gonzaga
-Arizona
+Ohio State
 Louisville
 Gonzaga
 Louisville
@@ -76,7 +76,7 @@ Florida
 Indiana
 Syracuse
 Miami (FL)
-Butler
+Marquette
 Kansas
 N Carolina
 Michigan
@@ -90,7 +90,7 @@ NC State
 Syracuse
 UNLV
 Miami (FL)
-Illinois
+Colorado
 Marquette
 Butler
 Kansas

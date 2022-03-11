@@ -41,3 +41,80 @@ Maximum accuracy: 73.13432835820896%
 Minimum accuracy: 47.76119402985074%
 Standard Deviation: 4.234000382453441
 notes: very similar to 7 simulations but with lwoer std deviation
+
+15 Simulations statistics for the 2021 tournament:
+Average accuracy: 62.39800995024888%
+Maximum accuracy: 74.6268656716418%
+Minimum accuracy: 47.76119402985074%
+Standard Deviation: 3.695134431231615
+notes: high accuract, highest maximum, lower std deviation
+
+
+
+Testing with more years, 25 tournaments each for [1,2,3,5,7,10,15] game simulations.
+Year: 2013   numGames: 1                                Year: 2014   numGames: 1                                Year: 2021   numGames: 1
+Average accuracy: 50.56716417910448%                    Average accuracy: 48.537313432835816%                   Average accuracy: 47.820895522388064%
+Maximum accuracy: 67.16417910447761%                    Maximum accuracy: 61.19402985074627%                    Maximum accuracy: 59.70149253731343%
+Minimum accuracy: 40.298507462686565%                   Minimum accuracy: 38.80597014925373%                    Minimum accuracy: 34.32835820895522%
+Standard Deviation: 6.771844269110049                   Standard Deviation: 5.957000445739119                   Standard Deviation: 8.15837879579203
+
+
+
+Year: 2013   numGames: 2                                Year: 2014   numGames: 2                                Year: 2021   numGames: 2
+Average accuracy: 52.238805970149244%                   Average accuracy: 51.70149253731341%                    Average accuracy: 53.91044776119402%
+Maximum accuracy: 59.70149253731343%                    Maximum accuracy: 64.17910447761194%                    Maximum accuracy: 64.17910447761194%
+Minimum accuracy: 44.776119402985074%                   Minimum accuracy: 40.298507462686565%                   Minimum accuracy: 41.7910447761194%
+Standard Deviation: 4.719817403236416                   Standard Deviation: 5.646132736734244                   Standard Deviation: 6.093063079246913
+
+
+
+Year: 2013   numGames: 3                                Year: 2014   numGames: 3                                Year: 2021   numGames: 3
+Average accuracy: 55.99999999999999%                    Average accuracy: 56.59701492537313%                    Average accuracy: 58.08955223880598%
+Maximum accuracy: 62.68656716417911%                    Maximum accuracy: 67.16417910447761%                    Maximum accuracy: 71.64179104477611%
+Minimum accuracy: 46.26865671641791%                    Minimum accuracy: 47.76119402985074%                    Minimum accuracy: 44.776119402985074%
+Standard Deviation: 4.833977905671026                   Standard Deviation: 4.9935578904660405                  Standard Deviation: 5.709535625554583
+
+
+
+Year: 2013   numGames: 5                                Year: 2014   numGames: 5                                Year: 2021   numGames: 5
+Average accuracy: 52.83582089552238%                    Average accuracy: 54.32835820895523%                    Average accuracy: 59.223880597014926%
+Maximum accuracy: 58.2089552238806%                     Maximum accuracy: 68.65671641791045%                    Maximum accuracy: 65.67164179104478%
+Minimum accuracy: 44.776119402985074%                   Minimum accuracy: 44.776119402985074%                   Minimum accuracy: 49.25373134328358%
+Standard Deviation: 3.8690989244226737                  Standard Deviation: 5.272693054523955                   Standard Deviation: 3.8856453958860393
+
+
+
+Year: 2013   numGames: 7                                Year: 2014   numGames: 7                                Year: 2021   numGames: 7
+Average accuracy: 56.23880597014923%                    Average accuracy: 59.04477611940299%                    Average accuracy: 61.37313432835819%
+Maximum accuracy: 65.67164179104478%                    Maximum accuracy: 67.16417910447761%                    Maximum accuracy: 67.16417910447761%
+Minimum accuracy: 46.26865671641791%                    Minimum accuracy: 49.25373134328358%                    Minimum accuracy: 50.74626865671642%
+Standard Deviation: 5.385061389268085                   Standard Deviation: 4.489139390353944                   Standard Deviation: 4.800683102800136                           
+
+
+
+Year: 2013   numGames: 10                               Year: 2014   numGames: 10                               Year: 2021   numGames: 10
+Average accuracy: 57.73134328358207%                    Average accuracy: 59.34328358208956%                    Average accuracy: 61.731343283582085%
+Maximum accuracy: 65.67164179104478%                    Maximum accuracy: 68.65671641791045%                    Maximum accuracy: 71.64179104477611%
+Minimum accuracy: 50.74626865671642%                    Minimum accuracy: 50.74626865671642%                    Minimum accuracy: 55.223880597014926%
+Standard Deviation: 3.816228493014397                   Standard Deviation: 4.8369263523650154                  Standard Deviation: 3.5791032327932957
+
+
+
+Year: 2013   numGames: 15                               Year: 2014   numGames: 15                               Year: 2021   numGames: 15
+Average accuracy: 58.62686567164179%                    Average accuracy: 56.835820895522374%                   Average accuracy: 62.14925373134329%
+Maximum accuracy: 67.16417910447761%                    Maximum accuracy: 62.68656716417911%                    Maximum accuracy: 70.1492537313433%
+Minimum accuracy: 50.74626865671642%                    Minimum accuracy: 49.25373134328358%                    Minimum accuracy: 55.223880597014926%
+Standard Deviation: 4.038575409023877                   Standard Deviation: 3.8672560574811583                  Standard Deviation: 3.979900492536877
+
+
+
+
+
+We decided to run each of the 3 years through 300 tournaments with 10 games each.
+
+Year: 2013   numGames: 10                               Year: 2014   numGames: 10                               Year: 2021   numGames: 10
+Average accuracy: 58.92537313432837%                    Average accuracy: 59.59203980099502%                    Average accuracy: 61.46268656716426%
+Maximum accuracy: 70.1492537313433%                     Maximum accuracy: 70.1492537313433%                     Maximum accuracy: 76.11940298507463%
+Minimum accuracy: 43.28358208955223%                    Minimum accuracy: 47.76119402985074%                    Minimum accuracy: 49.25373134328358%
+Standard Deviation: 4.0149716100832356                  Standard Deviation: 4.0586648759457775                  Standard Deviation: 4.476185510767141
+
