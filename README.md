@@ -84,4 +84,16 @@ Tycho Halpern
 
 This week I spent the majority of the time working on simulating the tournament for a given year. I created an array structure to store all of the teams so that the winners of the correct 2 games would play each other in the next round. I added an output list to store the winners of each game, and the a transformation array to reorganise the team names so they could be interpreted correctly by the bracket making program. At the end of the week we were able to output a simulated tournament to a .jpg file that was easy to read for the first time. 
 
+Progress Report (Week of 02/27/22)
+
+Rylee Benes
+
+This week, we prepared our code for our midterm presentation, getting our brackets to utilize the game simulator for two and three point attempts. We met to finish up the PowerPoint and run through it. We then began to talk over how we were going to implement our AI algorithm. We ended up changing our model from Naive Bayes to linear regression, and started to work on it.
+
+Progress Report (Week of 03/06/22)
+
+Rylee Benes
+
+We worked pretty much every day this week, so that our code was ready for March Madness, which starts next week. I created our regression model as Tycho finished parsing all new data. We then finished implementing all of the stats needed for the game simulator. I then did some research for a stat that may help in weighting teams from different conferences, and we deciding on implementing the Strength of Schedule stat. I then created the final bracket .txt files for 2021, 2013, and 2014, so that we could test accuracy between our create brackets and the real, final brackets. We then compared the number of games each match-up should have for low standard deviation and high accuracy.
+
 # References
