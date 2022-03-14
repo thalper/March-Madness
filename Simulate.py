@@ -37,9 +37,6 @@ from bracket import GAME_BOX_WIDTH_HEIGHT_RATIO
 # Strength of Schedule                  |           22
 
 
-# Weight order
-# 
-
 
 outputOrder = [1,2,33,3,4,34,49,5,6,35,7,8,36,50,57,9,10,37,11,12,38,51,13,14,39,15,16,40,52,58,61,
                 17,18,41,19,20,42,53,21,22,43,23,24,44,54,59,25,26,45,27,28,46,55,29,30,47,31,32,48,56,60,62,63,
@@ -231,6 +228,8 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
         score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, numGames)
     # print(a, score[0], "-", score[1], b)
     output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
+    if a == "Purdue" or b == "Purdue":
+        print(a, score[0], "-", score[1], b)
     if index[0] == 126:
         # print(a, score[0], "-", score[1], b)
         ScoreFile = open("Simulations/"+str(year)+"outputScore.txt", 'w')

@@ -19,7 +19,7 @@ Southern
 Pittsburgh
 Wichita St
 Kansas St
-*La Salle
+*Boise State
 Wisconsin
 Mississippi
 Ohio State
@@ -37,46 +37,46 @@ Oregon
 Duke
 Creighton
 Michigan St
-*St Marys
+Memphis
 Gonzaga
 Pittsburgh
-*La Salle
-Mississippi
+*Boise State
+Wisconsin
 Ohio State
 Iowa State
 New Mexico
 Arizona
 Louisville
 Saint Louis
-Creighton
+Duke
 Michigan St
-Gonzaga
-*La Salle
-Ohio State
+Pittsburgh
+Wisconsin
+Iowa State
 Arizona
 Louisville
-Creighton
-Gonzaga
+Duke
+Pittsburgh
 Arizona
-Creighton
-Gonzaga
-Gonzaga
-Gonzaga
-Indiana
+Louisville
+Pittsburgh
+Louisville
+Louisville
 Florida
-Indiana
+Florida
+Miami (FL)
 Michigan
 Florida
-Indiana
-Davidson
+Syracuse
+Miami (FL)
 Kansas
 Michigan
-Oklahoma
+Georgetown
 Florida
 Indiana
 Syracuse
 Miami (FL)
-Davidson
+Butler
 Kansas
 Villanova
 Michigan
@@ -88,7 +88,7 @@ Minnesota
 Indiana
 NC State
 Syracuse
-California
+UNLV
 Miami (FL)
 Illinois
 Davidson

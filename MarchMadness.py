@@ -216,8 +216,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
     minAcc = 100
     maxAcc = 0
     for i in range(numBrackets):
-        if i%25 == 24:
-            print(i+1)
+        print(i)
         while (True):
             Simulate.index[0] = 0
             Simulate.used = set()
@@ -267,7 +266,7 @@ if __name__ == "__main__":
     # use these values to generate real brackets to use this year
     gameTest = [10]
     yearTest = [2022]
-    numBrackets = 1
+    numBrackets = 100
     for year in yearTest:
         for numGames in gameTest:
             tournament(year, regressions, output, numGames, numBrackets)
