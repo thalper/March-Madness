@@ -13,7 +13,7 @@ prevData = {}
 
 
 def parseData():
-    for year in range(2013,2022):
+    for year in range(2013,2023):
         MarchMadness.dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
@@ -104,7 +104,7 @@ def manualRegression(X_train, Y_train):
     return regr
 
 if __name__ == "__main__":
-    for year in range(2013,2022):
+    for year in range(2013,2023):
         MarchMadness.dataSet.append({})
     parseData()
     xData = []

@@ -73,7 +73,7 @@ def testTeams(years):
     return "Teams parsed correctly."
 
 def parseData():
-    for year in range(2013,2022):
+    for year in range(2013,2023):
         dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
@@ -260,14 +260,14 @@ if __name__ == "__main__":
 
     regressions = setRegressions()
 
-    gameTest = [10]
-    yearTest = [2013, 2014, 2021]
-    numBrackets = 3 # number of brackets to produce
+    #gameTest = [10]
+    #yearTest = [2013, 2014, 2021]
+    #numBrackets = 10 # number of brackets to produce
 
     # use these values to generate real brackets to use this year
-    # gameTest = [10]
-    # yearTest = [2022]
-    # numBrackets = 100
+    gameTest = [10]
+    yearTest = [2022]
+    numBrackets = 1
     for year in yearTest:
         for numGames in gameTest:
             tournament(year, regressions, output, numGames, numBrackets)
