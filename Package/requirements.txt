@@ -1,0 +1,7 @@
+pytest
+mypy
+numpy
+coverage
+pytest-cov
+pillow
+tkinter
