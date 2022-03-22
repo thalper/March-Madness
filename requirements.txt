@@ -4,4 +4,3 @@ numpy
 coverage
 pytest-cov
 pillow
-tkinter
