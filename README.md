@@ -96,4 +96,14 @@ Rylee Benes
 
 We worked pretty much every day this week, so that our code was ready for March Madness, which starts next week. I created our regression model as Tycho finished parsing all new data. We then finished implementing all of the stats needed for the game simulator. I then did some research for a stat that may help in weighting teams from different conferences, and we deciding on implementing the Strength of Schedule stat. I then created the final bracket .txt files for 2021, 2013, and 2014, so that we could test accuracy between our create brackets and the real, final brackets. We then compared the number of games each match-up should have for low standard deviation and high accuracy.
 
+Tycho Halpern
+
+I finished parsing all of the data, then worked on the simulator. I added all of the new inputs that we used for the final bracket to the simulator. Then Rylee wrote a method for testing the accuracy between a generated bracket and the correct bracket for 2013, 2014, and 2019. I then spend time tweaking a few of the inputs (such as number of simulations to run for each game) in order to determine a final simulator that would produce as high accuracy as possible while still having variability in the bracket outputs. 
+
+Progress Report (Week of 03/13/22)
+
+Tycho Halpern
+
+Rylee added the updated data for 2022 and we ran the final simulations. We then entered 100 brackets into espn.com's tournament challenge so we will be able to view our results easier. We met as a group on Sunday and worked on the packaging deliverable for 3/21.
+
 # References
