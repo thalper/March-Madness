@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='MarchMadness',  
-     version='0.1',
+     version='1.0',
      scripts=['MarchMadness.py', 'Simulate.py', 'AIWeighting.py', 'bracket.py'] ,
      include_package_data=True,
      package_data={'Previous': ['*']},
