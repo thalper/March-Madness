@@ -1,0 +1,9 @@
+coverage
+mypy
+numpy
+opencv-python
+pillow
+pytest
+pytest-cov
+regex
+scikit-learn

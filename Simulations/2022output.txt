@@ -32,10 +32,10 @@ Texas
 VA Tech
 Gonzaga
 Memphis
-Vermont
+Arkansas
 Connecticut
 Duke
-Michigan St
+Davidson
 Texas Tech
 *Rutgers
 Baylor
@@ -45,29 +45,29 @@ UCLA
 Kentucky
 San Francisco
 Purdue
-VA Tech
+Texas
 Gonzaga
-Vermont
+Connecticut
 Duke
 Texas Tech
 Baylor
 UCLA
 Kentucky
-Purdue
+Texas
 Gonzaga
 Texas Tech
 UCLA
-Purdue
-Gonzaga
-Purdue
-Gonzaga
-Gonzaga
+Kentucky
+Texas Tech
+Kentucky
+Kentucky
+Kentucky
 Houston
 Houston
-Iowa
+Kansas
 Houston
 Tennessee
-Iowa
+Kansas
 Auburn
 Arizona
 Houston
@@ -76,7 +76,7 @@ Tennessee
 Kansas
 Iowa
 Auburn
-Wisconsin
+LSU
 Arizona
 Seton Hall
 Illinois
@@ -86,7 +86,7 @@ Ohio State
 Tennessee
 Michigan
 Kansas
-Creighton
+San Diego St
 S Dakota St
 Iowa
 Auburn

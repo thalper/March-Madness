@@ -4,4 +4,6 @@ numpy
 coverage
 pytest-cov
 pillow
-tkinter
+regex
+scikit-learn
+opencv-python

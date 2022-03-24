@@ -39,7 +39,7 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
                 tourneyTeams.remove(row[0])
 
 def parsePrevTourneyforAI(dataSet):
-    dataStr = "Previous/NCAATourneyFullBoxscoresAndStats_15-19.csv" # previous tournament data box scores
+    dataStr = "Previous\\NCAATourneyFullBoxscoresAndStats_15-19.csv" # previous tournament data box scores
     with open(dataStr, newline='') as csvfile:
         dataByGame = csv.reader(csvfile, delimiter=',', quotechar='|')
         count = 0

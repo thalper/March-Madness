@@ -1,15 +1,29 @@
 import setuptools
+from setuptools import setup, find_packages 
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+REQUIRES = [ 
+    "pytest",
+    "mypy",
+    "numpy",
+    "coverage",
+    "pytest-cov",
+    "pillow",
+    "regex",
+    "scikit-learn",
+    "opencv-python"]
 
 setuptools.setup(
      name='MarchMadness',  
-     version='0.1',
-     scripts=['MarchMadness.py', 'Simulate.py'] ,
+     version='1.0',
+     scripts=['MarchMadness.py', 'Simulate.py', 'AIWeighting.py', 'bracket.py'] ,
+     install_requires=REQUIRES,
+     include_package_data=True,
+     package_data={'Previous': ['*'], 'Simulations': ['*'], 'Brackets': ['*']},
      author="Tycho Halpern, Rylee Benes, Luca Rivera",
-     author_email="thalper@purdue.edu,rbenes@purdue.edu, river172@purdue.edu",
+     author_email="thalper@purdue.edu, rbenes@purdue.edu, river172@purdue.edu",
      description="March Madness bracket simulation 2022",
      long_description=long_description,
    long_description_content_type="text/markdown",
