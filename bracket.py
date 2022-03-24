@@ -46,8 +46,10 @@ def addXY(team, x_center, y_center, _game_box_width, _game_box_height, canvas, d
         xValue = x_center - _game_box_width / 16 + 2
         yValue = y_center - _game_box_height / 16
     bracketLoc[team] = [xValue, yValue]
-    canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
-    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
+    # # canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
+    # canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font = ImageFont.load_default())
+    # draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
+    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
 
 def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
     # CHANGE FOR TEAM NAMES NOW
@@ -62,8 +64,8 @@ def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
         xValue = x_center - _game_box_width / 16 + 2
         yValue = y_center - _game_box_height / 16
     bracketLoc[team] = [xValue, yValue]
-    #canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
-    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
+    # draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
+    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
 
 def buildBracket(BracketFileStr, ScoreFileStr, year):
     boxKey = [0]
@@ -108,8 +110,10 @@ def buildBracket(BracketFileStr, ScoreFileStr, year):
                 #champion
                 finalTwo[0] -= 1
                 addXY(output[63], x_center, y_center, _game_box_width, _game_box_height, canvas, draw)
-                canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=('Helvetica 10 bold'))
-                draw.text((WIDTH / 2, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
+                # # canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=('Helvetica 10 bold'))
+                # canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.load_default())
+                # draw.text((WIDTH / 2, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
+                draw.text((WIDTH / 2, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.load_default(), align= "center")
                 #right final two
                 finalTwo[0] += 2
                 canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
@@ -190,7 +194,8 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
                 finalTwo[0] -= 1
                 addXYJPG(output[63], x_center, y_center, _game_box_width, _game_box_height, draw)
                 #canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=('Helvetica 10 bold'))
-                draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
+                # draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
+                draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.load_default(), align= "center")
                 #right final two
                 finalTwo[0] += 2
                 #canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)

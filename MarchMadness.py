@@ -244,7 +244,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
             if currAcc > maxAcc:
                 maxAcc = currAcc
 
-        br.buildBracketJPG(outFileStr, "Simulations/"+str(year)+"outputScore.txt", "BracketOutputs2/"+str(year)+"bracket"+str(i+1)+".jpg")
+        br.buildBracketJPG(outFileStr, "Simulations/"+str(year)+"outputScore.txt", "Brackets/"+str(year)+"bracket"+str(i+1)+".jpg")
     
     if year < 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
