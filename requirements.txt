@@ -4,11 +4,7 @@ numpy
 coverage
 pytest-cov
 pillow
-re
-string
-csv
-sklearn
-cv2
-random
-time
+regex
+scikit-learn
+opencv-python
 inspect
