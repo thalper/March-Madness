@@ -1,14 +1,9 @@
 coverage
-csv
-cv2
-inspect
 mypy
 numpy
+opencv-python
 pillow
 pytest
 pytest-cov
-random
-re
-sklearn
-string
-time
+regex
+scikit-learn
