@@ -8,6 +8,7 @@ setup.py
 MarchMadness.egg-info/PKG-INFO
 MarchMadness.egg-info/SOURCES.txt
 MarchMadness.egg-info/dependency_links.txt
+MarchMadness.egg-info/requires.txt
 MarchMadness.egg-info/top_level.txt
 Previous/MMadnessBoxScores_15-19.csv
 Previous/NCAATourneyFullBoxscoresAndStats_15-19.csv

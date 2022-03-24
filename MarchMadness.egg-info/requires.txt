@@ -1,0 +1,16 @@
+pytest
+mypy
+numpy
+coverage
+pytest-cov
+pillow
+collections
+math
+re
+string
+csv
+sklearn
+cv2
+random
+time
+inspect
