@@ -5,6 +5,7 @@ README.md
 Simulate.py
 bracket.py
 setup.py
+Brackets/2022bracket1.jpg
 MarchMadness.egg-info/PKG-INFO
 MarchMadness.egg-info/SOURCES.txt
 MarchMadness.egg-info/dependency_links.txt
