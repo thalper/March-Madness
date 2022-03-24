@@ -10,8 +10,6 @@ REQUIRES = [
     "coverage",
     "pytest-cov",
     "pillow",
-    "collections",
-    "math",
     "re",
     "string",
     "csv",
