@@ -109,6 +109,7 @@ Rylee added the updated data for 2022 and we ran the final simulations. We then 
 Progress Report (Week of 03/21/22)
 
 Tycho Halpern
+
 As a group we met to update the deliverable from last week to fix our distribution. Each time we updated setup.py to change the files included in the build, I downloaded them and ran the setup execution steps mentioned in this weeks deliverable in a secluded environment to make sure an outside user would be able to use our program. 
 
 # References
