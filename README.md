@@ -106,10 +106,18 @@ Tycho Halpern
 
 Rylee added the updated data for 2022 and we ran the final simulations. We then entered 100 brackets into espn.com's tournament challenge so we will be able to view our results easier. We met as a group on Sunday and worked on the packaging deliverable for 3/21.
 
-Progress Report (Week of 03/21/22)
+Rylee Benes
+
+Over spring break, we created the 100 brackets and I filled in 50 of them by hand on the ESPN website. I pulled all of the 2022 data and created the bracket.txt file for 2022 so we could do this. We then watched our project at work as basketball games played this week and we are at 10 games above the 90th percentile as of the end of the round of 32.
+
+Progress Report (Week of 03/20/22)
 
 Tycho Halpern
 
 As a group we met to update the deliverable from last week to fix our distribution. Each time we updated setup.py to change the files included in the build, I downloaded them and ran the setup execution steps mentioned in this weeks deliverable in a secluded environment to make sure an outside user would be able to use our program. 
+
+Rylee Benes
+
+This week, we completed getting a package fully working for our project, and submitting the deliverable. We then created our documentation. I helped in created the user manual that works around the package, and created the deliverable we chose to submit. We have also been keeping a close eye on basketball results and how they impact our brackets. Due to various upsets, we currently have 4 brackets in the 90th percentile, but hope for that to go up.
 
 # References
