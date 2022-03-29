@@ -1,0 +1,127 @@
+Gonzaga
+Georgia St
+Boise State
+Memphis
+Arkansas
+Vermont
+Connecticut
+N Mex State
+Duke
+CS Fullerton
+Michigan St
+Davidson
+Texas Tech
+Montana St
+Alabama
+*Rutgers
+Baylor
+Norfolk St
+N Carolina
+Marquette
+UCLA
+Akron
+St Marys
+*Indiana
+Kentucky
+St Peters
+Murray St
+San Francisco
+Purdue
+Yale
+Texas
+VA Tech
+Gonzaga
+Memphis
+Arkansas
+Connecticut
+Duke
+Davidson
+Texas Tech
+*Rutgers
+Baylor
+N Carolina
+UCLA
+*Indiana
+Kentucky
+San Francisco
+Purdue
+Texas
+Gonzaga
+Connecticut
+Duke
+Texas Tech
+Baylor
+UCLA
+Kentucky
+Texas
+Gonzaga
+Texas Tech
+UCLA
+Kentucky
+Texas Tech
+Kentucky
+Kentucky
+Kentucky
+Houston
+Houston
+Kansas
+Houston
+Tennessee
+Kansas
+Auburn
+Arizona
+Houston
+Villanova
+Tennessee
+Kansas
+Iowa
+Auburn
+LSU
+Arizona
+Seton Hall
+Illinois
+Houston
+Villanova
+Ohio State
+Tennessee
+Michigan
+Kansas
+San Diego St
+S Dakota St
+Iowa
+Auburn
+USC
+Wisconsin
+LSU
+Arizona
+*Wright State
+Seton Hall
+TX Christian
+Illinois
+Chattanooga
+Houston
+UAB
+Villanova
+Delaware
+Ohio State
+Loyola-Chi
+Tennessee
+Longwood
+Colorado St
+Michigan
+Kansas
+*TX Southern
+San Diego St
+Creighton
+Providence
+S Dakota St
+Iowa
+Richmond
+Auburn
+Jksnville St
+USC
+Miami (FL)
+Wisconsin
+Colgate
+LSU
+Iowa State
