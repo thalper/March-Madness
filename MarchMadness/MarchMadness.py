@@ -1,9 +1,9 @@
 from cv2 import ORB
 import numpy as np
 import csv
-import Simulate
-import AIWeighting
-import bracket as br
+import MarchMadness.Simulate as Simulate
+import MarchMadness.AIWeighting as AIWeighting
+import MarchMadness.bracket as br
 
 
 dataSet = [] # each year is a dict
@@ -40,8 +40,8 @@ def parseBracket(teamFile, year, regressions, numGames):
     return bracket
 
 def parseYear(year): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
-    dataStr = "Previous/tr"+str(year%2000)+".csv"
-    teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
+    dataStr = "MarchMadness/Previous/tr"+str(year%2000)+".csv"
+    teamsFileStr = "MarchMadness/Previous/teams"+str(year%2000)+".txt"
     teamFile = open(teamsFileStr, "r")
     tourneyTeams = set(teamFile.read().split('\n'))
     teamFile.close()
@@ -60,7 +60,7 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
 
 def testTeams(years):
     for i in range(len(years)):
-        teamFileStr = "Previous/teams"+str(years[i]%2000)+".txt"
+        teamFileStr = "MarchMadness/Previous/teams"+str(years[i]%2000)+".txt"
         teamFile = open(teamFileStr, 'r')
         teams = teamFile.read().split("\n")
         teamFile.close()
@@ -204,7 +204,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
     if year > 2020:
         yearInd -= 1
 
-    teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
+    teamsFileStr = "MarchMadness/Previous/teams"+str(year%2000)+".txt"
     
     
 
@@ -229,7 +229,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
             else:
                 print("duplicate after ", i, " brackets")
         #outFileStr = "Simulations/2021output"  + str(i+1) + ".txt"
-        outFileStr = "Simulations/"+str(year)+"output.txt"
+        outFileStr = "MarchMadness/Simulations/"+str(year)+"output.txt"
         outFile = open(outFileStr, 'w')
         for team in output:
             outFile.write(team)
@@ -244,7 +244,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
             if currAcc > maxAcc:
                 maxAcc = currAcc
 
-        br.buildBracketJPG(outFileStr, "Simulations/"+str(year)+"outputScore.txt", "Brackets/"+str(year)+"bracket"+str(i+1)+".jpg")
+        br.buildBracketJPG(outFileStr, "MarchMadness/Simulations/"+str(year)+"outputScore.txt", "MarchMadness/Brackets/"+str(year)+"bracket"+str(i+1)+".jpg")
     
     if year < 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5

@@ -12,8 +12,8 @@ HORIZONTAL_PADDING = 70
 GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 
 def computeAccuracy(year):
-    BracketFile = open("Simulations/"+str(year)+"output.txt", 'r')
-    CorrectBracket = open("Previous/bracket"+str(year%2000)+".txt", 'r')
+    BracketFile = open("MarchMadness/Simulations/"+str(year)+"output.txt", 'r')
+    CorrectBracket = open("MarchMadness/Previous/bracket"+str(year%2000)+".txt", 'r')
     bList = []
     cList = []
     for i in BracketFile:
@@ -235,4 +235,4 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
     #tkinter.mainloop()
 
 if __name__ == "__main__":
-    buildBracket("Simulations/2021output.txt", "Simulations/2021outputScore.txt", 2021)
+    buildBracket("MarchMadness/Simulations/2021output.txt", "MarchMadness/Simulations/2021outputScore.txt", 2021)

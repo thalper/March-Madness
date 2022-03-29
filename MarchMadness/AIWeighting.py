@@ -22,8 +22,8 @@ def parseData():
     
 
 def parseYear(year): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
-    dataStr = "Previous/tr"+str(year%2000)+".csv"
-    teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
+    dataStr = "MarchMadness/Previous/tr"+str(year%2000)+".csv"
+    teamsFileStr = "MarchMadness/Previous/teams"+str(year%2000)+".txt"
     teamFile = open(teamsFileStr, "r")
     tourneyTeams = set(teamFile.read().split('\n'))
     teamFile.close()
@@ -39,7 +39,7 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
                 tourneyTeams.remove(row[0])
 
 def parsePrevTourneyforAI(dataSet):
-    dataStr = "Previous/NCAATourneyFullBoxscoresAndStats_15-19.csv" # previous tournament data box scores
+    dataStr = "MarchMadness/Previous/NCAATourneyFullBoxscoresAndStats_15-19.csv" # previous tournament data box scores
     with open(dataStr, newline='') as csvfile:
         dataByGame = csv.reader(csvfile, delimiter=',', quotechar='|')
         count = 0
