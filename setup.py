@@ -18,10 +18,10 @@ REQUIRES = [
 setuptools.setup(
      name='MarchMadness',  
      version='1.0',
-     scripts=['MarchMadness.py', 'Simulate.py', 'AIWeighting.py', 'bracket.py'] ,
+     scripts=['MarchMadness/MarchMadness.py', 'MarchMadness/Simulate.py', 'MarchMadness/AIWeighting.py', 'MarchMadness/bracket.py'] ,
      install_requires=REQUIRES,
      include_package_data=True,
-     package_data={'Previous': ['*'], 'Simulations': ['*'], 'Brackets': ['*']},
+     package_data={'MarchMadness/Previous': ['*'], 'MarchMadness/Simulations': ['*'], 'MarchMadness/Brackets': ['*']},
      author="Tycho Halpern, Rylee Benes, Luca Rivera",
      author_email="thalper@purdue.edu, rbenes@purdue.edu, river172@purdue.edu",
      description="March Madness bracket simulation 2022",
