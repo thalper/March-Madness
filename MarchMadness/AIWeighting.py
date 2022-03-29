@@ -1,4 +1,4 @@
-import MarchMadness
+import MarchMadness.MarchMadness
 import collections
 import math
 import numpy as np
