@@ -22,4 +22,5 @@ def test_sampleRun():
   numBrackets = 100 # how many unique brackets do you want to generate?
   for year in yearTest:
       for numGames in gameTest:
-          MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets)
+          assert MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets) == True
+  
