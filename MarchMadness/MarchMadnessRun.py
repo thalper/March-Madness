@@ -267,23 +267,23 @@ def tournament(year, regressions, output, numGames, numBrackets):
 
     return True
 
-if __name__ == "__main__":
-    parseData() # creates dataset
-    output = [0]*127
+# if __name__ == "__main__":
+parseData() # creates dataset
+output = [0]*127
 
-    regressions = setRegressions()
+regressions = setRegressions()
 
-    #gameTest = [10]
-    #yearTest = [2013, 2014, 2021]
-    #numBrackets = 10 # number of brackets to produce
+#gameTest = [10]
+#yearTest = [2013, 2014, 2021]
+#numBrackets = 10 # number of brackets to produce
 
-    # use these values to generate real brackets to use this year
-    gameTest = [10]
-    yearTest = [2022]
-    numBrackets = 100
-    for year in yearTest:
-        for numGames in gameTest:
-            tournament(year, regressions, output, numGames, numBrackets)
+# use these values to generate real brackets to use this year
+gameTest = [10]
+yearTest = [2022]
+numBrackets = 100
+for year in yearTest:
+    for numGames in gameTest:
+        tournament(year, regressions, output, numGames, numBrackets)
     # ind = 0
     # for year in range(2013,2022):
     #     if year == 2020:
