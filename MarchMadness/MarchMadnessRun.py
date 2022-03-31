@@ -265,6 +265,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
         print("Minimum accuracy: " + str(minAcc) + "%")
         print("Standard Deviation: " + str(stdev) + "\n\n")
 
+    return True
 
 if __name__ == "__main__":
     parseData() # creates dataset
