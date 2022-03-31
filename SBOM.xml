@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom xmlns="http://cyclonedx.org/schema/bom/1.4" version="1" serialNumber="urn:uuid:89a994ba-07b6-4327-9d49-0e6b66c8faa0">
+   <metadata>
+      <timestamp>2022-03-31T21:05:29.935151+00:00</timestamp>
+      <tools>
+         <tool>
+            <vendor>CycloneDX</vendor>
+            <name>cyclonedx-python-lib</name>
+            <version>2.1.0</version>
+            <externalReferences>
+               <reference type="vcs">
+                  <url>https://github.com/CycloneDX/cyclonedx-python-lib</url>
+               </reference>
+               <reference type="documentation">
+                  <url>https://cyclonedx.github.io/cyclonedx-python-lib/</url>
+               </reference>
+               <reference type="website">
+                  <url>https://cyclonedx.org</url>
+               </reference>
+               <reference type="license">
+                  <url>https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/LICENSE</url>
+               </reference>
+               <reference type="build-system">
+                  <url>https://github.com/CycloneDX/cyclonedx-python-lib/actions</url>
+               </reference>
+               <reference type="release-notes">
+                  <url>https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/CHANGELOG.md</url>
+               </reference>
+               <reference type="distribution">
+                  <url>https://pypi.org/project/cyclonedx-python-lib/</url>
+               </reference>
+               <reference type="issue-tracker">
+                  <url>https://github.com/CycloneDX/cyclonedx-python-lib/issues</url>
+               </reference>
+            </externalReferences>
+         </tool>
+         <tool>
+            <vendor>CycloneDX</vendor>
+            <name>cyclonedx-bom</name>
+            <version>3.1.1</version>
+         </tool>
+      </tools>
+   </metadata>
+   <components>
+      <component type="library" bom-ref="7d8c2174-4cda-4676-8517-47bf78d4e17b">
+         <name>types-toml</name>
+         <version>0.10.4</version>
+         <licenses>
+            <expression>Apache-2.0 license</expression>
+         </licenses>
+         <purl>pkg:pypi/types-toml@0.10.4</purl>
+      </component>
+      <component type="library" bom-ref="10f4a697-967f-4c15-8ad0-6a92a66f7149">
+         <name>typing-extensions</name>
+         <version>4.1.1</version>
+         <purl>pkg:pypi/typing-extensions@4.1.1</purl>
+      </component>
+      <component type="library" bom-ref="14272704-a6d7-45c2-87d5-e0cc99705f77">
+         <name>tomli</name>
+         <version>2.0.1</version>
+         <purl>pkg:pypi/tomli@2.0.1</purl>
+      </component>
+      <component type="library" bom-ref="c5790c87-1f0b-48f0-9639-1a2de5838e83">
+         <name>types-setuptools</name>
+         <version>57.4.11</version>
+         <licenses>
+            <expression>Apache-2.0 license</expression>
+         </licenses>
+         <purl>pkg:pypi/types-setuptools@57.4.11</purl>
+      </component>
+      <component type="library" bom-ref="e0fde52e-289d-45ef-a599-ddbc3eb78880">
+         <author>Tycho Halpern, Rylee Benes, Luca Rivera</author>
+         <name>MarchMadness</name>
+         <version>1.2.2</version>
+         <purl>pkg:pypi/marchmadness@1.2.2</purl>
+      </component>
+      <component type="library" bom-ref="1eb91a9b-4455-46da-b03c-cc4a3bc50bc9">
+         <author>the purl authors</author>
+         <name>packageurl-python</name>
+         <version>0.9.9</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/packageurl-python@0.9.9</purl>
+      </component>
+      <component type="library" bom-ref="84ab40c6-0bf9-49f2-9075-3c4a3cce9267">
+         <author>Hynek Schlawack</author>
+         <name>attrs</name>
+         <version>21.4.0</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/attrs@21.4.0</purl>
+      </component>
+      <component type="library" bom-ref="2010967b-fc37-4572-92da-4af43f667e96">
+         <author>Python Packaging Authority</author>
+         <name>setuptools</name>
+         <version>61.3.0</version>
+         <purl>pkg:pypi/setuptools@61.3.0</purl>
+      </component>
+      <component type="library" bom-ref="12455670-e2dc-444e-be49-70d8ae515880">
+         <name>scikit-learn</name>
+         <version>1.0.2</version>
+         <licenses>
+            <expression>new BSD</expression>
+         </licenses>
+         <purl>pkg:pypi/scikit-learn@1.0.2</purl>
+      </component>
+      <component type="library" bom-ref="5fd677d8-1f2a-488a-8c4a-3a8a1300533b">
+         <author>Gael Varoquaux</author>
+         <name>joblib</name>
+         <version>1.1.0</version>
+         <licenses>
+            <expression>BSD</expression>
+         </licenses>
+         <purl>pkg:pypi/joblib@1.1.0</purl>
+      </component>
+      <component type="library" bom-ref="76f0e2ae-6bc8-48ca-8f3d-213ee76e931d">
+         <author>Steven Springett</author>
+         <name>cyclonedx-bom</name>
+         <version>3.1.1</version>
+         <licenses>
+            <expression>Apache-2.0</expression>
+         </licenses>
+         <purl>pkg:pypi/cyclonedx-bom@3.1.1</purl>
+      </component>
+      <component type="library" bom-ref="aaefbede-6996-488d-9924-bdaf9856adb9">
+         <name>opencv-python</name>
+         <version>4.5.5.64</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/opencv-python@4.5.5.64</purl>
+      </component>
+      <component type="library" bom-ref="81cf4a3f-aa85-46d1-bdbe-aafa88d730e4">
+         <author>Alex Clark (PIL Fork Author)</author>
+         <name>Pillow</name>
+         <version>9.0.1</version>
+         <licenses>
+            <expression>HPND</expression>
+         </licenses>
+         <purl>pkg:pypi/pillow@9.0.1</purl>
+      </component>
+      <component type="library" bom-ref="088e4724-e9c4-4e11-9a80-a3660935a96a">
+         <author>William Pearson</author>
+         <name>toml</name>
+         <version>0.10.2</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/toml@0.10.2</purl>
+      </component>
+      <component type="library" bom-ref="accbb888-afd7-495d-b763-b550692a3314">
+         <author>Holger Krekel</author>
+         <name>pluggy</name>
+         <version>1.0.0</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/pluggy@1.0.0</purl>
+      </component>
+      <component type="library" bom-ref="3ef150da-d233-423b-8743-8ccf0d61ee7a">
+         <author>Paul Horton</author>
+         <name>cyclonedx-python-lib</name>
+         <version>2.1.0</version>
+         <licenses>
+            <expression>Apache-2.0</expression>
+         </licenses>
+         <purl>pkg:pypi/cyclonedx-python-lib@2.1.0</purl>
+      </component>
+      <component type="library" bom-ref="692a772e-2bbb-44e0-8b30-05c5ea696c0d">
+         <author>UNKNOWN</author>
+         <name>pkg-resources</name>
+         <version>0.0.0</version>
+         <purl>pkg:pypi/pkg-resources@0.0.0</purl>
+      </component>
+      <component type="library" bom-ref="d0172102-827d-4666-a57b-01fe62918da8">
+         <author>Matthew Barnett</author>
+         <name>regex</name>
+         <version>2022.3.15</version>
+         <licenses>
+            <expression>Apache Software License</expression>
+         </licenses>
+         <purl>pkg:pypi/regex@2022.3.15</purl>
+      </component>
+      <component type="library" bom-ref="cf16d7cf-982d-4fdf-b08d-2ecdd52bf73d">
+         <author>Ned Batchelder and 149 others</author>
+         <name>coverage</name>
+         <version>6.3.2</version>
+         <licenses>
+            <expression>Apache 2.0</expression>
+         </licenses>
+         <purl>pkg:pypi/coverage@6.3.2</purl>
+      </component>
+      <component type="library" bom-ref="ac6f26de-9105-451f-b03a-7f85f06b5bd3">
+         <author>holger krekel, Ronny Pfannschmidt, Benjamin Peterson and others</author>
+         <name>py</name>
+         <version>1.11.0</version>
+         <licenses>
+            <expression>MIT license</expression>
+         </licenses>
+         <purl>pkg:pypi/py@1.11.0</purl>
+      </component>
+      <component type="library" bom-ref="d6756238-04a1-44c4-ba2c-48b72284b3d7">
+         <author>Paul McGuire</author>
+         <name>pyparsing</name>
+         <version>3.0.7</version>
+         <licenses>
+            <expression>MIT License</expression>
+         </licenses>
+         <purl>pkg:pypi/pyparsing@3.0.7</purl>
+      </component>
+      <component type="library" bom-ref="21e940c1-5244-4ba6-8f71-2655180053a8">
+         <author>The pip authors, nexB. Inc. and others</author>
+         <name>pip-requirements-parser</name>
+         <version>31.2.0</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/pip-requirements-parser@31.2.0</purl>
+      </component>
+      <component type="library" bom-ref="8de9acbf-6bc1-4b5d-88d9-6bee796b11e3">
+         <author>Donald Stufft and individual contributors</author>
+         <name>packaging</name>
+         <version>21.3</version>
+         <licenses>
+            <expression>BSD-2-Clause or Apache-2.0</expression>
+         </licenses>
+         <purl>pkg:pypi/packaging@21.3</purl>
+      </component>
+      <component type="library" bom-ref="6fdf9464-651a-49e7-9115-a7d97b219c04">
+         <author>The pip developers</author>
+         <name>pip</name>
+         <version>20.0.2</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/pip@20.0.2</purl>
+      </component>
+      <component type="library" bom-ref="c1b9ead6-71e6-4948-9047-743d8a62e1aa">
+         <author>Jukka Lehtosalo</author>
+         <name>mypy</name>
+         <version>0.942</version>
+         <licenses>
+            <expression>MIT License</expression>
+         </licenses>
+         <purl>pkg:pypi/mypy@0.942</purl>
+      </component>
+      <component type="library" bom-ref="a1e10ad2-b1f0-4227-b3c0-97c526988efc">
+         <author>Barry Warsaw</author>
+         <name>importlib-resources</name>
+         <version>5.6.0</version>
+         <purl>pkg:pypi/importlib-resources@5.6.0</purl>
+      </component>
+      <component type="library" bom-ref="fa66106b-232e-4641-9d6c-245bc3ff53ef">
+         <author>Travis E. Oliphant et al.</author>
+         <name>numpy</name>
+         <version>1.22.3</version>
+         <licenses>
+            <expression>BSD</expression>
+         </licenses>
+         <purl>pkg:pypi/numpy@1.22.3</purl>
+      </component>
+      <component type="library" bom-ref="569831bc-c8f8-4eca-839e-3815f1db62fe">
+         <author>The mypy developers</author>
+         <name>mypy-extensions</name>
+         <version>0.4.3</version>
+         <licenses>
+            <expression>MIT License</expression>
+         </licenses>
+         <purl>pkg:pypi/mypy-extensions@0.4.3</purl>
+      </component>
+      <component type="library" bom-ref="5e7caba3-26e1-45e1-bb9a-b88f8491bb15">
+         <author>Thomas Moreau</author>
+         <name>threadpoolctl</name>
+         <version>3.1.0</version>
+         <licenses>
+            <expression>BSD-3-Clause</expression>
+         </licenses>
+         <purl>pkg:pypi/threadpoolctl@3.1.0</purl>
+      </component>
+      <component type="library" bom-ref="c903b0af-a65c-4ed4-a65a-0a14e66dbceb">
+         <author>Holger Krekel, Bruno Oliveira, Ronny Pfannschmidt, Floris Bruynooghe, Brianna Laugher, Florian Bruhin and others</author>
+         <name>pytest</name>
+         <version>7.1.1</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/pytest@7.1.1</purl>
+      </component>
+      <component type="library" bom-ref="3888c9ae-20f4-4b50-935e-20ca3c3bfaa9">
+         <name>scipy</name>
+         <version>1.8.0</version>
+         <licenses>
+            <expression>BSD</expression>
+         </licenses>
+         <purl>pkg:pypi/scipy@1.8.0</purl>
+      </component>
+      <component type="library" bom-ref="56a9efd4-4956-4b3a-9a71-5deb2cc2e006">
+         <author>Marc Schlaich</author>
+         <name>pytest-cov</name>
+         <version>3.0.0</version>
+         <licenses>
+            <expression>MIT</expression>
+         </licenses>
+         <purl>pkg:pypi/pytest-cov@3.0.0</purl>
+      </component>
+      <component type="library" bom-ref="fc1803d0-5376-429e-82c6-f0806b71656b">
+         <author>Jason R. Coombs</author>
+         <name>zipp</name>
+         <version>3.7.0</version>
+         <purl>pkg:pypi/zipp@3.7.0</purl>
+      </component>
+      <component type="library" bom-ref="a09f930a-b189-4808-83d0-3884211f67d4">
+         <author>Ronny Pfannschmidt, Holger Krekel</author>
+         <name>iniconfig</name>
+         <version>1.1.1</version>
+         <licenses>
+            <expression>MIT License</expression>
+         </licenses>
+         <purl>pkg:pypi/iniconfig@1.1.1</purl>
+      </component>
+   </components>
+</bom>
