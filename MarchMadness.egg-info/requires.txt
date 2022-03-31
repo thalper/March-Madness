@@ -1,4 +1,5 @@
 coverage
+importlib_resources
 mypy
 numpy
 opencv-python

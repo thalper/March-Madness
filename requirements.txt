@@ -7,3 +7,4 @@ pillow
 regex
 scikit-learn
 opencv-python
+importlib_resources

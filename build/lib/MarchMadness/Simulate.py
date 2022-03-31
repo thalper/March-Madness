@@ -5,6 +5,9 @@ from sklearn.linear_model import LinearRegression
 
 from MarchMadness.bracket import GAME_BOX_WIDTH_HEIGHT_RATIO
 
+from importlib_resources import files
+import MarchMadness.Simulations
+
 #Stat order
 # 3 point attempts,3 point %,3 point attempts allowed,3 point % allowed,2 point attempts,2 point %
 # 2 point attempts allowed,2 point % allowed,Fouls per game,opponent fouls per game,Attempted Free throws
@@ -232,7 +235,9 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
     #     print(a, score[0], "-", score[1], b)
     if index[0] == 126:
         # print(a, score[0], "-", score[1], b)
-        ScoreFile = open("MarchMadess/Simulations/"+str(year)+"outputScore.txt", 'w')
+        # ScoreFile = open("Simulations/"+str(year)+"outputScore.txt", 'w')
+        scoreFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
+        ScoreFile = open(scoreFileStr, 'w')
         ScoreFile.write(str(score[0]) + "\n" + str(score[1]))
         ScoreFile.close()
     index[0] += 1
