@@ -149,4 +149,11 @@ Rylee Benes
 
 This week, we completed getting a package fully working for our project, and submitting the deliverable. We then created our documentation. I helped in created the user manual that works around the package, and created the deliverable we chose to submit. We have also been keeping a close eye on basketball results and how they impact our brackets. Due to various upsets, we currently have 4 brackets in the 90th percentile, but hope for that to go up.
 
+Progress Report (Week of 03/28/22)
+
+Tycho Halpern
+
+This week I fixed our packaging. We were having issues with importing the data and using it in our functions. I updated our filepaths from strings to use importlib_resources and generate filepaths. Next I wrote a sample script so users would know how to use our package, and Rylee added it to the updated user manual. 
+Finally, I created the software bill of materials using cyclonedx. 
+
 # References
