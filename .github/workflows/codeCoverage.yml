@@ -56,8 +56,6 @@ jobs:
         cov-omit-list: 'test/*, build/*, temp.py, setup.py, MarchMadness/__init__.py, MarchMadness/Brackets/__init__.py, MarchMadness/Previous/__init__.py, MarchMadness/Simulations/__init__.py'
         cov-threshold-single: ${{ env.COVERAGE_SINGLE }}
         cov-threshold-total: ${{ env.COVERAGE_TOTAL }}
-      run: |
-        pytest
 
     - name: Coverage single fail - new issue
       if: ${{ steps.pytester-cover.outputs.cov-threshold-single-fail == 'true' }}
