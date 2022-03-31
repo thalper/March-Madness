@@ -53,7 +53,7 @@ jobs:
       uses: programmingwithalex/pytester-cover@v1.2.3
       with:
         pytest-root-dir: '.'
-        cov-omit-list: 'test/*, build/*, temp.py, setup.py, MarchMadness/init.py, MarchMadness/*/init.py'
+        cov-omit-list: 'test/*, build/*, temp.py, setup.py, MarchMadness/__init__.py, MarchMadness/Brackets/__init__.py, MarchMadness/Previous/__init__.py, MarchMadness/Simulations/__init__.py'
         cov-threshold-single: ${{ env.COVERAGE_SINGLE }}
         cov-threshold-total: ${{ env.COVERAGE_TOTAL }}
 
