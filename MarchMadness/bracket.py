@@ -1,5 +1,11 @@
 import tkinter
 from PIL import Image, ImageDraw, ImageFont
+from importlib_resources import files
+import MarchMadness.Previous
+import MarchMadness.Simulations
+import MarchMadness.Brackets
+import MarchMadness.Simulate as Simulate
+
 
 # https://github.com/JonathanZwiebel/bracket-generator
 
@@ -12,8 +18,10 @@ HORIZONTAL_PADDING = 70
 GAME_BOX_WIDTH_HEIGHT_RATIO = 3
 
 def computeAccuracy(year):
-    BracketFile = open("MarchMadness/Simulations/"+str(year)+"output.txt", 'r')
-    CorrectBracket = open("MarchMadness/Previous/bracket"+str(year%2000)+".txt", 'r')
+    BracketFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"output.txt")
+    CorrectBracketStr = files(MarchMadness.Previous).joinpath("bracket"+str(year%2000)+".txt")
+    BracketFile = open(BracketFileStr, "r")
+    CorrectBracket = open(CorrectBracketStr, "r")
     bList = []
     cList = []
     for i in BracketFile:

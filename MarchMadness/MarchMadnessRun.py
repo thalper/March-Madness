@@ -242,7 +242,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
             outFile.write(team)
             outFile.write("\n")
         outFile.close()
-        if year < 2022:
+        if year <= 2022:
             currAcc = br.computeAccuracy(year)
             total += currAcc
             total2 += currAcc*currAcc
@@ -257,7 +257,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
         bracketsFile = files(MarchMadness.Brackets).joinpath(str(year)+"bracket"+str(i+1)+".jpg")
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
     
-    if year < 2022:
+    if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
         print("Year: " + str(year) + "   numGames: " + str(numGames))
         print("Average accuracy: " + str(total/numBrackets) + "%")
