@@ -242,7 +242,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
             outFile.write(team)
             outFile.write("\n")
         outFile.close()
-        if year < 2022:
+        if year <= 2022:
             currAcc = br.computeAccuracy(year)
             total += currAcc
             total2 += currAcc*currAcc
@@ -257,7 +257,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
         bracketsFile = files(MarchMadness.Brackets).joinpath(str(year)+"bracket"+str(i+1)+".jpg")
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
     
-    if year < 2022:
+    if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
         print("Year: " + str(year) + "   numGames: " + str(numGames))
         print("Average accuracy: " + str(total/numBrackets) + "%")
@@ -265,6 +265,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
         print("Minimum accuracy: " + str(minAcc) + "%")
         print("Standard Deviation: " + str(stdev) + "\n\n")
 
+    return True
 
 if __name__ == "__main__":
     parseData() # creates dataset
@@ -283,33 +284,33 @@ if __name__ == "__main__":
     for year in yearTest:
         for numGames in gameTest:
             tournament(year, regressions, output, numGames, numBrackets)
-    # ind = 0
-    # for year in range(2013,2022):
-    #     if year == 2020:
-    #         continue
-    #     teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
-    #     teamFile = open(teamsFileStr, "r")
-    #     bracket = parseBracket(teamFile, year, regressions, numGames)
-    #     dataSet[ind]["bracket"] = bracket
-    #     ind += 1
+        # ind = 0
+        # for year in range(2013,2022):
+        #     if year == 2020:
+        #         continue
+        #     teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
+        #     teamFile = open(teamsFileStr, "r")
+        #     bracket = parseBracket(teamFile, year, regressions, numGames)
+        #     dataSet[ind]["bracket"] = bracket
+        #     ind += 1
 
-    # Simulate.simulateTournament(dataSet[7]["bracket"][0], dataSet[7]["bracket"][1], dataSet, 2021, output, regressions)
-    
-    
-    # Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
-    
-    
-    # outFile = open("Simulations/2021output.txt", 'w')
-    # for team in output:
-    #     outFile.write(team)
-    #     outFile.write("\n")
-    # outFile.close()
-    # br.computeAccuracy()
+        # Simulate.simulateTournament(dataSet[7]["bracket"][0], dataSet[7]["bracket"][1], dataSet, 2021, output, regressions)
+        
+        
+        # Simulate.simulateTournament(dataSet[6]["bracket"][0], dataSet[6]["bracket"][1], dataSet, 2019, output, regressions)
+        
+        
+        # outFile = open("Simulations/2021output.txt", 'w')
+        # for team in output:
+        #     outFile.write(team)
+        #     outFile.write("\n")
+        # outFile.close()
+        # br.computeAccuracy()
 
-    
-    
-    #Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])
-    #Simulate.simulateGame(dataSet[year][teamA], dataSet[year][teamB], weights) #simulates basketball game between two teams
-    #for i in range(15): #number of simulations to run
-        #score = Simulate.simulateGame(np.array([0.55, 0.42, 13, 60, 15]), np.array([0.49, 0.37, 18, 50, 12]), weights)
-        #print(score[0], "-", score[1])
+        
+        
+        #Simulate.simulateGame(dataSet[2019%2013]["Purdue"], dataSet[6]["Virginia"], [0.0,0.5])
+        #Simulate.simulateGame(dataSet[year][teamA], dataSet[year][teamB], weights) #simulates basketball game between two teams
+        #for i in range(15): #number of simulations to run
+            #score = Simulate.simulateGame(np.array([0.55, 0.42, 13, 60, 15]), np.array([0.49, 0.37, 18, 50, 12]), weights)
+            #print(score[0], "-", score[1])

@@ -11,7 +11,6 @@ MarchMadness.egg-info/SOURCES.txt
 MarchMadness.egg-info/dependency_links.txt
 MarchMadness.egg-info/requires.txt
 MarchMadness.egg-info/top_level.txt
-MarchMadness/Brackets/2022bracket1.jpg
 MarchMadness/Brackets/__init__.py
 MarchMadness/Previous/MMadnessBoxScores_15-19.csv
 MarchMadness/Previous/NCAATourneyFullBoxscoresAndStats_15-19.csv
@@ -21,6 +20,7 @@ MarchMadness/Previous/bracket13.txt
 MarchMadness/Previous/bracket14.txt
 MarchMadness/Previous/bracket19.txt
 MarchMadness/Previous/bracket21.txt
+MarchMadness/Previous/bracket22.txt
 MarchMadness/Previous/cbb.csv
 MarchMadness/Previous/cbb13.csv
 MarchMadness/Previous/cbb14.csv

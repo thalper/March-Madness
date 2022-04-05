@@ -1,12 +1,41 @@
 Metadata-Version: 2.1
 Name: MarchMadness
-Version: 1.2.2
+Version: 1.2.3
 Summary: March Madness bracket simulation 2022
 Home-page: https://github.com/thalper/March-Madness
 Author: Tycho Halpern, Rylee Benes, Luca Rivera
 Author-email: thalper@purdue.edu, rbenes@purdue.edu, river172@purdue.edu
 License: UNKNOWN
 Description: # March-Madness
+        
+        This project was created as a senior design project at Purdue University. It utilizes linear regression and game simulation to generate March Madness brackets that are aimed to do better than competing bracket A.I. Programs.
+        
+        To install the package, use the terminal command: ***pip install MarchMadness***  
+        Then, create and edit a file like the one below to generate your brackets:
+        ```python
+        from MarchMadness import MarchMadnessRun
+        
+        MarchMadnessRun.parseData() # creates dataset
+        output = [0]*127 # used to store team names for printing final bracket
+        
+        regressions = MarchMadnessRun.setRegressions() # calculate regregression models using data from previous tournaments
+        
+        # change these values to generate real brackets
+        gameTest = [10] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
+        yearTest = [2022] # what year(s) do you want to generate brackets for?
+        numBrackets = 100 # how many unique brackets do you want to generate?
+        for year in yearTest:
+            for numGames in gameTest:
+                MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets)
+        
+        
+        
+        """If you only want to simulate a single bracket for a single year,
+        calling this function with the desired inputs instead of using lines 9-14
+        will generate a sinlge bracket. You could also just enter a single year
+        in the yearTest list and set numBrackets to 1."""
+        #  MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets)
+        ```
         
         # Components 
         
@@ -127,6 +156,17 @@ Description: # March-Madness
         Rylee Benes
         
         This week, we completed getting a package fully working for our project, and submitting the deliverable. We then created our documentation. I helped in created the user manual that works around the package, and created the deliverable we chose to submit. We have also been keeping a close eye on basketball results and how they impact our brackets. Due to various upsets, we currently have 4 brackets in the 90th percentile, but hope for that to go up.
+        
+        Progress Report (Week of 03/27/22)
+        
+        Tycho Halpern
+        
+        This week I fixed our packaging. We were having issues with importing the data and using it in our functions. I updated our filepaths from strings to use importlib_resources and generate filepaths. Next I wrote a sample script so users would know how to use our package, and Rylee added it to the updated user manual. 
+        Finally, I created the software bill of materials using cyclonedx. 
+        
+        Rylee Benes
+        
+        This week, we fixed our package by getting it runnable with pip after uploading it to PyPi. I updated our README to reflect how to write a file that will in turn run our package properly. We then used CycloneDX to create an SBOM of our package. I also created the MIT license and deliverable summary for the week. I got our code coverage GitHub Action working again, and now Tycho and I are trying to write test cases to improve our code coverage.
         
         # References
         
