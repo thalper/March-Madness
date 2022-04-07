@@ -10,6 +10,9 @@ from MarchMadness import MarchMadnessRun
 #   MarchMadness.fillData()
 #   assert MarchMadness.testTeams(MarchMadness.dataSet, years) == "Teams parsed correctly."
 
+def test_add():
+  assert MarchMadnessRun.add(2,3) == 5
+
 def test_parseData():
   assert MarchMadnessRun.parseData() == True
 
