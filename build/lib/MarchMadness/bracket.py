@@ -90,7 +90,7 @@ def buildBracket(BracketFileStr, ScoreFileStr, year):
     ScoreFile = open(ScoreFileStr, 'r')
     outputScore = ScoreFile.read().split("\n")
     ScoreFile.close()
-    computeAccuracy(year)
+    # computeAccuracy(year)
     canvas = tkinter.Canvas(root, width=WIDTH, height=HEIGHT)
     canvas.pack()
     image1 = Image.new("RGB", (WIDTH, HEIGHT), 'white')

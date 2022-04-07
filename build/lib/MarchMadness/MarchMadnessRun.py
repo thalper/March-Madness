@@ -8,6 +8,7 @@ import MarchMadness.Previous
 import MarchMadness.Simulations
 import MarchMadness.Brackets
 from importlib_resources import files
+import os
 
 dataSet = [] # each year is a dict
 
@@ -206,6 +207,10 @@ def setRegressions():
 
 
 def tournament(year, regressions, output, numGames, numBrackets):
+    try:
+        os.mkdir("./brackets")
+    except:
+        pass
     yearInd = year%2013
     if year > 2020:
         yearInd -= 1
@@ -253,8 +258,13 @@ def tournament(year, regressions, output, numGames, numBrackets):
 
         # simulationFile = "Simulations/"+str(year)+"outputScore.txt"
         # bracketsFile = "Brackets/"+str(year)+"bracket"+str(i+1)+".jpg"
-        scoreFile = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
-        bracketsFile = files(MarchMadness.Brackets).joinpath(str(year)+"bracket"+str(i+1)+".jpg")
+        # scoreFile = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
+        # bracketsFile = files(MarchMadness.Brackets).joinpath(str(year)+"bracket"+str(i+1)+".jpg")
+    
+        # scoreFile = "./brackets/"+str(year)+"outputScore.txt"
+        scoreFile = os.path.abspath("./brackets/"+str(year)+"outputScore.txt")
+        bracketsFile = "./brackets/"+str(year)+"bracket"+str(i+1)+".jpg"
+
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
     
     if year <= 2022:

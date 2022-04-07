@@ -13,7 +13,7 @@ Davidson
 Texas Tech
 Montana St
 Alabama
-*Rutgers
+*Notre Dame
 Baylor
 Norfolk St
 N Carolina
@@ -21,7 +21,7 @@ Marquette
 UCLA
 Akron
 St Marys
-*Indiana
+*Wyoming
 Kentucky
 St Peters
 Murray St
@@ -32,69 +32,69 @@ Texas
 VA Tech
 Gonzaga
 Memphis
-Vermont
+Arkansas
 Connecticut
 Duke
 Davidson
-Texas Tech
+Montana St
 Alabama
 Baylor
-N Carolina
-UCLA
+Marquette
+Akron
 St Marys
-Kentucky
-Murray St
-Purdue
+St Peters
+San Francisco
+Yale
 VA Tech
 Gonzaga
-Connecticut
-Duke
-Texas Tech
-Baylor
-UCLA
-Kentucky
+Arkansas
+Davidson
+Alabama
+Marquette
+St Marys
+St Peters
 VA Tech
 Gonzaga
-Texas Tech
-Baylor
-Kentucky
-Gonzaga
-Baylor
-Gonzaga
-Gonzaga
-LSU
-Illinois
-LSU
-Illinois
-Villanova
-Iowa
-LSU
+Davidson
+St Marys
+VA Tech
+Davidson
+VA Tech
+Davidson
+Davidson
+Houston
+Houston
+USC
+Houston
+Tennessee
+Kansas
+USC
 Arizona
-Illinois
+Houston
 Villanova
 Tennessee
 Kansas
-Iowa
-Auburn
-LSU
+Providence
+USC
+Wisconsin
 Arizona
-Seton Hall
-Illinois
+TX Christian
+Chattanooga
 Houston
 Villanova
 Ohio State
 Tennessee
 Colorado St
 Kansas
-Creighton
+San Diego St
 Providence
-Iowa
+Richmond
 Auburn
 USC
 Wisconsin
 LSU
 Arizona
-*Wright State
+*Bryant
 Seton Hall
 TX Christian
 Illinois
@@ -110,7 +110,7 @@ Longwood
 Colorado St
 Michigan
 Kansas
-*TX Southern
+*TX A&M-CC
 San Diego St
 Creighton
 Providence

@@ -8,6 +8,7 @@ import MarchMadness.Previous
 import MarchMadness.Simulations
 import MarchMadness.Brackets
 from importlib_resources import files
+import os
 
 dataSet = [] # each year is a dict
 
@@ -205,7 +206,11 @@ def setRegressions():
     return regressions
 
 
-def tournament(year, regressions, output, numGames, numBrackets):
+def tournament(year, regressions, output, _numGames, numBrackets):
+    try:
+        os.mkdir("./brackets")
+    except:
+        pass
     yearInd = year%2013
     if year > 2020:
         yearInd -= 1
@@ -213,19 +218,29 @@ def tournament(year, regressions, output, numGames, numBrackets):
     # teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
     teamsFileStr = files(MarchMadness.Previous).joinpath("teams"+str(year%2000)+".txt")
     
-    
-
     completedBrackets = set()
     total = 0
     total2 = 0
+    total3 = 0
+    total4 = 0
     minAcc = 100
     maxAcc = 0
+    minScore = 1920
+    maxScore = 0
+    ninety = 0
+    seventyFive = 0
+    fifty = 0
+
+    if numBrackets < 10:
+        s = [_numGames]*numBrackets
+    else:
+        s = np.random.normal(_numGames, _numGames, numBrackets)
     for i in range(numBrackets):
+        numGames = s[i] if s[i] > 0.03 else 0.03
         teamFile = open(teamsFileStr, "r")
         bracket = parseBracket(teamFile, year, regressions, numGames)
         dataSet[yearInd]["bracket"] = bracket
         teamFile.close()
-        print(i)
         while (True):
             Simulate.index[0] = 0
             Simulate.used = set()
@@ -251,19 +266,61 @@ def tournament(year, regressions, output, numGames, numBrackets):
             if currAcc > maxAcc:
                 maxAcc = currAcc
 
+            currScore = br.computeScore(year)
+            total3 += currScore
+            total4 += currScore*currScore
+            # print(currScore)
+            if currScore < minScore:
+                minScore = currScore
+                worst = "{:0.2f}".format(numGames)
+                worsti = i+1
+            if currScore > maxScore:
+                # print("new max bracket")
+                best = "{:0.2f}".format(numGames)
+                besti = i+1
+                maxScore = currScore
+            if year == 2022:
+                if currScore >= 530:
+                    fifty += 1
+                    if currScore >= 650:
+                        seventyFive += 1
+                        if currScore >= 850:
+                            ninety += 1
+            if year == 2021:
+                if currScore >= 710:
+                    fifty += 1
+                    if currScore >= 880:
+                        seventyFive += 1
+                        if currScore >= 1050:
+                            ninety += 1
+                
         # simulationFile = "Simulations/"+str(year)+"outputScore.txt"
         # bracketsFile = "Brackets/"+str(year)+"bracket"+str(i+1)+".jpg"
-        scoreFile = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
-        bracketsFile = files(MarchMadness.Brackets).joinpath(str(year)+"bracket"+str(i+1)+".jpg")
+        # scoreFile = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
+        # bracketsFile = files(MarchMadness.Brackets).joinpath(str(year)+"bracket"+str(i+1)+".jpg")
+    
+        # scoreFile = "./brackets/"+str(year)+"outputScore.txt"
+        scoreFile = os.path.abspath("./brackets/"+str(year)+"outputScore.txt")
+        bracketsFile = "./brackets/"+str(year)+"_"+"{:0.2f}".format(numGames)+"bracket"+str(i+1)+".jpg"
+
+
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
     
     if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
-        print("Year: " + str(year) + "   numGames: " + str(numGames))
+        stdevPoints = ((total4 / numBrackets) - (total3/numBrackets)**2)**0.5
+        print("Year: " + str(year) + "   average numGames: " + "{:0.2f}".format(np.average(s)))
         print("Average accuracy: " + str(total/numBrackets) + "%")
         print("Maximum accuracy: " + str(maxAcc) + "%")
         print("Minimum accuracy: " + str(minAcc) + "%")
-        print("Standard Deviation: " + str(stdev) + "\n\n")
+        print("Standard Deviation ('%' correct): " + str(stdev))
+        print("Average Score: " + str(total3/numBrackets))
+        print("Maximum score: " + str(maxScore))
+        print("Minimum score: " + str(minScore))
+        print("Standard Deviation (score): " + str(stdevPoints))
+        print("best numGames: ", best, "best ind: ", besti)
+        print("worst numGames: ", worst, "worst ind: ", worsti)
+        print("thresholds: ", fifty, seventyFive, ninety, "\n\n\n")
 
     return True
 

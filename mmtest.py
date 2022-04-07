@@ -6,9 +6,10 @@ output = [0]*127 # used to store team names for printing final bracket
 regressions = MarchMadnessRun.setRegressions() # calculate regregression models using data from previous tournaments
 
 # change these values to generate real brackets
-gameTest = [1,3,5] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
-yearTest = [2013, 2014, 2022] # what year(s) do you want to generate brackets for?
-numBrackets = 20 # how many unique brackets do you want to generate?
+# average number of first round upsets = x # upset defined by who our algorithm thinks is the better team, not just higher seed
+gameTest = [1] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
+yearTest = [2021, 2022] # what year(s) do you want to generate brackets for?
+numBrackets = 9 # how many unique brackets do you want to generate?
 for year in yearTest:
     for numGames in gameTest:
         MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets)

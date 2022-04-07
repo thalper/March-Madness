@@ -41,6 +41,54 @@ def computeAccuracy(year):
         return True
     return False
 
+def computeScore(year):
+    BracketFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"output.txt")
+    CorrectBracketStr = files(MarchMadness.Previous).joinpath("bracket"+str(year%2000)+".txt")
+    BracketFile = open(BracketFileStr, "r")
+    CorrectBracket = open(CorrectBracketStr, "r")
+    bList = []
+    cList = []
+    for i in BracketFile:
+        bList.append(i)
+    for j in CorrectBracket:
+        cList.append(j)
+    BracketFile.close()
+    CorrectBracket.close()
+    bList = bList[32:95]
+    cList = cList[32:95]
+    score = 0
+    for i in range(16): # round of 32 correct
+        if bList[i] == cList[i]:
+            score += 10
+        if bList[-(1+i)] == cList[-(1+i)]:
+            score += 10
+    for i in range(16,24): # sweet 16 correct
+        if bList[i] == cList[i]:
+            score += 20
+        if bList[-(1+i)] == cList[-(1+i)]:
+            score += 20
+    for i in range(24,28): # elite 8 correct
+        if bList[i] == cList[i]:
+            score += 40
+        if bList[-(1+i)] == cList[-(1+i)]:
+            score += 40
+    for i in range(28,30): # final 4 correct
+        if bList[i] == cList[i]:
+            score += 80
+        if bList[-(1+i)] == cList[-(1+i)]:
+            score += 80
+    for i in range(30,31): # championship game correct
+        if bList[i] == cList[i]:
+            score += 160
+        if bList[-(1+i)] == cList[-(1+i)]:
+            score += 160
+    if bList[31] == cList[31]: # champion correct
+        score += 320
+
+    return score
+    
+    
+
 def addXY(team, x_center, y_center, _game_box_width, _game_box_height, canvas, draw):
     # CHANGE FOR TEAM NAMES NOW
     # BOXKEY[0] SHOULD BE TEAM NAMES

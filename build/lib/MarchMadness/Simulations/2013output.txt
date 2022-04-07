@@ -1,5 +1,5 @@
 Louisville
-*NC A&T
+*Liberty
 Colorado St
 Missouri
 Saint Louis
@@ -13,13 +13,13 @@ Cincinnati
 Michigan St
 Valparaiso
 Memphis
-*Middle Tenn
+*St Marys
 Gonzaga
 Southern
 Pittsburgh
 Wichita St
 Kansas St
-*La Salle
+*Boise State
 Wisconsin
 Mississippi
 Ohio State
@@ -31,47 +31,47 @@ Harvard
 Arizona
 Belmont
 Louisville
-Colorado St
+Missouri
 Saint Louis
 Oklahoma St
 Duke
-Cincinnati
+Creighton
 Michigan St
-Memphis
+*St Marys
 Gonzaga
-Pittsburgh
-Kansas St
-Wisconsin
+Wichita St
+*Boise State
+Mississippi
 Ohio State
 Notre Dame
-New Mexico
-Belmont
+Harvard
+Arizona
 Louisville
 Oklahoma St
-Duke
+Creighton
 Michigan St
 Gonzaga
-Wisconsin
-Ohio State
-Belmont
+*Boise State
+Notre Dame
+Arizona
 Louisville
-Michigan St
-Wisconsin
-Ohio State
+Creighton
+Gonzaga
+Arizona
 Louisville
-Ohio State
-Louisville
+Gonzaga
 Louisville
 Florida
 Florida
-Syracuse
-Kansas
 Florida
-Syracuse
+Indiana
+Michigan
+Florida
+Indiana
 Miami (FL)
 Kansas
 Michigan
-San Diego St
+Georgetown
 Florida
 Indiana
 Syracuse
@@ -82,7 +82,7 @@ N Carolina
 Michigan
 Akron
 Georgetown
-San Diego St
+Oklahoma
 Florida
 Minnesota
 Indiana
@@ -90,9 +90,9 @@ NC State
 Syracuse
 California
 Miami (FL)
-Illinois
+Colorado
 Marquette
-Bucknell
+Butler
 Kansas
 W Kentucky
 N Carolina
@@ -110,7 +110,7 @@ NW State
 UCLA
 Minnesota
 Indiana
-*James Mad
+*LIU-Brooklyn
 NC State
 Temple
 Syracuse

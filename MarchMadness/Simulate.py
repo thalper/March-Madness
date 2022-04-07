@@ -8,6 +8,8 @@ from MarchMadness.bracket import GAME_BOX_WIDTH_HEIGHT_RATIO
 from importlib_resources import files
 import MarchMadness.Simulations
 
+import os
+
 #Stat order
 # 3 point attempts,3 point %,3 point attempts allowed,3 point % allowed,2 point attempts,2 point %
 # 2 point attempts allowed,2 point % allowed,Fouls per game,opponent fouls per game,Attempted Free throws
@@ -80,7 +82,7 @@ def assignWeights(A,B,regressions):
     return [Anum2s, A2ptP, Anum3s, A3ptP, BFouls, AFreeThrows, AFreeThrowP, ATurnovers, Aorb, Bdrb]
 
 # return num points scored, num fouls commited 
-def simulatePossession(Poss, fouls):
+def simulatePossession(Poss, fouls, numGames):
     # percent chance of each outcome
     shot2 = Poss[0] / (Poss[0] + Poss[2] + Poss[4] + Poss[7])
     made2 = Poss[1]
@@ -106,7 +108,7 @@ def simulatePossession(Poss, fouls):
             return 2, fouls
         # miss with a chance of an offensive rebound (repeats possession)
         if random.random() < orb:
-            return simulatePossession(Poss, fouls)
+            return simulatePossession(Poss, fouls, numGames)
         return 0, fouls
     # 3pt attempt
     if random.random() < shot3:
@@ -115,7 +117,7 @@ def simulatePossession(Poss, fouls):
             return 3, fouls
         # miss with a chance of an offensive rebound (repeats possession)
         if random.random() < orb:
-            return simulatePossession(Poss, fouls)
+            return simulatePossession(Poss, fouls, numGames)
         return 0, fouls
     #foul
     ftm = 0 # free throws made
@@ -124,7 +126,7 @@ def simulatePossession(Poss, fouls):
         # not shooting
         if random.random() < 0.25: # about 25 percent of fouls are non-shooting fouls
             # double bonus 
-            if fouls >= 9:
+            if fouls >= 9*numGames:
                 # take two free throw shots
                 if random.random() < ftP:
                     ftm += 1
@@ -133,23 +135,23 @@ def simulatePossession(Poss, fouls):
                     return ftm, fouls
                 # if second is missed, chance for an offensive rebound (repeats possession)
                 elif random.random() < orb:
-                    nextPpoints, fouls = simulatePossession(Poss, fouls)
+                    nextPpoints, fouls = simulatePossession(Poss, fouls, numGames)
                     return ftm+nextPpoints, fouls
                 return ftm, fouls
             # single bonus (1 and 1)
-            elif fouls >= 6:
+            elif fouls >= 6*numGames:
                 if random.random() < ftP:
                     if random.random() < ftP:
                         return 2, fouls
                     elif random.random() < orb:
-                        nextPpoints, fouls = simulatePossession(Poss, fouls) # offensive rebound after missed free throw
+                        nextPpoints, fouls = simulatePossession(Poss, fouls, numGames) # offensive rebound after missed free throw
                         return 1+nextPpoints, fouls # 1 free throw made plus offensive rebound
                 elif random.random() < orb:
-                    nextPpoints, fouls = simulatePossession(Poss, fouls) # offensive rebound after missed free throw
+                    nextPpoints, fouls = simulatePossession(Poss, fouls, numGames) # offensive rebound after missed free throw
                     return nextPpoints, fouls
                 return 0, fouls
             # not in the bonus
-            return simulatePossession(Poss, fouls)
+            return simulatePossession(Poss, fouls, numGames)
         # 2 point attempt
         elif random.random() < 0.95: # about 95% of shooting fouls occur on 2 point attempts
             if random.random() < ftP:
@@ -159,7 +161,7 @@ def simulatePossession(Poss, fouls):
                 return ftm, fouls
             # if second is missed, chance for an offensive rebound (repeats possession)
             elif random.random() < orb:
-                nextPpoints, fouls = simulatePossession(Poss, fouls)
+                nextPpoints, fouls = simulatePossession(Poss, fouls, numGames)
                 return ftm+nextPpoints, fouls
             return ftm, fouls
         # 3 point attempt
@@ -173,7 +175,7 @@ def simulatePossession(Poss, fouls):
                 return ftm, fouls
             # if second is missed, chance for an offensive rebound (repeats possession)
             elif random.random() < orb:
-                nextPpoints, fouls = simulatePossession(Poss, fouls)
+                nextPpoints, fouls = simulatePossession(Poss, fouls, numGames)
                 return ftm+nextPpoints, fouls
             return ftm, fouls
     #turnover
@@ -201,9 +203,9 @@ def simulateGame(teamAdata, teamBdata, regressions, numGames):
             half = True
             foulA = 0  # reset foul count at halftime
             foulB = 0 # reset foul count at halftime
-        Pscore, foulA = simulatePossession(Possession[0], foulA)
+        Pscore, foulA = simulatePossession(Possession[0], foulA, numGames)
         Ascore += Pscore
-        Pscore, foulB = simulatePossession(Possession[1], foulB)
+        Pscore, foulB = simulatePossession(Possession[1], foulB, numGames)
         Bscore += Pscore
         # if index[0] == 126:
         #     print("Possession #", i+1, " ", Ascore, "-", Bscore)
@@ -236,7 +238,9 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
     if index[0] == 126:
         # print(a, score[0], "-", score[1], b)
         # ScoreFile = open("Simulations/"+str(year)+"outputScore.txt", 'w')
-        scoreFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
+        # scoreFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
+        # scoreFileStr = "./brackets/"+str(year)+"outputScore.txt"
+        scoreFileStr = os.path.abspath("./brackets/"+str(year)+"outputScore.txt")
         ScoreFile = open(scoreFileStr, 'w')
         ScoreFile.write(str(score[0]) + "\n" + str(score[1]))
         ScoreFile.close()
