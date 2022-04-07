@@ -12,6 +12,9 @@ import os
 
 dataSet = [] # each year is a dict
 
+def add(a, b):
+    return a + b
+
 def parseBracket(teamFile, year, regressions, numGames):
     b = teamFile.read().split('\n')
     i = 0
