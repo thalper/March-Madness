@@ -10,6 +10,9 @@ from MarchMadness import MarchMadnessRun
 #   MarchMadness.fillData()
 #   assert MarchMadness.testTeams(MarchMadness.dataSet, years) == "Teams parsed correctly."
 
+def test_parseData():
+  assert MarchMadnessRun.parseData() == True
+
 def test_tournament():
   MarchMadnessRun.parseData() # creates dataset
   output = [0]*127 # used to store team names for printing final bracket
