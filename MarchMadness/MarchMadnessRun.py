@@ -85,6 +85,7 @@ def parseData():
             continue
         parseYear(year)
     AIWeighting.parsePrevTourneyforAI(dataSet)
+    return True
 
 def setRegressions():
     regressions = []
