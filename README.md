@@ -160,4 +160,10 @@ Rylee Benes
 
 This week, we fixed our package by getting it runnable with pip after uploading it to PyPi. I updated our README to reflect how to write a file that will in turn run our package properly. We then used CycloneDX to create an SBOM of our package. I also created the MIT license and deliverable summary for the week. I got our code coverage GitHub Action working again, and now Tycho and I are trying to write test cases to improve our code coverage.
 
+Progress Report (Week of 04/03/22)
+
+Rylee Benes
+
+This week, we started to brainstorm how to possibly improve our bracket results as we only ended up with 2 brackets in the 90th percentile. I grabbed the percentile threshold values for 2022 and 2021 from the ESPN website and we created a function to calculate bracket points and compared them to the percentile values to see what percentile they were. We then came up with the idea to randomize the number of games each matchup plays for each bracket using a bell curve. This then accounts for having some brackets with more upsets (coin flip) and some brackets with more high-seeded wins. We plan on creating an option for users to pick their preference. I also created a progress bar for when brackets are being created for greater UI design.
+
 # References
