@@ -12,9 +12,6 @@ import os
 
 dataSet = [] # each year is a dict
 
-def add(a, b):
-    return a + b
-
 def parseBracket(teamFile, year, regressions, numGames):
     b = teamFile.read().split('\n')
     i = 0
@@ -47,8 +44,6 @@ def parseBracket(teamFile, year, regressions, numGames):
     return bracket
 
 def parseYear(year): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
-    # dataStr = "Previous/tr"+str(year%2000)+".csv"
-    # teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
     dataStr = files(MarchMadness.Previous).joinpath("tr"+str(year%2000)+".csv")
     teamsFileStr = files(MarchMadness.Previous).joinpath("teams"+str(year%2000)+".txt")
     teamFile = open(teamsFileStr, "r")
@@ -88,7 +83,6 @@ def parseData():
             continue
         parseYear(year)
     AIWeighting.parsePrevTourneyforAI(dataSet)
-    return True
 
 def setRegressions():
     regressions = []
@@ -272,13 +266,14 @@ def tournament(year, regressions, output, numGames, numBrackets):
 
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
         toprint += 50 / numBrackets
+        if (2 * toprint) > 10:
+            print("\b\b\b", end="")
+        else:
+            print("\b\b", end="")
         for i in range(printed, int(toprint)):
-            if (2 * toprint) > 10:
-                print("\b\b\b", end="")
-            else:
-                print("\b\b", end="")
-            print(b'\xdb'.decode('cp437') + "{:0.0f}".format(2 * toprint) + "%", end='')
-            printed = int(toprint)
+            print(b'\xdb'.decode('cp437'), end='')
+        printed = int(toprint)
+        print("{:0.0f}".format(2 * toprint) + "%", end='', flush=True)
     
     if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
