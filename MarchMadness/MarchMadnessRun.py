@@ -207,8 +207,12 @@ def tournament(year, regressions, output, _numGames, numBrackets):
     completedBrackets = set()
     total = 0
     total2 = 0
+    total3 = 0
+    total4 = 0
     minAcc = 100
     maxAcc = 0
+    minScore = 1920
+    maxScore = 0
     if numBrackets < 10:
         numGames = [_numGames]*numBrackets
     else:
@@ -240,12 +244,19 @@ def tournament(year, regressions, output, _numGames, numBrackets):
         outFile.close()
         if year <= 2022:
             currAcc = br.computeAccuracy(year)
+            currScore = br.computeScore(year)
             total += currAcc
             total2 += currAcc*currAcc
+            total3 += currScore
+            total4 += currScore*currScore
             if currAcc < minAcc:
                 minAcc = currAcc
             if currAcc > maxAcc:
                 maxAcc = currAcc
+            if currScore < minScore:
+                minScore = currScore
+            if currScore > maxScore:
+                maxScore = currScore
 
         # simulationFile = "Simulations/"+str(year)+"outputScore.txt"
         # bracketsFile = "Brackets/"+str(year)+"bracket"+str(i+1)+".jpg"
@@ -269,10 +280,15 @@ def tournament(year, regressions, output, _numGames, numBrackets):
     
     if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
-        print("\nYear: " + str(year) + "   average numGames: " + str(np.average(numGames)))
+        stdevScore = ((total4 / numBrackets) - (total3/numBrackets)**2)**0.5
+        print("\n\nYear: " + str(year) + "   average numGames: " + str(np.average(numGames)))
         print("Average accuracy: " + str(total/numBrackets) + "%")
         print("Maximum accuracy: " + str(maxAcc) + "%")
         print("Minimum accuracy: " + str(minAcc) + "%")
-        print("Standard Deviation: " + str(stdev) + "\n\n")
+        print("Standard Deviation: " + str(stdev) + "\n")
+        print("Average score: " + str(total3/numBrackets))
+        print("Maximum score: " + str(maxScore) + "%")
+        print("Minimum score: " + str(minScore) + "%")
+        print("Standard Deviation of Score: " + str(stdevScore) + "\n")
 
     return True
