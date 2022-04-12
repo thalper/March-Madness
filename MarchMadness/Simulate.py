@@ -242,7 +242,7 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
         # scoreFileStr = "./brackets/"+str(year)+"outputScore.txt"
         scoreFileStr = os.path.abspath("./brackets/"+str(year)+"outputScore.txt")
         ScoreFile = open(scoreFileStr, 'w')
-        ScoreFile.write(str(score[0]) + "\n" + str(score[1]))
+        ScoreFile.write(str(int(score[0])) + "\n" + str(int(score[1])))
         ScoreFile.close()
     index[0] += 1
     return a if score[0] > score[1] else b
