@@ -116,7 +116,6 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
     ScoreFile = open(ScoreFileStr, 'r')
     outputScore = ScoreFile.read().split("\n")
     ScoreFile.close()
-    #computeAccuracy()
     image1 = Image.new("RGB", (WIDTH, HEIGHT), 'white')
     draw = ImageDraw.Draw(image1)
     for i in range(_columns):
