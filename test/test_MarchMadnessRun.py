@@ -1,18 +1,6 @@
 import sys
 import os
-#sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../src")
-#from MarchMadness.MarchMadnessRun import parseData, tournament, setRegressions
 import MarchMadness.MarchMadnessRun
-
-
-# def test_testTeams():
-#   pass
-#   years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021]
-#   MarchMadness.fillData()
-#   assert MarchMadness.testTeams(MarchMadness.dataSet, years) == "Teams parsed correctly."
-
-def test_parseData():
-  assert MarchMadness.MarchMadnessRun.parseData() == True
 
 def test_tournament():
   MarchMadness.MarchMadnessRun.parseData() # creates dataset
@@ -27,4 +15,3 @@ def test_tournament():
   for year in yearTest:
       for numGames in gameTest:
           assert MarchMadness.MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets) == True
-  
