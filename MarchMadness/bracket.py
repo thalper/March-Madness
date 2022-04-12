@@ -37,9 +37,7 @@ def computeAccuracy(year):
     BracketFile.close()
     CorrectBracket.close()
     return (correct - 60) / 67 * 100
-    if (correct - 60) / 67 * 100 > 70:
-        return True
-    return False
+
 
 def computeScore(year):
     BracketFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"output.txt")
@@ -87,26 +85,6 @@ def computeScore(year):
 
     return score
     
-    
-
-def addXY(team, x_center, y_center, _game_box_width, _game_box_height, canvas, draw):
-    # CHANGE FOR TEAM NAMES NOW
-    # BOXKEY[0] SHOULD BE TEAM NAMES
-    if finalTwo[0] == 1:
-        xValue = x_center - _game_box_width / 16 + 2
-        yValue = y_center - _game_box_height / 16 - 2 - 80
-    elif finalTwo[0] == 2:
-        xValue = x_center - _game_box_width / 16 + 2
-        yValue = y_center - _game_box_height / 16 + 2 + 76
-    else:
-        xValue = x_center - _game_box_width / 16 + 2
-        yValue = y_center - _game_box_height / 16
-    bracketLoc[team] = [xValue, yValue]
-    # # canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font=('Helvetica 5 bold'))
-    # canvas.create_text(bracketLoc[team][0], bracketLoc[team][1], text=team, fill="black", font = ImageFont.load_default())
-    # draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
-    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
-
 def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
     # CHANGE FOR TEAM NAMES NOW
     # BOXKEY[0] SHOULD BE TEAM NAMES
