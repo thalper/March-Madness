@@ -230,7 +230,7 @@ def tournament(year, regressions, output, _numGames, numBrackets):
                 completedBrackets.add(tuple(output))
                 break
             else:
-                print("duplicate after ", i, " brackets")
+                print("duplicate after ", i, " brackets") # pragma: no cover
         # outFileStr = "Simulations/"+str(year)+"output.txt"
         outFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"output.txt")
         outFile = open(outFileStr, 'w')
