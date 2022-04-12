@@ -205,5 +205,3 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
     image1.save(JPGOutStr)
     #tkinter.mainloop()
 
-if __name__ == "__main__":
-    buildBracket("MarchMadness/Simulations/2021output.txt", "MarchMadness/Simulations/2021outputScore.txt", 2021)
