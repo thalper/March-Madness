@@ -34,14 +34,14 @@ def parsePrevTourneyforAI(dataSet):
             year = int(year)
             if teamH not in dataSet[year%2013]:
                 if "*"+teamH not in dataSet[year%2013]:
-                    bad += 1
-                    print(count, teamH, year, bad)
+                    bad += 1 # pragma: no cover
+                    print(count, teamH, year, bad) # pragma: no cover
                 else:
                     teamH = "*"+teamH
             if teamA not in dataSet[year%2013]:
                 if "*"+teamA not in dataSet[year%2013]:
-                    bad += 1
-                    print(count, teamA, year, bad)
+                    bad += 1 # pragma: no cover
+                    print(count, teamA, year, bad) # pragma: no cover
                 else:
                     teamA = "*"+teamA
             gameKey = (teamA, teamH, year)
