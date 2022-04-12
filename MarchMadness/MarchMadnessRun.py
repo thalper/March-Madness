@@ -204,7 +204,7 @@ def setRegressions():
     return regressions
 
 
-def tournament(year, regressions, output, numGames, numBrackets):
+def tournament(year, regressions, output, _numGames, numBrackets):
     print("Creating your bracket(s)...")
     try:
         os.mkdir("./brackets")
@@ -224,16 +224,23 @@ def tournament(year, regressions, output, numGames, numBrackets):
     total2 = 0
     minAcc = 100
     maxAcc = 0
+    if numBrackets < 10:
+        numGames = [_numGames]*numBrackets
+    else:
+        numGames = np.random.normal(_numGames, _numGames, numBrackets)
+    for i in range(len(numGames)):
+        if numGames[i] < 0.03:
+            numGames[i] = 0.03
     for i in range(numBrackets):
         teamFile = open(teamsFileStr, "r")
-        bracket = parseBracket(teamFile, year, regressions, numGames)
+        bracket = parseBracket(teamFile, year, regressions, numGames[i])
         dataSet[yearInd]["bracket"] = bracket
         teamFile.close()
-        #print(i)
+        # print(i)
         while (True):
             Simulate.index[0] = 0
             Simulate.used = set()
-            Simulate.simulateTournament(dataSet[yearInd]["bracket"][0], dataSet[yearInd]["bracket"][1], dataSet, year, output, regressions, numGames)
+            Simulate.simulateTournament(dataSet[yearInd]["bracket"][0], dataSet[yearInd]["bracket"][1], dataSet, year, output, regressions, numGames[i])
             if tuple(output) not in completedBrackets:
                 completedBrackets.add(tuple(output))
                 break
@@ -277,7 +284,7 @@ def tournament(year, regressions, output, numGames, numBrackets):
     
     if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
-        print("\nYear: " + str(year) + "   numGames: " + str(numGames))
+        print("\nYear: " + str(year) + "   average numGames: " + str(np.average(numGames)))
         print("Average accuracy: " + str(total/numBrackets) + "%")
         print("Maximum accuracy: " + str(maxAcc) + "%")
         print("Minimum accuracy: " + str(minAcc) + "%")

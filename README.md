@@ -166,4 +166,8 @@ Rylee Benes
 
 This week, we started to brainstorm how to possibly improve our bracket results as we only ended up with 2 brackets in the 90th percentile. I grabbed the percentile threshold values for 2022 and 2021 from the ESPN website and we created a function to calculate bracket points and compared them to the percentile values to see what percentile they were. We then came up with the idea to randomize the number of games each matchup plays for each bracket using a bell curve. This then accounts for having some brackets with more upsets (coin flip) and some brackets with more high-seeded wins. We plan on creating an option for users to pick their preference. I also created a progress bar for when brackets are being created for greater UI design.
 
+Tycho Halpern
+
+This week, I wrote functions to calculate the "score" of a bracket, using the same logic as ESPN (10 points for correctly picking a first round game, 20 for second, ..., 320 points for correctly picking the champion) and tested our simulator with 2022 data as well as 2021 data. When using the thresholds Rylee looked up from these past 2 years, our brackets perform significantly better for how the 2021 tournament played out when compared to the 2022 tournament. 
+
 # References
