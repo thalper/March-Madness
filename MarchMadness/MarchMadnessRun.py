@@ -190,7 +190,7 @@ def setRegressions():
 
 
 def tournament(year, regressions, output, _numGames, numBrackets):
-    print("Creating your bracket(s)...")
+    print("Creating your bracket(s):\nyear: " + str(year) + " numGames: " + "{:0.2f}".format(_numGames))
     try:
         os.mkdir("./brackets")
     except:
@@ -213,6 +213,25 @@ def tournament(year, regressions, output, _numGames, numBrackets):
     maxAcc = 0
     minScore = 1920
     maxScore = 0
+
+    threshold = False
+    # thresholds
+    if year == 2021:
+        ninetyT = 1050
+        seventyFiveT = 880
+        fiftyT = 710
+        threshold = True
+    elif year == 2022:
+        ninetyT = 850
+        seventyFiveT = 650
+        fiftyT = 530
+        threshold = True
+
+    # number of brackets above threshold
+    ninety = 0 
+    seventyFive = 0
+    fifty = 0
+
     if numBrackets < 10:
         numGames = [_numGames]*numBrackets
     else:
@@ -257,22 +276,25 @@ def tournament(year, regressions, output, _numGames, numBrackets):
                 minScore = currScore
             if currScore > maxScore:
                 maxScore = currScore
-
-        # simulationFile = "Simulations/"+str(year)+"outputScore.txt"
-        # bracketsFile = "Brackets/"+str(year)+"bracket"+str(i+1)+".jpg"
-        # scoreFile = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
-        # bracketsFile = files(MarchMadness.Brackets).joinpath(str(year)+"bracket"+str(i+1)+".jpg")
-    
-        # scoreFile = "./brackets/"+str(year)+"outputScore.txt"
+            if threshold:
+                if currScore >= fiftyT:
+                    fifty += 1
+                    if currScore >= seventyFiveT: 
+                        seventyFive += 1
+                        if currScore >= ninetyT:
+                            ninety += 1
+            
         scoreFile = os.path.abspath("./brackets/"+str(year)+"outputScore.txt")
-        bracketsFile = "./brackets/"+str(year)+"bracket"+str(i+1)+".jpg"
+        bracketsFile = "./brackets/"+str(year)+"_{:0.2f}".format(_numGames)+"bracket"+str(i+1)+".jpg"
 
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
-        toprint += 50 / numBrackets
-        if (2 * toprint) > 10:
+        if (2 * toprint) >= 99.5:
+            print("\b\b\b\b", end="")
+        elif (2 * toprint) >= 9.5:
             print("\b\b\b", end="")
         else:
             print("\b\b", end="")
+        toprint += 50 / numBrackets
         for i in range(printed, int(toprint)):
             print(b'\xdb'.decode('cp437'), end='')
         printed = int(toprint)
@@ -281,7 +303,7 @@ def tournament(year, regressions, output, _numGames, numBrackets):
     if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
         stdevScore = ((total4 / numBrackets) - (total3/numBrackets)**2)**0.5
-        print("\n\nYear: " + str(year) + "   average numGames: " + str(np.average(numGames)))
+        print("\n\nYear: " + str(year) + "   average numGames: " + "{:0.2f}".format(np.average(numGames)))
         print("Average accuracy: " + str(total/numBrackets) + "%")
         print("Maximum accuracy: " + str(maxAcc) + "%")
         print("Minimum accuracy: " + str(minAcc) + "%")
@@ -289,6 +311,12 @@ def tournament(year, regressions, output, _numGames, numBrackets):
         print("Average score: " + str(total3/numBrackets))
         print("Maximum score: " + str(maxScore))
         print("Minimum score: " + str(minScore))
-        print("Standard Deviation of Score: " + str(stdevScore) + "\n")
+        print("Standard Deviation of Score: " + "{:0.2f}".format(stdevScore) + "\n")
+        if threshold:
+            print("Percentiles of " + str(numBrackets) + " brackets:")
+            print("Brackets in the 90th percentile:", ninety)
+            print("Brackets in the 75th percentile:",  seventyFive)
+            print("Brackets in the 50th percentile:", fifty, "\n")
+
 
     return True
