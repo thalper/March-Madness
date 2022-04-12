@@ -287,8 +287,8 @@ def tournament(year, regressions, output, _numGames, numBrackets):
         print("Minimum accuracy: " + str(minAcc) + "%")
         print("Standard Deviation: " + str(stdev) + "\n")
         print("Average score: " + str(total3/numBrackets))
-        print("Maximum score: " + str(maxScore) + "%")
-        print("Minimum score: " + str(minScore) + "%")
+        print("Maximum score: " + str(maxScore))
+        print("Minimum score: " + str(minScore))
         print("Standard Deviation of Score: " + str(stdevScore) + "\n")
 
     return True
