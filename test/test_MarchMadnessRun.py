@@ -11,7 +11,7 @@ import MarchMadness.MarchMadnessRun
 #   MarchMadness.fillData()
 #   assert MarchMadness.testTeams(MarchMadness.dataSet, years) == "Teams parsed correctly."
 
-def test_parseData():
+def test_MarchMadnessRun.parseData():
   assert MarchMadness.MarchMadnessRun.parseData() == True
 
 def test_tournament():
