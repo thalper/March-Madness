@@ -181,10 +181,6 @@ def simulatePossession(Poss, fouls, numGames):
     #turnover
     if random.random() < turnover:
         return 0,fouls
-    
-    print("how did we get here")
-    return 0,0
-
 
 def simulateGame(teamAdata, teamBdata, regressions, numGames):
     Ascore = 0
