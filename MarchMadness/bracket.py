@@ -98,8 +98,8 @@ def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
         xValue = x_center - _game_box_width / 16 + 2
         yValue = y_center - _game_box_height / 16
     bracketLoc[team] = [xValue, yValue]
-    # draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("arial.ttf", 7), align= "center")
-    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
+    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("/usr/share/fonts/arial.ttf", 8), align= "center")
+    #draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
 
 
 def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
