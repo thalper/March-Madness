@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 import os
 import MarchMadness.MarchMadnessRun
@@ -26,6 +27,20 @@ def test_tournament2():
   gameTest = [1] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
   yearTest = [2021, 2022] # what year(s) do you want to generate brackets for?
   numBrackets = 25 # how many unique brackets do you want to generate?
+  for year in yearTest:
+      for numGames in gameTest:
+          assert MarchMadness.MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets) == True
+
+def test_tournament3():
+  MarchMadness.MarchMadnessRun.parseData() # creates dataset
+  output = [0]*127 # used to store team names for printing final bracket
+
+  regressions = MarchMadness.MarchMadnessRun.setRegressions() # calculate regregression models using data from previous tournaments
+
+  # change these values to generate real brackets
+  gameTest = [0] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
+  yearTest = [2022] # what year(s) do you want to generate brackets for?
+  numBrackets = 100 # how many unique brackets do you want to generate?
   for year in yearTest:
       for numGames in gameTest:
           assert MarchMadness.MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets) == True
