@@ -290,7 +290,7 @@ def tournament(year, regressions, output, _numGames, numBrackets):
 
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
         if (2 * toprint) >= 99.5:
-            print("\b\b\b\b", end="")
+            print("\b\b\b\b", end="") # pragma: no cover
         elif (2 * toprint) >= 9.5:
             print("\b\b\b", end="")
         else:
