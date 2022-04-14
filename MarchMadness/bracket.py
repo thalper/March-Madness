@@ -100,7 +100,7 @@ def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
     bracketLoc[team] = [xValue, yValue]
     #draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", 20), align= "center")
     # draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
-    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.truetype(font="DejaVuSerif-Bold.ttf", size=20, index=0, encoding='', layout_engine=None), align= "center")
+    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.truetype(font=str(files(MarchMadness.Previous).joinpath("DejaVuSerif-Bold.ttf")), size=20, index=0, encoding='', layout_engine=None), align= "center")
 
 
 def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
@@ -145,7 +145,7 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
                 #canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=('Helvetica 10 bold'))
                 # draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
                 # draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.load_default(), align= "center")
-                draw.text((WIDTH / 2 - 35, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.truetype(font="DejaVuSerif-Bold.ttf", size=20, index=0, encoding='', layout_engine=None), align= "center")
+                draw.text((WIDTH / 2 - 35, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.truetype(font=str(files(MarchMadness.Previous).joinpath("DejaVuSerif-Bold.ttf")), size=20, index=0, encoding='', layout_engine=None), align= "center")
                 #right final two
                 finalTwo[0] += 2
                 #canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
