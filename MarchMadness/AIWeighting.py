@@ -14,9 +14,9 @@ import MarchMadness.Previous
 
 prevData = {}
 
+# parses data to be used in creating weights
 def parsePrevTourneyforAI(dataSet):
-    # dataStr = "Previous/NCAATourneyFullBoxscoresAndStats_15-19.csv" # previous tournament data box scores
-    dataStr = files(MarchMadness.Previous).joinpath("NCAATourneyFullBoxscoresAndStats_15-19.csv")
+    dataStr = files(MarchMadness.Previous).joinpath("NCAATourneyFullBoxscoresAndStats_15-19.csv") # previous tournament data box scores
     with open(dataStr, newline='') as csvfile:
         dataByGame = csv.reader(csvfile, delimiter=',', quotechar='|')
         count = 0
@@ -53,8 +53,8 @@ def parsePrevTourneyforAI(dataSet):
             GameStats = [Astats, Hstats]
             prevData[gameKey] = GameStats
 
+# creates linear regressions
 def manualRegression(X_train, Y_train):
     regr = LinearRegression()
     regr.fit(X_train,Y_train)
     return regr
-

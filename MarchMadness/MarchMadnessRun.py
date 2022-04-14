@@ -13,6 +13,7 @@ import os
 
 dataSet = [] # each year is a dict
 
+# parses a bracket from the given teams from a given year
 def parseBracket(teamFile, year, regressions, numGames):
     b = teamFile.read().split('\n')
     i = 0
@@ -44,7 +45,8 @@ def parseBracket(teamFile, year, regressions, numGames):
                 [[[[b2[1+16*3],b2[16+16*3]],[b2[8+16*3],b2[9+16*3]]],[[b2[4+16*3],b2[13+16*3]],[b2[5+16*3],b2[12+16*3]]]],[[[b2[2+16*3],b2[15+16*3]],[b2[7+16*3],b2[10+16*3]]],[[b2[3+16*3],b2[14+16*3]],[b2[6+16*3],b2[11+16*3]]]]]]]
     return bracket
 
-def parseYear(year): # input year, output dict of numpy array storing statistics of the 68 march madness teams from that year
+# input year, output dict of numpy array storing statistics of the 68 March Madness teams from that year
+def parseYear(year):
     dataStr = files(MarchMadness.Previous).joinpath("tr"+str(year%2000)+".csv")
     teamsFileStr = files(MarchMadness.Previous).joinpath("teams"+str(year%2000)+".txt")
     teamFile = open(teamsFileStr, "r")
@@ -62,6 +64,7 @@ def parseYear(year): # input year, output dict of numpy array storing statistics
                 dataSet[ind][row[0]] = np.array(row[1:24], dtype=float)
                 tourneyTeams.remove(row[0])
 
+# parses all of the data for the available years, then sends the data for weighting
 def parseData():
     for year in range(2013,2023):
         dataSet.append({}) # each key is a team, the value is the data for that team
@@ -70,8 +73,8 @@ def parseData():
         parseYear(year)
     AIWeighting.parsePrevTourneyforAI(dataSet)
 
+# creates the regressions for each weighting
 def setRegressions():
-    regressions = []
     numStats = 10
     xData = []
     yData = []  
@@ -82,7 +85,7 @@ def setRegressions():
         Away = key[0]
         Home = key[1]
         year = key[2]
-        # 3 point attempts DONE
+        # 3 point attempts
         away3ptAttemptsAVG = [dataSet[year%2013][Away][0], dataSet[year%2013][Home][2], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         away3ptAttemptsREAL = AIWeighting.prevData[key][0][0]
         xData[0].append(away3ptAttemptsAVG)
@@ -92,7 +95,7 @@ def setRegressions():
         xData[0].append(home3ptAttemptsAVG)
         yData[0].append(home3ptAttemptsREAL)
 
-        # 3 point percentage DONE
+        # 3 point percentage
         away3ptPercentAVG = [dataSet[year%2013][Away][1], dataSet[year%2013][Home][3], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         away3ptPercentREAL = AIWeighting.prevData[key][0][1]
         xData[1].append(away3ptPercentAVG)
@@ -102,7 +105,7 @@ def setRegressions():
         xData[1].append(home3ptPercentAVG)
         yData[1].append(home3ptPercentREAL)
 
-        # 2 point attempts DONE
+        # 2 point attempts
         away2ptAttemptsAVG = [dataSet[year%2013][Away][4], dataSet[year%2013][Home][6], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         away2ptAttemptsREAL = AIWeighting.prevData[key][0][2]
         xData[2].append(away2ptAttemptsAVG)
@@ -112,7 +115,7 @@ def setRegressions():
         xData[2].append(home2ptAttemptsAVG)
         yData[2].append(home2ptAttemptsREAL)
 
-        # 2 point percentage DONE
+        # 2 point percentage
         away2ptPercentAVG = [dataSet[year%2013][Away][5], dataSet[year%2013][Home][7], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         away2ptPercentREAL = AIWeighting.prevData[key][0][3]
         xData[3].append(away2ptPercentAVG)
@@ -122,7 +125,7 @@ def setRegressions():
         xData[3].append(home2ptPercentAVG)
         yData[3].append(home2ptPercentREAL)
 
-        # Fouls Committed DONE
+        # Fouls Committed
         awayFoulsAVG = [dataSet[year%2013][Away][8], dataSet[year%2013][Home][9], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         awayFoulsREAL = AIWeighting.prevData[key][0][4]
         xData[4].append(awayFoulsAVG)
@@ -132,7 +135,7 @@ def setRegressions():
         xData[4].append(homeFoulsAVG)
         yData[4].append(homeFoulsREAL)
 
-        # Attempted Free Throws DONE
+        # Attempted Free Throws
         awayFreeThrowsAVG = [dataSet[year%2013][Away][10], dataSet[year%2013][Home][11], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         awayFreeThrowsREAL = AIWeighting.prevData[key][0][5]
         xData[5].append(awayFreeThrowsAVG)
@@ -142,7 +145,7 @@ def setRegressions():
         xData[5].append(homeFreeThrowsAVG)
         yData[5].append(homeFreeThrowsREAL)
 
-        # Free throw percentage DONE
+        # Free throw percentage
         awayFreethrowPAVG = [dataSet[year%2013][Away][12]]
         awayFreethrowPREAL = AIWeighting.prevData[key][0][6]
         xData[6].append(awayFreethrowPAVG)
@@ -152,7 +155,7 @@ def setRegressions():
         xData[6].append(homeFreethrowPVG)
         yData[6].append(homeFreethrowPREAL)
 
-        # Turnovers Committed DONE
+        # Turnovers Committed
         awayTurnoversAVG = [dataSet[year%2013][Away][13], dataSet[year%2013][Home][14], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         awayTurnoversREAL = AIWeighting.prevData[key][0][7]
         xData[7].append(awayTurnoversAVG)
@@ -162,7 +165,7 @@ def setRegressions():
         xData[7].append(homeTurnoversAVG)
         yData[7].append(homeTurnoversREAL)
 
-        # ORB DONE
+        # ORB
         awayORBAVG = [dataSet[year%2013][Away][16], dataSet[year%2013][Home][17], dataSet[year%2013][Away][22] - dataSet[year%2013][Home][22]]
         awayORBREAL = AIWeighting.prevData[key][0][8]
         xData[8].append(awayORBAVG)
@@ -185,11 +188,10 @@ def setRegressions():
     regressions = [0]*numStats
     for i in range(numStats):
         currRegr = AIWeighting.manualRegression(xData[i],yData[i]) #runs AI weighting
-        regressions[i] = currRegr   
-    
+        regressions[i] = currRegr
     return regressions
 
-
+# runs a bracket tournament from the provided data
 def tournament(year, regressions, output, _numGames, numBrackets):
     print("Creating your bracket(s):\nyear: " + str(year) + " numGames: " + "{:0.2f}".format(_numGames))
     try:
@@ -200,7 +202,6 @@ def tournament(year, regressions, output, _numGames, numBrackets):
     if year > 2020:
         yearInd -= 1
 
-    # teamsFileStr = "Previous/teams"+str(year%2000)+".txt"
     teamsFileStr = files(MarchMadness.Previous).joinpath("teams"+str(year%2000)+".txt")
     printed = 0
     toprint = 0
@@ -215,6 +216,7 @@ def tournament(year, regressions, output, _numGames, numBrackets):
     minScore = 1920
     maxScore = 0
 
+    # ESPN percentile thresholds for 2021 and 2022
     threshold = False
     # thresholds
     if year == 2021:
@@ -233,6 +235,7 @@ def tournament(year, regressions, output, _numGames, numBrackets):
     seventyFive = 0
     fifty = 0
 
+    # creates bell curve for brackets created
     if numBrackets < 10:
         numGames = [_numGames]*numBrackets
     else:
@@ -245,7 +248,6 @@ def tournament(year, regressions, output, _numGames, numBrackets):
         bracket = parseBracket(teamFile, year, regressions, numGames[i])
         dataSet[yearInd]["bracket"] = bracket
         teamFile.close()
-        # print(i)
         while (True):
             Simulate.index[0] = 0
             Simulate.used = set()
@@ -255,13 +257,13 @@ def tournament(year, regressions, output, _numGames, numBrackets):
                 break
             else:
                 print("duplicate after ", i, " brackets") # pragma: no cover
-        # outFileStr = "Simulations/"+str(year)+"output.txt"
         outFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"output.txt")
         outFile = open(outFileStr, 'w')
         for team in output:
             outFile.write(team)
             outFile.write("\n")
         outFile.close()
+        # finds accuracy and percentile (if 2021 or 2022) for each bracket
         if year <= 2022:
             currAcc = br.computeAccuracy(year)
             currScore = br.computeScore(year)
@@ -287,8 +289,8 @@ def tournament(year, regressions, output, _numGames, numBrackets):
             
         scoreFile = os.path.abspath("./brackets/"+str(year)+"outputScore.txt")
         bracketsFile = "./brackets/"+str(year)+"_{:0.2f}".format(_numGames)+"bracket"+str(i+1)+".jpg"
-
         br.buildBracketJPG(outFileStr, scoreFile, bracketsFile)
+        # creates a loading bar when brackets being made
         if (2 * toprint) >= 99.5:
             print("\b\b\b\b", end="") # pragma: no cover
         elif (2 * toprint) >= 9.5:
@@ -300,7 +302,7 @@ def tournament(year, regressions, output, _numGames, numBrackets):
             print(b'\xdb'.decode('cp437'), end='')
         printed = int(toprint)
         print("{:0.0f}".format(2 * toprint) + "%", end='', flush=True)
-    
+    # prints out stats for brackets for testing
     if year <= 2022:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
         stdevScore = ((total4 / numBrackets) - (total3/numBrackets)**2)**0.5
@@ -318,6 +320,4 @@ def tournament(year, regressions, output, _numGames, numBrackets):
             print("Brackets in the 90th percentile:", ninety)
             print("Brackets in the 75th percentile:",  seventyFive)
             print("Brackets in the 50th percentile:", fifty, "\n")
-
-
     return True
