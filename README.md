@@ -186,10 +186,10 @@ This week, I wrote functions to calculate the "score" of a bracket, using the sa
 
 # References
 
-https://github.com/JonathanZwiebel/bracket-generator
-https://www.kaggle.com/c/ncaam-march-mania-2021/data
-https://www.teamrankings.com/ncb/team-stats/
-https://github.com/programmingwithalex/test_repo_pylinter_v2
-https://fantasy.espn.com/tournament-challenge-bracket/2022/en/
-https://dzone.com/articles/executable-package-pip-install
+https://github.com/JonathanZwiebel/bracket-generator  
+https://www.kaggle.com/c/ncaam-march-mania-2021/data  
+https://www.teamrankings.com/ncb/team-stats/  
+https://github.com/programmingwithalex/test_repo_pylinter_v2  
+https://fantasy.espn.com/tournament-challenge-bracket/2022/en/  
+https://dzone.com/articles/executable-package-pip-install  
 https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
