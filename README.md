@@ -22,7 +22,7 @@ games being essentially coin flips and will result in a poor guess for the final
 
 If you decide to create more than 10 brackets at a time, the value(s) of gameTest will be used as an average.
 Following a bell curve, 16 percent of brackets will be decided by coin flips, and 16 percent of brackets will 
-be decided using atleast double length games of your input, the rest will be somewhere in between.
+be decided using at least double length games of your input, the rest will be somewhere in between.
 If you want your gameTest input to be used directly, create brackets in batches of 9 or fewer.
 '''
 # change these values to generate real brackets
@@ -38,7 +38,7 @@ for year in yearTest:
 
 '''If you only want to simulate a single bracket for a single year,
 calling this function with the desired inputs instead of using lines 23-28
-will generate a sinlge bracket. You could also just enter a single year
+will generate a single bracket. You could also just enter a single year
 in the yearTest list and set numBrackets to 1.'''
 #  MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets)
 ```
@@ -185,3 +185,11 @@ Tycho Halpern
 This week, I wrote functions to calculate the "score" of a bracket, using the same logic as ESPN (10 points for correctly picking a first round game, 20 for second, ..., 320 points for correctly picking the champion) and tested our simulator with 2022 data as well as 2021 data. When using the thresholds Rylee looked up from these past 2 years, our brackets perform significantly better for how the 2021 tournament played out when compared to the 2022 tournament. 
 
 # References
+
+https://github.com/JonathanZwiebel/bracket-generator
+https://www.kaggle.com/c/ncaam-march-mania-2021/data
+https://www.teamrankings.com/ncb/team-stats/
+https://github.com/programmingwithalex/test_repo_pylinter_v2
+https://fantasy.espn.com/tournament-challenge-bracket/2022/en/
+https://dzone.com/articles/executable-package-pip-install
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
