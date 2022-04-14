@@ -237,6 +237,7 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
         # ScoreFile = open("Simulations/"+str(year)+"outputScore.txt", 'w')
         # scoreFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
         # scoreFileStr = "./brackets/"+str(year)+"outputScore.txt"
+        winnerB = winner
         if numGames < 1:
             for i in range(10):
                 score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, 2)
