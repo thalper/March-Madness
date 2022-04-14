@@ -189,6 +189,8 @@ def simulateGame(teamAdata, teamBdata, regressions, numGames):
     Possession[0] = assignWeights(teamAdata, teamBdata, regressions)
     Possession[1] = assignWeights(teamBdata, teamAdata, regressions)
     possessionsPG = (teamAdata[15] + teamBdata[15]) / 2 # possessions per game
+    if index[0] == 126 and numGames < 0.5:
+        numGames = 0.5
     possessions = int (numGames * possessionsPG)
     
     foulA = 0 # used for calculating if a team is in the "bonus"

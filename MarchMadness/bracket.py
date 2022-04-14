@@ -12,10 +12,10 @@ import MarchMadness.Simulate as Simulate
 bracketLoc = {}
 finalTwo = [0]
 boxKey = [0]
-HEIGHT = 625  # root.winfo_screenheight()
-WIDTH = 1250  # root.winfo_screenwidth()
-HORIZONTAL_PADDING = 70
-GAME_BOX_WIDTH_HEIGHT_RATIO = 3
+HEIGHT = 1250  # root.winfo_screenheight()
+WIDTH = 2500  # root.winfo_screenwidth()
+HORIZONTAL_PADDING = 50
+GAME_BOX_WIDTH_HEIGHT_RATIO = 5
 
 def computeAccuracy(year):
     BracketFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"output.txt")
@@ -89,17 +89,18 @@ def addXYJPG(team, x_center, y_center, _game_box_width, _game_box_height, draw):
     # CHANGE FOR TEAM NAMES NOW
     # BOXKEY[0] SHOULD BE TEAM NAMES
     if finalTwo[0] == 1:
-        xValue = x_center - _game_box_width / 16 + 2
+        xValue = x_center - _game_box_width / 16 - 50
         yValue = y_center - _game_box_height / 16 - 2 - 80
     elif finalTwo[0] == 2:
-        xValue = x_center - _game_box_width / 16 + 2
+        xValue = x_center - _game_box_width / 16 - 50
         yValue = y_center - _game_box_height / 16 + 2 + 76
     else:
-        xValue = x_center - _game_box_width / 16 + 2
-        yValue = y_center - _game_box_height / 16
+        xValue = x_center - _game_box_width / 16 - 50
+        yValue = y_center - _game_box_height / 16 - 2
     bracketLoc[team] = [xValue, yValue]
-    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("/usr/share/fonts/comicbd.ttf", 7), align= "center")
-    #draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
+    #draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", 20), align= "center")
+    # draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.load_default(), align= "center")
+    draw.text((bracketLoc[team][0] - 20, bracketLoc[team][1] - 2), text=team, fill="black", font = ImageFont.truetype(font="DejaVuSerif-Bold.ttf", size=20, index=0, encoding='', layout_engine=None), align= "center")
 
 
 def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
@@ -143,7 +144,8 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
                 addXYJPG(output[63], x_center, y_center, _game_box_width, _game_box_height, draw)
                 #canvas.create_text(WIDTH / 2, HEIGHT / 2 + 30, text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=('Helvetica 10 bold'))
                 # draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font=ImageFont.truetype("arial.ttf", 12), align= "center")
-                draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.load_default(), align= "center")
+                # draw.text((WIDTH / 2 - 15, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.load_default(), align= "center")
+                draw.text((WIDTH / 2 - 35, HEIGHT / 2 + 30), text=str(outputScore[0]) + "-" + str(outputScore[1]), fill="black", font = ImageFont.truetype(font="DejaVuSerif-Bold.ttf", size=20, index=0, encoding='', layout_engine=None), align= "center")
                 #right final two
                 finalTwo[0] += 2
                 #canvas.create_rectangle(x_center - _game_box_width / 2, y_center - _game_box_height / 2 + 80, x_center + _game_box_width / 2, y_center + _game_box_height / 2 + 80)
@@ -159,7 +161,7 @@ def buildBracketJPG(BracketFileStr, ScoreFileStr, JPGOutStr):
             if i != _columns - 1:
                 if i == 5:
                     #canvas.create_line(x_center - _game_box_width / 2 + 2 * _game_box_width - 8, y_center + 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2 + 2 * _game_box_width - 8, y_center + 80)
-                    draw.line([x_center - _game_box_width / 2 + 2 * _game_box_width - 8, y_center + 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2 + 2 * _game_box_width - 8, y_center + 80], 'black')
+                    draw.line([x_center - _game_box_width / 2 + 2 * _game_box_width - 150, y_center + 80, x_center - _game_box_width / 2 - HORIZONTAL_PADDING / 2 + 2 * _game_box_width - 150, y_center + 80], 'black')
                 else:
                     #canvas.create_line(x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center)
                     draw.line([x_center + _game_box_width / 2, y_center, x_center + _game_box_width / 2 + HORIZONTAL_PADDING / 2, y_center], 'black')
