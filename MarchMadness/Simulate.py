@@ -189,8 +189,6 @@ def simulateGame(teamAdata, teamBdata, regressions, numGames):
     Possession[0] = assignWeights(teamAdata, teamBdata, regressions)
     Possession[1] = assignWeights(teamBdata, teamAdata, regressions)
     possessionsPG = (teamAdata[15] + teamBdata[15]) / 2 # possessions per game
-    if index[0] == 126 and numGames < 0.5:
-        numGames = 0.5
     possessions = int (numGames * possessionsPG)
     
     foulA = 0 # used for calculating if a team is in the "bonus"
@@ -230,7 +228,8 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
     while score[0] == score[1]:
         score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, numGames)
     # print(a, score[0], "-", score[1], b)
-    output[outputOrder[index[0]]-1] = a if score[0] > score[1] else b
+    winner = a if score[0] > score[1] else b
+    output[outputOrder[index[0]]-1] = winner
     # if a == "Purdue" or b == "Purdue":
     #     print(a, score[0], "-", score[1], b)
     if index[0] == 126:
@@ -238,6 +237,16 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
         # ScoreFile = open("Simulations/"+str(year)+"outputScore.txt", 'w')
         # scoreFileStr = files(MarchMadness.Simulations).joinpath(str(year)+"outputScore.txt")
         # scoreFileStr = "./brackets/"+str(year)+"outputScore.txt"
+        if numGames < 1:
+            for i in range(10):
+                score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, 2)
+                winnerB =  a if score[0] > score[1] else b
+                if winner == winnerB:
+                    break
+        if winner != winnerB:
+            temp = score[1]
+            score[1] = score[0]
+            score[0] = temp
         scoreFileStr = os.path.abspath("./brackets/"+str(year)+"outputScore.txt")
         ScoreFile = open(scoreFileStr, 'w')
         ScoreFile.write(str(int(score[0])) + "\n" + str(int(score[1])))
