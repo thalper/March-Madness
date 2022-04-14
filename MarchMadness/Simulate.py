@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from inspect import formatargvalues
 import random
 import time

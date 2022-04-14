@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import tkinter
 from PIL import Image, ImageDraw, ImageFont
 from importlib_resources import files

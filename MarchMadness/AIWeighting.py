@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import MarchMadness.MarchMadnessRun as MarchMadness
 import collections
 import math

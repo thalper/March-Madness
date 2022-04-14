@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from cv2 import ORB
 import numpy as np
 import csv
@@ -304,10 +305,10 @@ def tournament(year, regressions, output, _numGames, numBrackets):
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
         stdevScore = ((total4 / numBrackets) - (total3/numBrackets)**2)**0.5
         print("\n\nYear: " + str(year) + "   average numGames: " + "{:0.2f}".format(np.average(numGames)))
-        print("Average accuracy: " + str(total/numBrackets) + "%")
-        print("Maximum accuracy: " + str(maxAcc) + "%")
-        print("Minimum accuracy: " + str(minAcc) + "%")
-        print("Standard Deviation: " + str(stdev) + "\n")
+        print("Average accuracy: " + "{:0.2f}".format(total/numBrackets) + "%")
+        print("Maximum accuracy: " + "{:0.2f}".format(maxAcc) + "%")
+        print("Minimum accuracy: " + "{:0.2f}".format(minAcc) + "%")
+        print("Standard Deviation: " + "{:0.2f}".format(stdev) + "\n")
         print("Average score: " + str(total3/numBrackets))
         print("Maximum score: " + str(maxScore))
         print("Minimum score: " + str(minScore))
