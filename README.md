@@ -44,8 +44,21 @@ in the yearTest list and set numBrackets to 1.'''
 ```
 
 # Components 
+*These are the components of our project with a brief description of what they do all available in the MarchMadness folder on GitHub or in the installed package:*  
+
+**MarchMadnessRun.py**: the driver file that helps with parsing data and tournament creation.  
+**Simulate.py**: the file used to simulate matchups between teams using stats to run every game possession.  
+**AIWeighting.py**: the file used to create weights for each stat based on team season stats versus individual March Madness game team stats using linear regression.  
+**bracket.py**: the file used to create readable and organized brackets of each tournament saved locally as a .jpg file.  
+**Previous/**: contains all of the data used for team stats and bracket creation.  
+**Simulations/**: contains files used for final game bracket scores and accuracy measurements.  
+**Brackets/**: contains outputted final brackets.  
+
+*Here is our component diagram below, summarizing our project:*  
+![image](https://user-images.githubusercontent.com/54416591/163599314-fbfa7155-4177-4812-828b-f4c83886ceca.png)
 
 # Software Architecture
+Our software architecture includes saving everything here on GitHub. All of the notable components saved are mentioned in the section above. We utilized a branching model when creating this project, starting with a main branch and creating a new branch for every new feature, later merging it back to main.
 
 # Progress Reports
 Progress Report (Week of 01/16/22)
