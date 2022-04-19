@@ -33,7 +33,7 @@ BYU
 Gonzaga
 Missouri
 Virginia
-Creighton
+UCSB
 Iowa
 Oregon
 Kansas
@@ -43,48 +43,48 @@ St Bonavent
 Florida St
 Georgetown
 Alabama
-Maryland
-Abl Christian
-BYU
+Connecticut
+Texas
+*UCLA
 Gonzaga
 Virginia
-Oregon
-USC
+Iowa
+Kansas
 Michigan
 Florida St
-Alabama
-BYU
+Connecticut
+*UCLA
 Gonzaga
-USC
+Iowa
 Michigan
-Alabama
+Connecticut
 Gonzaga
 Michigan
 Gonzaga
 Baylor
 Baylor
 Baylor
-Illinois
-Baylor
-Ohio State
-Illinois
 Houston
 Baylor
-Purdue
 Ohio State
-Arkansas
-Illinois
 Tennessee
 Houston
-Syracuse
 Baylor
-N Carolina
+Villanova
+Ohio State
+Arkansas
+Loyola-Chi
+Tennessee
+Houston
+W Virginia
+Baylor
+Wisconsin
 Purdue
 Villanova
 Ohio State
-Florida
+VA Tech
 Arkansas
-Utah State
+Texas Tech
 Illinois
 Loyola-Chi
 Oklahoma St
@@ -92,7 +92,7 @@ Tennessee
 Houston
 Clemson
 W Virginia
-Syracuse
+San Diego St
 Baylor
 Hartford
 N Carolina

@@ -221,7 +221,7 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames, champ
         if numGames < 1 or champion == winner:
             for i in range(10):
                 score[0] = 0
-                score[1] = 1
+                score[1] = 0
                 while score[0] == score[1]:
                     score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, 2)
                 winnerB =  a if score[0] > score[1] else b

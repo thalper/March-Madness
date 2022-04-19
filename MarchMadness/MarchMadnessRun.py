@@ -293,10 +293,10 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
                 maxAcc = currAcc
             if currScore < minScore:
                 minScore = currScore
-                worstInd = i
+                worstInd = i + 1
             if currScore > maxScore:
                 maxScore = currScore
-                bestInd = i
+                bestInd = i + 1
             if threshold:
                 if currScore >= fiftyT:
                     fifty += 1
