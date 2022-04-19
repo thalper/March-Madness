@@ -14,7 +14,7 @@ import os
 dataSet = [] # each year is a dict
 
 # parses a bracket from the given teams from a given year
-def parseBracket(teamFile, year, regressions, numGames):
+def parseBracket(teamFile, year, regressions, numGames, champion):
     b = teamFile.read().split('\n')
     i = 0
     j = 1
@@ -37,8 +37,13 @@ def parseBracket(teamFile, year, regressions, numGames):
     for i in range(4):
         teamA = playInTeams[i][0]
         teamB = playInTeams[i][1]
-        score = Simulate.simulateGame(dataSet[dataInd][teamA], dataSet[dataInd][teamB], regressions, numGames) 
-        b2[indexList[i]] = teamA if score[0] > score[1] else teamB
+        if teamA == champion or teamA == "*"+champion:
+            b2[indexList[i]] = teamA
+        elif teamB == champion or teamB == "*"+champion:
+            b2[indexList[i]] = teamB
+        else:
+            score = Simulate.simulateGame(dataSet[dataInd][teamA], dataSet[dataInd][teamB], regressions, numGames) 
+            b2[indexList[i]] = teamA if score[0] > score[1] else teamB
     bracket =   [[[[[[b2[1+16*0],b2[16+16*0]],[b2[8+16*0],b2[9+16*0]]],[[b2[4+16*0],b2[13+16*0]],[b2[5+16*0],b2[12+16*0]]]],[[[b2[2+16*0],b2[15+16*0]],[b2[7+16*0],b2[10+16*0]]],[[b2[3+16*0],b2[14+16*0]],[b2[6+16*0],b2[11+16*0]]]]],
                 [[[[b2[1+16*1],b2[16+16*1]],[b2[8+16*1],b2[9+16*1]]],[[b2[4+16*1],b2[13+16*1]],[b2[5+16*1],b2[12+16*1]]]],[[[b2[2+16*1],b2[15+16*1]],[b2[7+16*1],b2[10+16*1]]],[[b2[3+16*1],b2[14+16*1]],[b2[6+16*1],b2[11+16*1]]]]]],
                 [[[[[b2[1+16*2],b2[16+16*2]],[b2[8+16*2],b2[9+16*2]]],[[b2[4+16*2],b2[13+16*2]],[b2[5+16*2],b2[12+16*2]]]],[[[b2[2+16*2],b2[15+16*2]],[b2[7+16*2],b2[10+16*2]]],[[b2[3+16*2],b2[14+16*2]],[b2[6+16*2],b2[11+16*2]]]]],
@@ -192,7 +197,13 @@ def setRegressions():
     return regressions
 
 # runs a bracket tournament from the provided data
-def tournament(year, regressions, output, _numGames, numBrackets):
+def tournament(year, regressions, output, _numGames, numBrackets, champion):
+    if champion and champion != "Purdue":
+        if "y" == input("Are you sure you don't want to pick Purdue? (y/n)\n"):
+            input("\nLame.\n\npress Enter to continue")
+    if champion == "Purdue":
+        print("\nBTFU!\n")
+    
     print("Creating your bracket(s):\nyear: " + str(year) + " numGames: " + "{:0.2f}".format(_numGames))
     try:
         os.mkdir("./brackets")
@@ -245,13 +256,13 @@ def tournament(year, regressions, output, _numGames, numBrackets):
             numGames[i] = 0.03
     for i in range(numBrackets):
         teamFile = open(teamsFileStr, "r")
-        bracket = parseBracket(teamFile, year, regressions, numGames[i])
+        bracket = parseBracket(teamFile, year, regressions, numGames[i], champion)
         dataSet[yearInd]["bracket"] = bracket
         teamFile.close()
         while (True):
             Simulate.index[0] = 0
             Simulate.used = set()
-            Simulate.simulateTournament(dataSet[yearInd]["bracket"][0], dataSet[yearInd]["bracket"][1], dataSet, year, output, regressions, numGames[i])
+            Simulate.simulateTournament(dataSet[yearInd]["bracket"][0], dataSet[yearInd]["bracket"][1], dataSet, year, output, regressions, numGames[i], champion)
             if tuple(output) not in completedBrackets:
                 completedBrackets.add(tuple(output))
                 break

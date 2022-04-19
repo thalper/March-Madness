@@ -189,11 +189,11 @@ def simulateGame(teamAdata, teamBdata, regressions, numGames):
     return [Ascore//numGames, Bscore//numGames]
 
 # simulates a full bracket tournament depending on the year
-def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
+def simulateTournament(a, b, dataSet, year, output, regressions, numGames, champion):
     if type(a) == list:
-        a = simulateTournament(a[0],a[1], dataSet, year, output, regressions, numGames)
+        a = simulateTournament(a[0],a[1], dataSet, year, output, regressions, numGames, champion)
     if type(b) == list: 
-        b = simulateTournament(b[0],b[1], dataSet, year, output, regressions, numGames)
+        b = simulateTournament(b[0],b[1], dataSet, year, output, regressions, numGames, champion)
     if a not in used:
         used.add(a)
         output[outputOrder[index[0]]-1] = a
@@ -207,13 +207,18 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
         ind -= 1
     score = [0,0]
     # tie game (no OT yet)
-    while score[0] == score[1]:
-        score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, numGames)
-    winner = a if score[0] > score[1] else b
+    if (champion == a) or ("*"+champion == a):
+        winner = champion
+    elif (champion == b) or ("*"+champion == b):
+        winner = champion
+    else:
+        while score[0] == score[1]:
+            score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, numGames)
+        winner = a if score[0] > score[1] else b
     output[outputOrder[index[0]]-1] = winner
     if index[0] == 126:
         winnerB = winner
-        if numGames < 1:
+        if numGames < 1 or champion == winner:
             for i in range(10):
                 score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, 2)
                 winnerB =  a if score[0] > score[1] else b
@@ -228,4 +233,4 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames):
         ScoreFile.write(str(int(score[0])) + "\n" + str(int(score[1])))
         ScoreFile.close()
     index[0] += 1
-    return a if score[0] > score[1] else b
+    return winner
