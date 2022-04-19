@@ -48,7 +48,8 @@ def test_tournament3():
       for numGames in gameTest:
           assert MarchMadness.MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets, champion) == True
         
-def test_tournament4():
+def test_tournament4(monkeypatch):
+  monkeypatch.setattr('builtins.input', lambda _: "y")
   MarchMadness.MarchMadnessRun.parseData() # creates dataset
   output = [0]*127 # used to store team names for printing final bracket
 
