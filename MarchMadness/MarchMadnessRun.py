@@ -199,10 +199,10 @@ def setRegressions():
 # runs a bracket tournament from the provided data
 def tournament(year, regressions, output, _numGames, numBrackets, champion):
     if champion and champion != "Purdue":
-        if "y" == input("Are you sure you don't want to pick Purdue? (y/n)\n"):
+        if "y" == input("Are you sure you want to pick " + champion + " (instead of Purdue)?\n(y/n)\n"):
             input("\nLame.\n\npress Enter to continue")
         else:
-            print("good choice")
+            print("Good choice.")
             return
     if champion == "Purdue":
         print("\nBTFU!\n")
@@ -228,7 +228,9 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
     minAcc = 100
     maxAcc = 0
     minScore = 1920
+    worstInd = 0
     maxScore = 0
+    bestInd = 0
 
     # ESPN percentile thresholds for 2021 and 2022
     threshold = False
@@ -291,8 +293,10 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
                 maxAcc = currAcc
             if currScore < minScore:
                 minScore = currScore
+                worstInd = i
             if currScore > maxScore:
                 maxScore = currScore
+                bestInd = i
             if threshold:
                 if currScore >= fiftyT:
                     fifty += 1
@@ -326,8 +330,8 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
         print("Minimum accuracy: " + "{:0.2f}".format(minAcc) + "%")
         print("Standard Deviation: " + "{:0.2f}".format(stdev) + "\n")
         print("Average score: " + str(total3/numBrackets))
-        print("Maximum score: " + str(maxScore))
-        print("Minimum score: " + str(minScore))
+        print("Maximum score: " + str(maxScore) + " (bracket number "+str(bestInd) + ")")
+        print("Minimum score: " + str(minScore) + " (bracket number "+str(worstInd) + ")")
         print("Standard Deviation of Score: " + "{:0.2f}".format(stdevScore) + "\n")
         if threshold:
             print("Percentiles of " + str(numBrackets) + " brackets:")
