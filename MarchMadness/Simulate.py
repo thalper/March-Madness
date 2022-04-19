@@ -207,10 +207,14 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames, champ
         ind -= 1
     score = [0,0]
     # tie game (no OT yet)
-    if (champion == a) or ("*"+champion == a):
+    if (champion == a):
         winner = champion
-    elif (champion == b) or ("*"+champion == b):
+    elif ("*"+champion == a):
+        winner = "*"+champion
+    elif (champion == b):
         winner = champion
+    elif ("*"+champion == b):
+        winner = "*"+champion
     else:
         while score[0] == score[1]:
             score = simulateGame(dataSet[ind][a], dataSet[ind][b], regressions, numGames)
