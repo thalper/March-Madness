@@ -203,7 +203,7 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
             input("\nLame.\n\npress Enter to continue")
         else:
             print("Good choice.")
-            return
+            return True
     if champion == "Purdue":
         print("\nBTFU!\n")
     

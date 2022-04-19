@@ -19,7 +19,7 @@ REQUIRES = [
 
 setuptools.setup(
      name='MarchMadness',  
-     version='1.4.1',
+     version='1.5.5',
      scripts=['MarchMadness/MarchMadnessRun.py', 'MarchMadness/Simulate.py', 'MarchMadness/AIWeighting.py', 'MarchMadness/bracket.py'] ,
      install_requires=REQUIRES,
      include_package_data=True,
