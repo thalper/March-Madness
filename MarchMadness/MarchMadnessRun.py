@@ -201,6 +201,9 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
     if champion and champion != "Purdue":
         if "y" == input("Are you sure you don't want to pick Purdue? (y/n)\n"):
             input("\nLame.\n\npress Enter to continue")
+        else:
+            print("good choice")
+            return
     if champion == "Purdue":
         print("\nBTFU!\n")
     
