@@ -76,7 +76,7 @@ def test_tournament5(monkeypatch):
   gameTest = [1] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
   yearTest = [2022] # what year(s) do you want to generate brackets for?
   numBrackets = 5 # how many unique brackets do you want to generate?
-  champion = "Indiana"
+  champion = "Rutgers"
   for year in yearTest:
       for numGames in gameTest:
           assert MarchMadness.MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets, champion) == True
@@ -93,13 +93,29 @@ def test_tournament6(monkeypatch):
   gameTest = [1] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
   yearTest = [2022] # what year(s) do you want to generate brackets for?
   numBrackets = 5 # how many unique brackets do you want to generate?
-  champion = "*Indiana"
+  champion = "*Notre Dame"
   for year in yearTest:
       for numGames in gameTest:
           assert MarchMadness.MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets, champion) == True
         
 
 
+def test_tournament7(monkeypatch):
+  monkeypatch.setattr('builtins.input', lambda _: "n")
+  MarchMadness.MarchMadnessRun.parseData() # creates dataset
+  output = [0]*127 # used to store team names for printing final bracket
+
+  regressions = MarchMadness.MarchMadnessRun.setRegressions() # calculate regregression models using data from previous tournaments
+
+  # change these values to generate real brackets
+  gameTest = [1] # number of games to simulate per matchup, higher number here leads to less variation in generated brackets
+  yearTest = [2022] # what year(s) do you want to generate brackets for?
+  numBrackets = 5 # how many unique brackets do you want to generate?
+  champion = "Indiana"
+  for year in yearTest:
+      for numGames in gameTest:
+          assert MarchMadness.MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets, champion) == True
+        
 
 
   
