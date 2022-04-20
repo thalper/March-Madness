@@ -200,12 +200,15 @@ Tycho Halpern
 This week, I wrote functions to calculate the "score" of a bracket, using the same logic as ESPN (10 points for correctly picking a first round game, 20 for second, ..., 320 points for correctly picking the champion) and tested our simulator with 2022 data as well as 2021 data. When using the thresholds Rylee looked up from these past 2 years, our brackets perform significantly better for how the 2021 tournament played out when compared to the 2022 tournament. 
 
 
-Progress Report (Week of 04/11/22)
+Progress Report (Week of 04/10/22)
 
 Tycho Halpern
 
 This week I worked with Rylee to increase our code coverage. After we restructured our code without the unneeded lines, we fixed the output bracked .jpg files to be higher quality and made sure all of the team names fully fit in the bracket boxes. 
 
+Rylee Benes
+
+This week, we fixed the code coverage. I implemented it into our other GitHub Action, and we got our code coverage up to 100%. We then cleaned up the rest of our code and added comments. Tycho and I fixed the font and resolution of the bracket output to make it more readable. We also started analyzing our data and brainstorming how it would be presented in our final presentation. I started cleaning up our repository, so that it looks good for the final.
 
 # References
 
