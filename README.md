@@ -2,7 +2,7 @@
 
 This project was created as a senior design project at Purdue University. It utilizes linear regression and game simulation to generate March Madness brackets that are aimed to do better than competing bracket A.I. Programs.
 
-To install the package, use the terminal command: ***pip install MarchMadness***  
+To install the package, use the terminal command: ***pip install MarchMadness***  (currently version 1.6.0)
 Then, create and edit a file like the one below to generate your brackets:
 ```python
 from MarchMadness import MarchMadnessRun
