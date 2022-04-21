@@ -19,7 +19,7 @@ REQUIRES = [
 
 setuptools.setup(
      name='MarchMadness',  
-     version='1.5.5',
+     version='1.5.6',
      scripts=['MarchMadness/MarchMadnessRun.py', 'MarchMadness/Simulate.py', 'MarchMadness/AIWeighting.py', 'MarchMadness/bracket.py'] ,
      install_requires=REQUIRES,
      include_package_data=True,
@@ -27,6 +27,7 @@ setuptools.setup(
      author="Tycho Halpern, Rylee Benes, Luca Rivera",
      author_email="thalper@purdue.edu, rbenes@purdue.edu, river172@purdue.edu",
      description="March Madness bracket simulation 2022",
+     license_files = ('LICENSE'),
      long_description=long_description,
    long_description_content_type="text/markdown",
      url="https://github.com/thalper/March-Madness",
