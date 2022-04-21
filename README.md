@@ -4,7 +4,7 @@ This project was created as a senior design project at Purdue University. It uti
 
 To install the package, use the terminal command: ***pip install MarchMadness***  (currently version 1.6.0) 
 
-Then, create and edit a file like the one below to generate your brackets:
+Then, create and edit a python file (.py) like the one below to generate your brackets:
 ```python
 from MarchMadness import MarchMadnessRun
 
