@@ -4,7 +4,7 @@ This project was created as a senior design project at Purdue University. It uti
 
 To install the package, use the terminal command: ***pip install MarchMadness***  (currently version 1.6.0) 
 
-Then, create and edit a python file (.py) like the one below to generate your brackets:
+Then, create and edit a python file (.py) like the one below:
 ```python
 from MarchMadness import MarchMadnessRun
 
@@ -45,6 +45,9 @@ will generate a single bracket. You could also just enter a single year
 in the yearTest list and set numBrackets to 1.'''
 #  MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets)
 ```
+
+Finally, to generate your brackets run the command: ***python3 <yourFile.py>*** in the terminal
+
 
 # Components 
 *These are the components of our project with a brief description of what they do all available in the MarchMadness folder on GitHub or in the installed package:*  
