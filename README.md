@@ -46,7 +46,7 @@ in the yearTest list and set numBrackets to 1.'''
 #  MarchMadnessRun.tournament(year, regressions, output, numGames, numBrackets)
 ```
 
-Finally, to generate your brackets run the command: ***python3 <yourFile.py>*** in the terminal. Your brackets will be store in a newly created /brackets/ directory.
+Finally, to generate your brackets run the command: ***python3 <yourFile.py>*** in the terminal. Your brackets will be stored in a newly created /brackets/ directory. View them by navigating to this directory in your file system. 
 
 
 # Components 
