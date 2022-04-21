@@ -28,9 +28,9 @@ If you want your gameTest input to be used directly, create brackets in batches 
 '''
 # change these values to generate real brackets
 
-gameTest = [5] # number of games to simulate per matchup, see block comment above
-yearTest = [2021] # what year(s) do you want to generate brackets for?
-numBrackets = 11 # how many unique brackets do you want to generate?
+gameTest = [2] # number of games to simulate per matchup, see block comment above
+yearTest = [2022] # what year(s) do you want to generate brackets for?
+numBrackets = 10 # how many unique brackets do you want to generate?
 # if you leave the champion field empty (or input a string that does not match a team name) it will be ignored and brackets will be filled out with no bias.
 champion = "" # If this doesn't work, match the input to what your team is named on the output file
 for year in yearTest:
