@@ -214,6 +214,12 @@ Rylee Benes
 
 This week, we fixed the code coverage. I implemented it into our other GitHub Action, and we got our code coverage up to 100%. We then cleaned up the rest of our code and added comments. Tycho and I fixed the font and resolution of the bracket output to make it more readable. We also started analyzing our data and brainstorming how it would be presented in our final presentation. I started cleaning up our repository, so that it looks good for the final.
 
+Progress Report (Week of 04/17/22)
+
+Tycho Halpern
+
+I worked on and prepared for the final presentation. Added ability to select champion, made a final package to use in the presentation, and wrote a few scripts for the demo.
+
 # References
 
 https://github.com/JonathanZwiebel/bracket-generator  
