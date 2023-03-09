@@ -71,7 +71,7 @@ def parseYear(year):
 
 # parses all of the data for the available years, then sends the data for weighting
 def parseData():
-    for year in range(2013,2023):
+    for year in range(2013,2024):
         dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
