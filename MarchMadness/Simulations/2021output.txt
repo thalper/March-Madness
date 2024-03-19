@@ -1,5 +1,5 @@
 Gonzaga
-*App State
+*Norfolk St
 Oklahoma
 Missouri
 Virginia
@@ -13,7 +13,7 @@ VCU
 Kansas
 E Washingtn
 USC
-*Drake
+*Wichita St
 Michigan
 *TX Southern
 LSU
@@ -33,56 +33,56 @@ BYU
 Gonzaga
 Missouri
 Virginia
-UCSB
+Creighton
 Iowa
 Oregon
 Kansas
 USC
 Michigan
-St Bonavent
+LSU
 Florida St
-Georgetown
+Colorado
 Alabama
 Connecticut
 Texas
-*UCLA
+BYU
 Gonzaga
-Virginia
+Creighton
 Iowa
 Kansas
 Michigan
-Florida St
+Colorado
 Connecticut
-*UCLA
+Texas
 Gonzaga
 Iowa
 Michigan
-Connecticut
-Gonzaga
+Texas
+Iowa
 Michigan
-Gonzaga
-Baylor
+Michigan
+Michigan
 Baylor
 Baylor
 Houston
 Baylor
 Ohio State
-Tennessee
+Loyola-Chi
 Houston
 Baylor
-Villanova
+Purdue
 Ohio State
 Arkansas
 Loyola-Chi
-Tennessee
+Oklahoma St
 Houston
 W Virginia
 Baylor
-Wisconsin
+N Carolina
 Purdue
 Villanova
 Ohio State
-VA Tech
+Florida
 Arkansas
 Texas Tech
 Illinois
@@ -90,7 +90,7 @@ Loyola-Chi
 Oklahoma St
 Tennessee
 Houston
-Clemson
+Rutgers
 W Virginia
 San Diego St
 Baylor
