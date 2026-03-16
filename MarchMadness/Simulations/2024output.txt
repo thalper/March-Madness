@@ -15,7 +15,7 @@ Morehead St
 BYU
 Duquesne
 N Carolina
-*Wagner
+*Howard
 Miss State
 Michigan St
 Alabama
@@ -31,7 +31,7 @@ Colgate
 Clemson
 New Mexico
 Connecticut
-Northwestern
+Fla Atlantic
 Auburn
 San Diego St
 Iowa State
@@ -41,22 +41,22 @@ BYU
 N Carolina
 Michigan St
 Alabama
-St Marys
+Grd Canyon
 Arizona
-Nevada
+Dayton
 Baylor
 New Mexico
 Connecticut
 Auburn
 Iowa State
 BYU
-N Carolina
-St Marys
+Michigan St
+Alabama
 Arizona
 Baylor
 Connecticut
-Iowa State
-N Carolina
+BYU
+Alabama
 Arizona
 Connecticut
 Arizona
@@ -64,17 +64,17 @@ Connecticut
 Houston
 Houston
 Houston
-Tennessee
+Creighton
 Houston
 Marquette
-Gonzaga
-Tennessee
-Houston
-Duke
-Marquette
-Kentucky
 Purdue
-Gonzaga
+Creighton
+Houston
+Wisconsin
+Marquette
+Texas Tech
+Purdue
+Kansas
 Tennessee
 Creighton
 Houston
@@ -82,9 +82,9 @@ Nebraska
 Duke
 Wisconsin
 Marquette
-Florida
+*Boise State
 Kentucky
-NC State
+Texas Tech
 Purdue
 TX Christian
 Kansas

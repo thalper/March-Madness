@@ -42,6 +42,8 @@ outputOrder = [1,2,33,3,4,34,49,5,6,35,7,8,36,50,57,9,10,37,11,12,38,51,13,14,39
 used = set()
 index = [0]
 
+seed = [0, 0, 0, 0]
+
 # Possession stat                 |         Index
 # 2 pointers attempts             |           0
 # 2 point percentage              |           1
@@ -240,4 +242,14 @@ def simulateTournament(a, b, dataSet, year, output, regressions, numGames, champ
         ScoreFile.write(str(int(score[0])) + "\n" + str(int(score[1])))
         ScoreFile.close()
     index[0] += 1
+    #temp code good for 16-pick specific competitions
+    #if winner == 'Duke':
+     #   seed[0] += 1
+    #elif winner == "Florida":
+     #   seed[1] += 1
+    #elif winner == 'Arizona':
+     #   seed[2] += 1
+    #elif winner == 'Michigan':
+     #   seed[3] += 1
+    #print(seed)
     return winner

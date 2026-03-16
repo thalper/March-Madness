@@ -71,7 +71,7 @@ def parseYear(year):
 
 # parses all of the data for the available years, then sends the data for weighting
 def parseData():
-    for year in range(2013,2025):
+    for year in range(2013,2027):
         dataSet.append({}) # each key is a team, the value is the data for that team
         if year == 2020:
             continue
@@ -250,6 +250,16 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
         seventyFiveT = 490
         fiftyT = 430
         threshold = True
+    elif year == 2024:
+        ninetyT = 1200
+        seventyFiveT = 990
+        fiftyT = 670
+        threshold = True
+    elif year == 2025:
+        ninetyT = 1370
+        seventyFiveT = 1140
+        fiftyT = 890
+        threshold = True
 
     # number of brackets above threshold
     ninety = 0 
@@ -257,10 +267,10 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
     fifty = 0
 
     # creates bell curve for brackets created
-    if numBrackets < 10:
-        numGames = [_numGames]*numBrackets
-    else:
-        numGames = np.random.normal(_numGames, _numGames, numBrackets)
+   # if numBrackets < 10:
+    numGames = [_numGames]*numBrackets
+    #else:
+       # numGames = np.random.normal(_numGames, _numGames, numBrackets)
     for i in range(len(numGames)):
         if numGames[i] < 0.03:
             numGames[i] = 0.03
@@ -285,7 +295,7 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
             outFile.write("\n")
         outFile.close()
         # finds accuracy and percentile (if 2021 or 2022 or 2023) for each bracket
-        if year <= 2023:
+        if year <= 2025:
             currAcc = br.computeAccuracy(year)
             currScore = br.computeScore(year)
             total += currAcc
@@ -326,7 +336,7 @@ def tournament(year, regressions, output, _numGames, numBrackets, champion):
         printed = int(toprint)
         print("{:0.0f}".format(2 * toprint) + "%", end='', flush=True)
     # prints out stats for brackets for testing
-    if year <= 2023:
+    if year <= 2024:
         stdev = ((total2 / numBrackets) - (total/numBrackets)**2)**0.5
         stdevScore = ((total4 / numBrackets) - (total3/numBrackets)**2)**0.5
         print("\n\nYear: " + str(year) + "   average numGames: " + "{:0.2f}".format(np.average(numGames)))
